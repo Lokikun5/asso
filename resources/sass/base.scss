@@ -1,0 +1,94 @@
+
+
+.section-divider {
+    height: 6px; // Épaisseur de la barre
+    background: linear-gradient(90deg, #4CAF50, #FFCC00); // Dégradé du vert au jaune
+    border: none;
+    margin: 2rem 0; // Espacement avec les sections avant et après
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Ombre subtile pour un effet de profondeur
+    border-radius: 4px; // Coins légèrement arrondis
+  }
+
+  .form-section {
+    background-color: #f8f9fa; // Couleur de fond claire
+    border: 1px solid #dee2e6; // Bordure subtile
+    border-radius: 8px; // Coins arrondis pour un effet moderne
+    padding: 2rem 1rem;
+  
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #4CAF50; // Vert principal
+      margin-bottom: 1.5rem;
+    }
+  
+    form {
+      .form-label {
+        font-weight: bold;
+        color: #2C3E50; // Couleur sombre pour le texte
+      }
+  
+      .form-control {
+        border: 1px solid #dee2e6; // Bordure légère
+        border-radius: 4px;
+        padding: 0.75rem;
+        &:focus {
+          border-color: #4CAF50; // Vert principal pour l'état focus
+          box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); // Ombre verte
+        }
+      }
+  
+      textarea.form-control {
+        resize: none; // Désactive le redimensionnement manuel
+      }
+  
+      button {
+        background-color: #4CAF50; // Vert principal
+        border: none;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: #43A047; // Vert plus foncé sur hover
+        }
+      }
+    }
+  }
+
+
+  // Parallax Banner
+.parallax-banner {
+  position: relative;
+  height: 400px; // Hauteur de la bannière
+  background-image: url('/image/banner.webp'); // Chemin vers l'image de la bannière
+  background-attachment: fixed; // Fixe l'image pour l'effet parallax
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // Contenu de la bannière
+  .banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      .banner-titel {
+          font-size: 3rem;
+          font-weight: bold;
+          color: whitesmoke;
+          text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); // Ombre pour le texte
+      }
+
+      .banner-subtxt {
+          font-size: 1.25rem;
+          color: whitesmoke;
+          text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7); // Ombre pour le texte
+      }
+  }
+}
+
+  

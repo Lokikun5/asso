@@ -1,0 +1,154 @@
+@use 'bootstrap' as *;
+@use './reset';
+@use './base';
+@use './page';
+@use './card.scss';
+//nav bar
+.header-logo{
+
+    img{
+
+        width: 6rem;
+        
+    }
+    
+}
+
+// Général
+body {
+    padding-top: 6rem; 
+  }
+  
+// Palette de couleurs (inspirée du logo)
+$primary-color: #4CAF50; // Vert principal
+$secondary-color: #FFCC00; // Jaune accent
+$light-color: #F0FFF4; // Vert très clair pour le fond
+$text-dark: #2C3E50; // Texte sombre
+$text-light: #FFFFFF; // Texte clair
+
+// Header
+.navbar {
+  background-color: $primary-color; 
+  color: $text-dark;
+
+  .navbar-brand {
+    color: $text-dark;
+    
+    font-weight: bold;
+    &:hover {
+      color: $secondary-color; 
+    }
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.5rem;
+    color: $text-dark;
+    &:hover {
+      color: $secondary-color; // Jaune sur hover
+    }
+  }
+}
+
+// Section Hero
+.hero {
+  background: linear-gradient(135deg, $primary-color, $secondary-color); // Dégradé vert-jaune
+  color: $text-light; // Texte clair pour contraster
+
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); // Ombre légère
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    color: $light-color;
+  }
+}
+
+// Section : Mission
+.mission {
+    background-color: #ffffff;
+    padding: 4rem 0;
+    text-align: center;
+  
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #343a40;
+      margin-bottom: 3rem;
+    }
+  
+    p {
+      font-size: 1.25rem;
+      line-height: 1.3;
+      margin-bottom: 3rem;
+      color: #495057;
+
+      span{
+        font-weight: 800;
+      }
+    }
+  
+    .programme {
+      margin-top: 2rem;
+  
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $primary-color;
+        margin-bottom: 3rem;
+      }
+  
+      p {
+        font-size: 1.25rem;
+        color: #495057;
+      }
+    }
+  }
+
+
+
+
+// Footer
+.footer {
+  background-color: $primary-color; // Vert principal pour le fond
+  color: $text-light;
+
+  .footer-logo {
+    width: 50px; 
+    height: auto;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: $secondary-color; 
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $text-light;
+  }
+
+  ul {
+    li {
+      font-size: 0.9rem;
+      color: $text-dark;
+
+      i {
+        color: $text-dark; // Icônes en jaune
+      }
+
+      a {
+        color: $text-light;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+          color: $secondary-color; // Lien en jaune sur hover
+        }
+      }
+    }
+  }
+}

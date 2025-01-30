@@ -1,21 +1,45 @@
 .card {
-    border-radius: 8px; // Coins arrondis pour un look moderne
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Ombre subtile
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
-  
-    &:hover {
+  border-radius: 8px; // Coins arrondis pour un look moderne
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Ombre subtile
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  height: 100%; // Permet d'avoir des cartes uniformes
+
+  &:hover {
       transform: translateY(-5px); // Légère élévation au survol
       box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); // Ombre renforcée au survol
-    }
   }
-  
+
+  .card-img-top {
+      height: 200px; // Taille fixe pour toutes les images
+      object-fit: cover; // Coupe l'image pour qu'elle s'adapte sans déformation
+      border-top-left-radius: 8px; // Assure une continuité avec la carte
+      border-top-right-radius: 8px;
+  }
+
+  .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; // Permet d'aligner le bouton en bas
+      flex-grow: 1; // Étend le contenu pour uniformiser la hauteur des cartes
+  }
+
   .card-title {
-    font-size: 1.25rem; // Taille de police du titre
-    font-weight: bold;
+      font-size: 1.25rem; // Taille de police du titre
+      font-weight: bold;
   }
-  
+
   .card-text {
-    color: #6c757d; // Couleur du texte de description
+      color: #6c757d; // Couleur du texte de description
+      flex-grow: 1; // Permet au texte de s'étendre sans casser la mise en page
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; // Limite à 3 lignes pour éviter les hauteurs variables
+      -webkit-box-orient: vertical;
   }
-  
+
+  .btn-primary {
+      margin-top: auto; // Place le bouton en bas
+  }
+}

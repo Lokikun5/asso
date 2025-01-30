@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title', $article->title)
+@section('description', $article->description)
+@section('canonical', Request::url())
 @section('content')
 
 @include('layouts.header')

@@ -12445,6 +12445,7 @@ span {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
+  height: 100%;
 }
 
 .card:hover {
@@ -12452,13 +12453,38 @@ span {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.card-title {
+.card .card-img-top {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card .card-title {
   font-size: 1.25rem;
   font-weight: bold;
 }
 
-.card-text {
+.card .card-text {
   color: #6c757d;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card .btn-primary {
+  margin-top: auto;
 }
 
 .header-logo img {

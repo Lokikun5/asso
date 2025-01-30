@@ -23,4 +23,9 @@ return [
          celle de préparer la prochaine génération à réussir dans des domaines clés",
     ],
 
+    "article" => [
+        "title" => "article",
+        "description" => "A la une note actualité",
+    ],
+
 ];

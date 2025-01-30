@@ -13,7 +13,7 @@
         <a class="nav-item nav-link" href="{{ route('objectif') }}">Nos objectifs</a>
         <a class="nav-item nav-link" href="{{ route('activity') }}">Les activités prévues</a>
         <a class="nav-item nav-link" href="{{ route('target') }}">Public cible</a>
-        <a class="nav-item nav-link" href="{{ route('articles.index') }}">Article</a>
+        <a class="nav-item nav-link" href="{{ route('articles.index') }}">Articles</a>
       </div>
     </div>
   </div>

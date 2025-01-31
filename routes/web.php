@@ -5,6 +5,7 @@ use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\ContactController;
 use App\Models\Article;
 
 /*
@@ -46,3 +47,6 @@ Route::get('/sitemap.xml', function () {
         ->header('Content-Type', 'application/xml');
 
 });
+
+
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');

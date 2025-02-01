@@ -8,7 +8,9 @@
         "php": "^7.3|^8.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "10",
+        "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.5",
+        "psy/psysh": "^0.12.7",
         "spatie/laravel-sitemap": "^7.3"
     },
     "require-dev": {

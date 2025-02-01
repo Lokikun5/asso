@@ -16,5 +16,17 @@
         <a class="nav-item nav-link" href="{{ route('articles.index') }}">Articles</a>
       </div>
     </div>
+    @if(Auth::check())
+    @if(Auth::user()->role === 'admin')
+        <a href="{{ route('dashboard') }}" class="btn btn-primary">Tableau de Bord</a>
+    @endif
+
+    <!-- Bouton de déconnexion -->
+    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+        @csrf
+        <button type="submit" class="btn btn-danger">Déconnexion</button>
+    </form>
+  @endif
+
   </div>
 </nav>

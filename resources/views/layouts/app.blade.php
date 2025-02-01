@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            tinymce.init({
+                selector: 'textarea.editor',
+                menubar: false,
+                plugins: 'lists link image',
+                toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
+                content_css: '//www.tiny.cloud/css/codepen.min.css'
+            });
+        });
+    </script>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +20,7 @@
 
 
         <title>@yield('title', config('meta.default.title'))</title>
+        @yield('meta')
         <meta name="description" content="@yield('description', config('meta.default.description'))">
 
         <!-- Favicon -->

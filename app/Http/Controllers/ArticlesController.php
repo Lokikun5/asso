@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
+//die("ArticlesController est bien chargé !");
 class ArticlesController extends Controller
 {
+    
     
     public function index()
     {
@@ -25,8 +27,9 @@ class ArticlesController extends Controller
 
     public function create()
     {
-        return view('articles.create');
+        return view('admin.articles.create');
     }
+
 
 
     public function store(Request $request)

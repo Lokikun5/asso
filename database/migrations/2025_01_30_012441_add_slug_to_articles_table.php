@@ -14,7 +14,9 @@ class AddSlugToArticlesTable extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->string('slug')->unique()->after('title');
+            if (!Schema::hasColumn('articles', 'slug')) {
+                $table->string('slug')->after('title');
+            }
         });
     }
 

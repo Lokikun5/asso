@@ -4,6 +4,15 @@
 
 @section('content')
 @include('layouts.header')
+
+@php
+        $breadcrumbs = [
+            ['name' => 'Articles', 'url' => route('articles.index')]
+        ];
+    @endphp
+    <div class="mt-5">
+    @include('components.breadcrumbs', ['breadcrumbs' => $breadcrumbs])
+    </div>
 <div class="container py-5">
     <h1 class="text-center mb-4">Tous les Articles</h1>
     <div class="row">
@@ -15,7 +24,7 @@
                     <p>{{ $article->type }}</p>
                     <h5 class="card-title">{{ $article->title }}</h5>
                     <p class="card-text">{{ Str::limit($article->description, 100) }}</p>
-                    <a href="{{ route('articles.show', $article->slug) }}" class="btn btn-primary mt-auto">Lire la suite</a>
+                    <a href="{{ route('articles.show', $article->slug) }}" class="btn btn-color btn-primary mt-auto">Lire la suite</a>
                 </div>
             </div>
         </div>

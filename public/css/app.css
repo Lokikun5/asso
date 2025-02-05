@@ -12304,9 +12304,8 @@ table {
 
 .section-divider {
   height: 6px;
-  background: linear-gradient(90deg, #4CAF50, #FFCC00);
+  background: linear-gradient(90deg, #0097b2, #7eb957);
   border: none;
-  margin: 2rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
@@ -12321,7 +12320,6 @@ table {
 .form-section h2 {
   font-size: 2rem;
   font-weight: bold;
-  color: #4CAF50;
   margin-bottom: 1.5rem;
 }
 
@@ -12337,7 +12335,7 @@ table {
 }
 
 .form-section form .form-control:focus {
-  border-color: #4CAF50;
+  border-color: #137c49;
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
@@ -12346,7 +12344,7 @@ table {
 }
 
 .form-section form button {
-  background-color: #4CAF50;
+  background-color: #137c49;
   border: none;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -12356,7 +12354,7 @@ table {
 }
 
 .form-section form button:hover {
-  background-color: #43A047;
+  background-color: #137c49;
 }
 
 .parallax-banner {
@@ -12399,7 +12397,7 @@ table {
 }
 
 .page-content h1, .page-content h2 {
-  color: #4CAF50;
+  color: #137c49;
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -12410,6 +12408,10 @@ table {
 
 .page-content h2 {
   font-size: 1.75rem;
+}
+
+.page-content h3 {
+  font-size: 1.5rem;
 }
 
 .page-content p {
@@ -12436,6 +12438,16 @@ table {
   margin-top: 1.8rem;
 }
 
+.page-content button {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.page-content button i {
+  font-size: 2rem;
+}
+
 span {
   font-weight: 600;
 }
@@ -12444,7 +12456,6 @@ span {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
   height: 100%;
 }
 
@@ -12464,6 +12475,7 @@ span {
 .card .card-body {
   display: flex;
   flex-direction: column;
+  background-color: #f8f9fa;
   justify-content: space-between;
   flex-grow: 1;
 }
@@ -12487,16 +12499,98 @@ span {
   margin-top: auto;
 }
 
+.card .btn-color {
+  background-color: #137c49 !important;
+  border-color: #137c49 !important;
+  color: #fff !important;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.card .btn-color:hover {
+  background-color: #0097b2 !important;
+  border-color: #0097b2 !important;
+}
+
+.btn-color {
+  background-color: #137c49 !important;
+  border-color: #137c49 !important;
+  color: #fff !important;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.btn-color:hover {
+  background-color: #0097b2 !important;
+  border-color: #0097b2 !important;
+}
+
+.breadcrumb-container {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 12px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb-container .breadcrumb {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+.breadcrumb-container .breadcrumb .breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-container .breadcrumb .breadcrumb-item a {
+  text-decoration: none;
+  color: #137c49;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-container .breadcrumb .breadcrumb-item a:hover {
+  color: #0056b3;
+}
+
+.breadcrumb-container .breadcrumb .breadcrumb-item.active {
+  font-weight: bold;
+  color: #495057;
+}
+
+.breadcrumb-container .breadcrumb .breadcrumb-separator {
+  margin: 0 8px;
+  font-size: 18px;
+  color: #6c757d;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 300px;
+}
+
 .header-logo img {
   width: 6rem;
 }
 
 body {
   padding-top: 6rem;
+  background-color: #f8f9fa;
+}
+
+.new-green {
+  color: #137c49;
+}
+
+i {
+  color: #137c49;
 }
 
 .navbar {
-  background-color: #4CAF50;
+  background-color: #137c49;
   color: #2C3E50;
 }
 
@@ -12515,11 +12609,17 @@ body {
 }
 
 .navbar .navbar-nav .nav-link:hover {
-  color: #FFCC00;
+  color: #137c49;
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: #137c49 !important;
+  border-bottom: 2px solid #137c49;
 }
 
 .hero {
-  background: linear-gradient(135deg, #4CAF50, #FFCC00);
+  background: linear-gradient(135deg, #0097b2, #7eb957);
   color: #FFFFFF;
 }
 
@@ -12559,14 +12659,10 @@ body {
   font-weight: 800;
 }
 
-.mission .programme {
-  margin-top: 2rem;
-}
-
 .mission .programme h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  color: #4CAF50;
+  color: #137c49;
   margin-bottom: 3rem;
 }
 
@@ -12576,7 +12672,7 @@ body {
 }
 
 .footer {
-  background-color: #4CAF50;
+  background-color: #137c49;
   color: #FFFFFF;
 }
 
@@ -12588,7 +12684,7 @@ body {
 .footer h5 {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #FFCC00;
+  color: #137c49;
 }
 
 .footer p {
@@ -12613,4 +12709,9 @@ body {
 .footer ul li a:hover {
   text-decoration: underline;
   color: #FFCC00;
+}
+
+.background-gradient {
+  background: linear-gradient(90deg, rgba(19, 124, 73, 0.15) 0%, rgba(126, 185, 87, 0.0823529412) 100%);
+  background: -o-linear-gradient(90deg, rgba(19, 124, 73, 0.15) 0%, rgba(126, 185, 87, 0.0196078431) 100%);
 }

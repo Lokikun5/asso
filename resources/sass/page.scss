@@ -8,7 +8,7 @@
   
   
     h1, h2 {
-      color: #4CAF50; 
+      color: #137c49; 
       font-weight: bold;
       margin-bottom: 1rem;
     }
@@ -19,6 +19,9 @@
   
     h2 {
       font-size: 1.75rem; // Taille intermédiaire pour les sous-titres
+    }
+    h3{
+      font-size: 1.50rem;
     }
   
     p {
@@ -45,6 +48,15 @@
     & > h1 + p,
     & > h2 + ul {
       margin-top: 1.8rem;
+    }
+
+    button{
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      i{
+        font-size: 2rem;
+      }
     }
   }
   span {

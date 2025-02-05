@@ -10,23 +10,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav gap-3">
-        <a class="nav-item nav-link" href="{{ route('objectif') }}">Nos objectifs</a>
-        <a class="nav-item nav-link" href="{{ route('activity') }}">Les activités prévues</a>
-        <a class="nav-item nav-link" href="{{ route('target') }}">Public cible</a>
-        <a class="nav-item nav-link" href="{{ route('articles.index') }}">Articles</a>
+        <a class="nav-item nav-link {{ Request::routeIs('programmes') ? 'active' : '' }}" href="{{ route('programmes') }}">Nos programmes</a>
+        <a class="nav-item nav-link {{ Request::routeIs('activity') ? 'active' : '' }}" href="{{ route('activity') }}">Les activités prévues</a>
+        <a class="nav-item nav-link {{ Request::routeIs('target') ? 'active' : '' }}" href="{{ route('target') }}">Public cible</a>
+        <a class="nav-item nav-link {{ Request::routeIs('partenaires') ? 'active' : '' }}" href="{{ route('partenaires') }}">Nos partenaires</a>
+        <a class="nav-item nav-link {{ Request::routeIs('articles.index') ? 'active' : '' }}" href="{{ route('articles.index') }}">Articles</a>
       </div>
     </div>
+
     @if(Auth::check())
-    @if(Auth::user()->role === 'admin')
+      @if(Auth::user()->role === 'admin')
         <a href="{{ route('dashboard') }}" class="btn btn-primary">Tableau de Bord</a>
+      @endif
+      <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+          @csrf
+          <button type="submit" class="btn btn-danger">Déconnexion</button>
+      </form>
     @endif
-
-    <!-- Bouton de déconnexion -->
-    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-        @csrf
-        <button type="submit" class="btn btn-danger">Déconnexion</button>
-    </form>
-  @endif
-
   </div>
 </nav>

@@ -5,6 +5,7 @@ use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -23,9 +24,13 @@ use App\Models\Article;
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
 // ✅ Pages statiques
-Route::get('/Nos-objectif', fn() => view('objectif'))->name('objectif');
+Route::get('/Nos-programmes', fn() => view('programmes'))->name('programmes');
 Route::get('/Les-activites-prevues', fn() => view('activity'))->name('activity');
 Route::get('/Public-cible', fn() => view('target'))->name('target');
+
+Route::get('/Nos-partenaires', [PartnerController::class, 'index'])->name('partenaires');
+Route::get('/Nos-partenaires/{slug}', [PartnerController::class, 'show'])->name('partenaire.show');
+
 
 // ✅ Authentification
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -52,8 +57,9 @@ Route::get('/articles/{slug}', [ArticlesController::class, 'show'])->name('artic
 Route::get('/sitemap.xml', function () {
     $sitemap = Sitemap::create()
         ->add(Url::create(route('welcome')))
-        ->add(Url::create(route('objectif')))
+        ->add(Url::create(route('programmes')))
         ->add(Url::create(route('activity')))
+        ->add(Url::create(route('partenaires')))
         ->add(Url::create(route('target')));
 
     foreach (Article::all() as $article) {

@@ -3,6 +3,14 @@
 @use './base';
 @use './page';
 @use './card.scss';
+@use './breadcrumb';
+
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 300px;
+}
+
 //nav bar
 .header-logo{
 
@@ -17,15 +25,24 @@
 // Général
 body {
     padding-top: 6rem; 
+    background-color: #f8f9fa;
   }
   
 // Palette de couleurs (inspirée du logo)
-$primary-color: #4CAF50; // Vert principal
+$primary-color: #137c49; // Vert principal
 $secondary-color: #FFCC00; // Jaune accent
+
 $light-color: #F0FFF4; // Vert très clair pour le fond
 $text-dark: #2C3E50; // Texte sombre
 $text-light: #FFFFFF; // Texte clair
 
+
+.new-green{
+  color: $primary-color;
+}
+i{
+  color: $primary-color;
+}
 // Header
 .navbar {
   background-color: $primary-color; 
@@ -44,14 +61,20 @@ $text-light: #FFFFFF; // Texte clair
     font-size: 1.5rem;
     color: $text-dark;
     &:hover {
-      color: $secondary-color; // Jaune sur hover
+      color: $primary-color; // Jaune sur hover
     }
   }
 }
 
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: #137c49 !important;
+  border-bottom: 2px solid #137c49;
+}
+
 // Section Hero
 .hero {
-  background: linear-gradient(135deg, $primary-color, $secondary-color); // Dégradé vert-jaune
+  background: linear-gradient(135deg, #0097b2, #7eb957); // Dégradé vert-jaune
   color: $text-light; // Texte clair pour contraster
 
   h1 {
@@ -92,10 +115,9 @@ $text-light: #FFFFFF; // Texte clair
     }
   
     .programme {
-      margin-top: 2rem;
   
       h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         font-weight: 600;
         color: $primary-color;
         margin-bottom: 3rem;
@@ -124,7 +146,7 @@ $text-light: #FFFFFF; // Texte clair
   h5 {
     font-size: 1.25rem;
     font-weight: bold;
-    color: $secondary-color; 
+    color: $primary-color; 
   }
 
   p {
@@ -152,3 +174,15 @@ $text-light: #FFFFFF; // Texte clair
     }
   }
 }
+
+.background-gradient {
+  // Dégradé linéaire de gauche à droite, de vert très discret vers blanc
+  background: linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95715 100%);
+  
+  // Préfixes pour une compatibilité étendue
+  background: -webkit-linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95705 100%);
+  background: -moz-linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95705 100%);
+  background: -o-linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95705 100%);
+}
+
+

@@ -6,9 +6,17 @@
     @include('layouts.header')
     @include('layouts.banner')
 
+    @php
+        $breadcrumbs = [
+            ['name' => 'Public Cible', 'url' => route('target')]
+        ];
+    @endphp
+
+    @include('components.breadcrumbs', ['breadcrumbs' => $breadcrumbs])
+
     <section class="page-content py-5">
         <div class="container">
-            <h1 class="text-center mb-4">🎯 Public Cible</h1>
+            <h1 class="text-center mb-4"><i class="fas fa-bullseye"></i> Public Cible</h1>
 
             <p class="text-center">
                 Notre initiative s’adresse à un public varié, uni par une ambition commune :
@@ -25,45 +33,39 @@
             <div class="row mt-5">
                 <!-- Jeunes élèves et étudiants -->
                 <div class="col-md-4">
-                    <div class="card text-center p-4 border rounded shadow-sm">
-                        <div class="card-body">
-                            <h3 class="card-title">🎓 Jeunes Élèves et Étudiants</h3>
-                            <p class="card-text">
+                    <div class="p-4 border rounded shadow-sm">
+                            <h3><i class="fas fa-graduation-cap"></i> Jeunes Élèves et Étudiants</h3>
+                            <p>
                                 Collégiens, lycéens et universitaires en quête d’orientation et d’opportunités professionnelles.
                             </p>
-                        </div>
                     </div>
                 </div>
 
                 <!-- Institutions -->
                 <div class="col-md-4">
-                    <div class="card text-center p-4 border rounded shadow-sm">
-                        <div class="card-body">
-                            <h3 class="card-title">🏫 Institutions</h3>
-                            <p class="card-text">
-                                Établissements scolaires, universités et services gouvernementaux désireux de renforcer l'accompagnement éducatif.
-                            </p>
-                        </div>
+                    <div class="p-4 border rounded shadow-sm">
+                            <h3 class="card-title"><i class="fas fa-school"></i> Institutions</h3>
+                                <p class="card-text">
+                                    Établissements scolaires, universités et services gouvernementaux désireux de renforcer l'accompagnement éducatif.
+                                </p>
                     </div>
                 </div>
 
                 <!-- Entreprises -->
                 <div class="col-md-4">
-                    <div class="card text-center p-4 border rounded shadow-sm">
-                        <div class="card-body">
-                            <h3 class="card-title">🏢 Entreprises du Secteur Privé</h3>
-                            <p class="card-text">
+                    <div class="p-4 border rounded shadow-sm">
+                            <h3><i class="fas fa-building"></i> Entreprises du Secteur Privé</h3>
+                            <p>
                                 Acteurs des domaines de l’ingénierie, de l’informatique, de la médecine et des nouvelles technologies,
                                 souhaitant contribuer à l’accompagnement des jeunes talents.
                             </p>
-                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Conclusion -->
             <p class="mt-5 text-center">
-                🤝 Ensemble, inspirons des vocations et bâtissons des ponts entre savoir, expérience et ambition 
+            <i class="fas fa-handshake"></i> Ensemble, inspirons des vocations et bâtissons des ponts entre savoir, expérience et ambition 
                 pour façonner un avenir prometteur.
             </p>
         </div>

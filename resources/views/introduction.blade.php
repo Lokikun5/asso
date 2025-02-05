@@ -5,9 +5,9 @@
     </div>
 </section>
 
-<section class="mission py-5">
+<section class="mission py-5 background-gradient">
     <div class="container">
-        <h2 class="text-center mb-4">Notre Mission</h2>
+        <h2 class="text-center mb-4">Notre mission</h2>
         <p>La mission de l'association A.N.G est de faciliter le transfert de connaissances et d'expériences professionnelles entre des experts actifs dans les domaines de l'ingénierie, 
             de l'informatique, de la médecine et des nouvelles technologies,
              et les jeunes élèves, étudiant(e)s africain(e)s. 
@@ -21,9 +21,9 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="programme p-4 border rounded shadow-sm">
-                    <h3>1. Le Programme TGPD « Transfert Générationnel, la Passerelle pour Demain »</h3>
+                    <h3>1. Le Programme TGPD <br> « Transfert Générationnel, la Passerelle pour Demain »</h3>
                     <p>
-                        <span>Ce programme s'adresse aux jeunes élèves, étudiants et étudiantes africain(e)s,</span> 
+                        Ce programme s'adresse <span> aux jeunes élèves, étudiants et étudiantes africain(e)s,</span> 
                         avec pour ambition de les <span>accompagner dans leur orientation scolaire et professionnelle</span> 
                         tout en renforçant leurs compétences pratiques et théoriques pour mieux les préparer 
                         <span>à leur carrière professionnelle.</span>
@@ -35,14 +35,15 @@
                     <p>
                         En promouvant l'égalité des chances, ce programme offre à chacun des ressources et un réseau adapté pour construire un avenir prometteur.
                     </p>
+                    <a href="{{ route('programmes') }}" class="btn btn-primary btn-color mt-auto">En savoir plus</a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="programme p-4 border rounded shadow-sm">
-                    <h3>2. Le Programme FORV « Lycéennes, étudiantes, Osez et Rêvez Grand »</h3>
+                    <h3>2. Le Programme FORV <br> « Lycéennes, étudiantes, Osez et Rêvez Grand »</h3>
                     <p>
-                        Ce programme est né de l’idée de faire découvrir aux jeunes filles des collèges, lycées et universités l’éventail de
-                        possibilités qui s’offrent à elles quant au choix de leur carrière future.
+                        Ce programme est né de l’idée de faire découvrir aux <span>jeunes filles des collèges, lycées et universités </span> l’éventail de
+                        possibilités qui s’offrent à elles quant au choix de <span>leur carrière future.</span>
                     </p>
                     <p>
                         Dans le cadre de notre mission, nous accordons une attention particulière à 
@@ -58,6 +59,8 @@
                         qu’il s’agisse d’ateliers de découverte, de programmes de mentorat, ou de stages immersifs qui leur permettent 
                         de se projeter dans ces carrières.
                     </p>
+
+                    <a href="{{ route('programmes') }}#programme-feminin" class="btn btn-primary btn-color mt-auto">En savoir plus</a>
                 </div>
             </div>
         </div>

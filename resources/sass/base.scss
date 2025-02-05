@@ -2,9 +2,8 @@
 
 .section-divider {
     height: 6px; // Épaisseur de la barre
-    background: linear-gradient(90deg, #4CAF50, #FFCC00); // Dégradé du vert au jaune
+    background: linear-gradient(90deg, #0097b2, #7eb957); // Dégradé du vert au jaune
     border: none;
-    margin: 2rem 0; // Espacement avec les sections avant et après
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Ombre subtile pour un effet de profondeur
     border-radius: 4px; // Coins légèrement arrondis
   }
@@ -18,7 +17,6 @@
     h2 {
       font-size: 2rem;
       font-weight: bold;
-      color: #4CAF50; // Vert principal
       margin-bottom: 1.5rem;
     }
   
@@ -33,7 +31,7 @@
         border-radius: 4px;
         padding: 0.75rem;
         &:focus {
-          border-color: #4CAF50; // Vert principal pour l'état focus
+          border-color: #137c49; // Vert principal pour l'état focus
           box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); // Ombre verte
         }
       }
@@ -43,7 +41,7 @@
       }
   
       button {
-        background-color: #4CAF50; // Vert principal
+        background-color: #137c49; // Vert principal
         border: none;
         padding: 0.75rem 1.5rem;
         font-size: 1rem;
@@ -51,7 +49,7 @@
         border-radius: 4px;
         transition: background-color 0.3s ease;
         &:hover {
-          background-color: #43A047; // Vert plus foncé sur hover
+          background-color: #137c49; // Vert plus foncé sur hover
         }
       }
     }

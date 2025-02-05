@@ -5,6 +5,15 @@
 @section('content')
 
 @include('layouts.header')
+@php
+        $breadcrumbs = [
+            ['name' => 'Articles', 'url' => route('articles.index')],
+            ['name' => $article->title, 'url' => route('articles.show', $article->id)]
+        ];
+@endphp
+    <div class="mt-5">
+        @include('components.breadcrumbs', ['breadcrumbs' => $breadcrumbs])
+    </div>
 
 <div class="container py-5">
     <!-- Titre de l'article -->

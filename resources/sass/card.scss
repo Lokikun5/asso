@@ -1,9 +1,8 @@
 .card {
-  border-radius: 8px; // Coins arrondis pour un look moderne
+  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Ombre subtile
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  height: 100%; // Permet d'avoir des cartes uniformes
+  height: 100%;
 
   &:hover {
       transform: translateY(-5px); // Légère élévation au survol
@@ -20,6 +19,7 @@
   .card-body {
       display: flex;
       flex-direction: column;
+      background-color: #f8f9fa;
       justify-content: space-between; // Permet d'aligner le bouton en bas
       flex-grow: 1; // Étend le contenu pour uniformiser la hauteur des cartes
   }
@@ -42,4 +42,29 @@
   .btn-primary {
       margin-top: auto; // Place le bouton en bas
   }
+
+  .btn-color {
+    background-color: #137c49 !important;
+    border-color: #137c49 !important;
+    color: #fff !important;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #0097b2 !important;
+        border-color: #0097b2 !important;
+    }
+}
+
+}
+
+.btn-color {
+    background-color: #137c49 !important;
+    border-color: #137c49 !important;
+    color: #fff !important;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #0097b2 !important;
+        border-color: #0097b2 !important;
+    }
 }

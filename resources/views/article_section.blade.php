@@ -1,7 +1,7 @@
 @if($articles->count())
-<section>
+<section class="background-gradient">
     <div class="container">
-        <h2 class="text-center fw-bold">Découvrez nos articles</h2>
+        <h2 class="text-center fw-bold pt-5">Découvrez nos articles</h2>
 
         <div class="container py-5">
             <div class="row justify-content-center">
@@ -11,9 +11,9 @@
                         <img src="{{ asset('storage/' . $article->img_banner) }}" class="card-img-top" alt="{{ $article->title }}">
                         <div class="card-body d-flex flex-column">
                             <p>{{ $article->type }}</p>
-                            <h5 class="card-title">{{ $article->title }}</h5>
+                            <h3 class="card-title">{{ $article->title }}</h3>
                             <p class="card-text">{{ Str::limit($article->description, 100) }}</p>
-                            <a href="{{ route('articles.show', $article->slug) }}" class="btn btn-primary mt-auto">Lire la suite</a>
+                            <a href="{{ route('articles.show', $article->slug) }}" class="btn btn-primary btn-color mt-auto">Lire la suite</a>
                         </div>
                     </div>
                 </div>

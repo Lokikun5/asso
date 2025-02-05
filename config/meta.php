@@ -7,8 +7,8 @@ return [
         "description" => "Inspirer des vocations, élargir le champ des possibles… ",
     ],
 
-    "objectif" => [
-        "title" => "Nos objectifs",
+    "programmes" => [
+        "title" => "Nos Programmes",
         "description" => "Le Programme transfert Générationnel, la Passerelle pour Demain",
     ],
 
@@ -19,6 +19,12 @@ return [
 
     "target" => [
         "title" => "Public cible",
+        "description" => "Notre initiative s’adresse à un public varié, uni par une ambition commune,
+         celle de préparer la prochaine génération à réussir dans des domaines clés",
+    ],
+
+    "partenaires" => [
+        "title" => "Nos partenaires",
         "description" => "Notre initiative s’adresse à un public varié, uni par une ambition commune,
          celle de préparer la prochaine génération à réussir dans des domaines clés",
     ],

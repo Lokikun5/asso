@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log('salut')
     const galleryUpload = document.getElementById("gallery-upload");
     const csrfToken = document.querySelector('meta[name="csrf-token"]');
     const articleIdInput = document.querySelector('input[name="article_id"]');

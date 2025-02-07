@@ -3,7 +3,6 @@
   !*** ./resources/js/media-upload.js ***!
   \**************************************/
 document.addEventListener("DOMContentLoaded", function () {
-  console.log('salut');
   var galleryUpload = document.getElementById("gallery-upload");
   var csrfToken = document.querySelector('meta[name="csrf-token"]');
   var articleIdInput = document.querySelector('input[name="article_id"]');

@@ -10,13 +10,13 @@
         <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('admin.partenaires.index') ? 'active fw-bold' : '' }}" 
                 href="{{ route('admin.partenaires.index') }}">
-                <i class="fas fa-handshake"></i> Gestion des Partenaires
+                <i class="fas fa-handshake"></i> Gestion des formateur et bénévoles
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('admin.institution-partners.index') ? 'active fw-bold' : '' }}" 
                 href="{{ route('admin.institution-partners.index') }}">
-                <i class="fas fa-building"></i> Gestion des Partenaires
+                <i class="fas fa-building"></i> Gestion des établissements partenaires
             </a>
         </li>
     </ul>

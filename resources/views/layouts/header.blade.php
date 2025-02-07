@@ -20,7 +20,7 @@
             Partenaires
           </a>
           <ul class="dropdown-menu" aria-labelledby="partnerDropdown">
-            <li><a class="dropdown-item {{ Request::routeIs('partenaires') ? 'active' : '' }}" href="{{ route('partenaires') }}">Nos membres formateur et bénévoles</a></li>
+            <li><a class="dropdown-item {{ Request::routeIs('partenaires') ? 'active' : '' }}" href="{{ route('partenaires') }}">Membres formateur et bénévoles</a></li>
             <li><a class="dropdown-item {{ Request::routeIs('etablissements.index') ? 'active' : '' }}" href="{{ route('etablissements.index') }}">Établissements partenaires</a></li>
           </ul>
         </div>

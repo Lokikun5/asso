@@ -58,6 +58,40 @@
         @yield('meta')
         <meta name="description" content="@yield('description', config('meta.default.description'))">
 
+            {{-- ✅ Balises Open Graph de base --}}
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ url()->current() }}">
+        <meta property="og:title" content="@yield('title', config('app.name'))">
+        <meta property="og:description" content="@yield('description', 'Découvrez notre plateforme dédiée aux jeunes talents.')">
+        
+        {{-- ✅ Gestion des images dynamiques Open Graph pour les articles --}}
+        @if(request()->routeIs('articles.show') && isset($article))
+            <meta property="og:image" content="{{ asset('storage/' . $article->img_banner) }}">
+            <meta property="og:image:alt" content="{{ $article->title }}">
+        @else
+            {{-- ✅ Image Open Graph par défaut --}}
+            <meta property="og:image" content="{{ asset('image/default-og-image.webp') }}">
+            <meta property="og:image:alt" content="Image de présentation">
+        @endif
+
+        @if (
+        request()->is('/') 
+        || request()->is('articles') 
+        || request()->is('Nos-partenaires') 
+        || request()->is('etablissements-partenaires') 
+        || request()->is('Nos-programmes') 
+        || request()->is('Les-activites-prevues') 
+        || request()->is('Public-cible') 
+        || request()->is('articles/*')
+        || request()->is('Nos-partenaires/*')
+    )
+        <meta name="robots" content="index, follow">
+    @elseif (request()->is('admin/*'))
+        <meta name="robots" content="noindex, nofollow">
+    @else
+        <meta name="robots" content="noindex, nofollow">
+    @endif
+
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
         <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">

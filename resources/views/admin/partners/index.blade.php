@@ -15,8 +15,8 @@
                 <button type="submit" class="btn btn-danger">🚪 Déconnexion</button>
             </form>
         </div>
-        <h2 class="my-4"><i class="fas fa-handshake"></i> Gestion des Partenaires</h2>
-        <a href="{{ route('admin.partenaires.create') }}" class="btn btn-primary my-2">➕ Ajouter un Partenaire</a>
+        <h2 class="my-4"><i class="fas fa-handshake"></i> Gestion des formateur / bénévoles</h2>
+        <a href="{{ route('admin.partenaires.create') }}" class="btn btn-primary my-2">➕ Ajouter un formateur / bénévoles</a>
 
         @if(session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>

@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            tinymce.init({
-                selector: 'textarea.editor',
-                menubar: false,
-                plugins: 'lists link image',
-                toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
-                content_css: '//www.tiny.cloud/css/codepen.min.css'
-            });
+    @if(isset($load_tinymce) && $load_tinymce)
+        <script src="https://cdn.tiny.cloud/1/2j9xry6jul6ri51jnjmp3fgncjknf024pd879izabqmxlo5l/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+        <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof tinymce !== 'undefined') {
+                tinymce.init({
+                    selector: 'textarea.editor',
+                    menubar: true,
+                    plugins: 'lists link image',
+                    toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
+                    images_upload_url: '/upload-image', // Route Laravel pour l'upload
+                    images_upload_handler: (blobInfo) => {
+                        return new Promise((resolve, reject) => {
+                            let formData = new FormData();
+                            formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+                            fetch('/upload-image', {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                                }
+                            })
+                            .then(response => response.json())
+                            .then(result => {
+                                if (result && result.location) {
+                                    resolve(result.location); // ✅ Succès : URL de l’image
+                                } else {
+                                    reject("L'upload a échoué."); // ❌ Erreur
+                                }
+                            })
+                            .catch(() => {
+                                reject("Erreur lors de l'upload."); // ❌ Erreur réseau
+                            });
+                        });
+                    },
+                    content_css: '//www.tiny.cloud/css/codepen.min.css'
+                });
+            } else {
+                console.error("❌ TinyMCE n'a pas été chargé correctement !");
+            }
         });
-    </script>
+
+        </script>
+    @endif
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,6 +81,7 @@
         @yield('content')
         <script src="{{ mix('js/app.js') }}"></script>
         <script src="{{ asset('js/contact.js') }}"></script>
+        <script src="{{ asset('js/media-upload.js') }}"></script>
 
     </body>
 </html>

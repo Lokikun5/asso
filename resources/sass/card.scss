@@ -3,6 +3,8 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Ombre subtile
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
       transform: translateY(-5px); // Légère élévation au survol
@@ -10,6 +12,7 @@
   }
 
   .card-img-top {
+    width: 100%;
       height: 200px; // Taille fixe pour toutes les images
       object-fit: cover; // Coupe l'image pour qu'elle s'adapte sans déformation
       border-top-left-radius: 8px; // Assure une continuité avec la carte
@@ -22,6 +25,7 @@
       background-color: #f8f9fa;
       justify-content: space-between; // Permet d'aligner le bouton en bas
       flex-grow: 1; // Étend le contenu pour uniformiser la hauteur des cartes
+      padding: 1rem;
   }
 
   .card-title {
@@ -40,7 +44,7 @@
   }
 
   .btn-primary {
-      margin-top: auto; // Place le bouton en bas
+      margin-top: auto;
   }
 
   .btn-color {
@@ -53,7 +57,21 @@
         background-color: #0097b2 !important;
         border-color: #0097b2 !important;
     }
-}
+
+    }
+
+    .btn-color2 {
+        background-color: #0097b2 !important;
+        border-color: #0097b2 !important;
+        color: #fff !important;
+        transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    
+        &:hover {
+            background-color: #137c49 !important;
+            border-color: #137c49 !important;
+        }
+    
+        }
 
 }
 

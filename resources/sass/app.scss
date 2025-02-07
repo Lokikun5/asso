@@ -25,7 +25,14 @@ html {
 // Général
 body {
     padding-top: 6rem; 
-    background-color: #f8f9fa;
+    
+    // Dégradé linéaire de gauche à droite, de vert très discret vers blanc
+  background: linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95715 100%);
+  
+  // Préfixes pour une compatibilité étendue
+  background: -webkit-linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95705 100%);
+  background: -moz-linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95705 100%);
+  background: -o-linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95705 100%);
   }
   
 // Palette de couleurs (inspirée du logo)
@@ -45,26 +52,61 @@ i{
 }
 // Header
 .navbar {
-  background-color: $primary-color; 
+  background-color: $primary-color;
   color: $text-dark;
 
   .navbar-brand {
     color: $text-dark;
-    
     font-weight: bold;
+
     &:hover {
-      color: $secondary-color; 
+      color: $secondary-color;
     }
   }
 
   .navbar-nav .nav-link {
     font-size: 1.5rem;
     color: $text-dark;
+
     &:hover {
       color: $primary-color; // Jaune sur hover
     }
   }
+
+  .dropdown-menu {
+    border: none;
+    background-color: #e8f5e9; // Remplacement de lighten() pour compatibilité
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    .dropdown-item {
+      color: $primary-color;
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        background-color: $primary-color;
+        color: #fff;
+      }
+
+      &.active {
+        background-color: $primary-color;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .dropdown-toggle::after {
+    content: ""; // Ajout pour compatibilité
+    display: inline-block;
+    margin-left: 0.5rem;
+    border-top: 0.4em solid;
+    border-right: 0.4em solid transparent;
+    border-left: 0.4em solid transparent;
+  }
 }
+
+
 
 .navbar-nav .nav-link.active {
   font-weight: bold;
@@ -92,7 +134,7 @@ i{
 
 // Section : Mission
 .mission {
-    background-color: #ffffff;
+    
     padding: 4rem 0;
     text-align: center;
   
@@ -105,8 +147,8 @@ i{
   
     p {
       font-size: 1.25rem;
-      line-height: 1.3;
-      margin-bottom: 3rem;
+      line-height: 1.1;
+      margin-bottom: 2rem;
       color: #495057;
 
       span{
@@ -121,6 +163,9 @@ i{
         font-weight: 600;
         color: $primary-color;
         margin-bottom: 3rem;
+      }
+      h4{
+        font-size: 1.2rem; 
       }
   
       p {
@@ -175,14 +220,24 @@ i{
   }
 }
 
-.background-gradient {
-  // Dégradé linéaire de gauche à droite, de vert très discret vers blanc
-  background: linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95715 100%);
-  
-  // Préfixes pour une compatibilité étendue
-  background: -webkit-linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95705 100%);
-  background: -moz-linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95705 100%);
-  background: -o-linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95705 100%);
+.pagination .page-link {
+  font-size: 14px; /* Ajuste la taille de la police */
+  padding: 8px 12px; /* Ajuste l'espacement */
 }
 
+.pagination .page-item {
+  margin: 0 2px; /* Ajoute un espace entre les boutons */
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff; /* Couleur du bouton actif */
+  border-color: #007bff;
+  color: white;
+}
+
+.pagination .page-link svg {
+  width: 16px; /* Taille des flèches */
+  height: 16px;
+  vertical-align: middle;
+}
 

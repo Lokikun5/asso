@@ -1,4 +1,4 @@
-<section class="form-section py-5 background-gradient">
+<section class="form-section py-5 ">
     <div class="container">
         <h2 class="text-center mb-4">Contactez-nous</h2>
         <form id="contact-form" action="{{ route('contact.submit') }}" method="POST">

@@ -5,7 +5,7 @@
     </div>
 </section>
 
-<section class="mission py-5 background-gradient">
+<section class="mission py-5 ">
     <div class="container">
         <h2 class="text-center mb-4">Notre mission</h2>
         <p>La mission de l'association A.N.G est de faciliter le transfert de connaissances et d'expériences professionnelles entre des experts actifs dans les domaines de l'ingénierie, 
@@ -51,13 +51,11 @@
                         <span>à leur inclusion active dans des domaines essentiels</span> tels que l’ingénierie, l’informatique, la médecine et les nouvelles technologies.
                     </p>
                     <p>
-                        Nous croyons fermement que leur intégration et leur réussite dans ces secteurs stratégiques sont essentielles 
-                        pour une société plus équitable et innovante.
-                    </p>
-                    <p>
-                        Nous souhaitons remédier à cette disparité en créant des opportunités spécifiques pour les jeunes femmes, 
-                        qu’il s’agisse d’ateliers de découverte, de programmes de mentorat, ou de stages immersifs qui leur permettent 
-                        de se projeter dans ces carrières.
+                    Nous croyons fermement que l'intégration et la réussite des
+                     jeunes femmes dans ces secteurs stratégiques sont essentielles pour
+                      une société plus équitable et innovante, et nous œuvrons à réduire cette disparité
+                    en leur offrant des opportunités ciblées telles que des ateliers de découverte, des programmes
+                     de mentorat et des stages immersifs.
                     </p>
 
                     <a href="{{ route('programmes') }}#programme-feminin" class="btn btn-primary btn-color mt-auto">En savoir plus</a>

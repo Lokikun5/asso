@@ -30,7 +30,7 @@ return [
     ],
 
     "article" => [
-        "title" => "article",
+        "title" => "Articles",
         "description" => "A la une note actualité",
     ],
 

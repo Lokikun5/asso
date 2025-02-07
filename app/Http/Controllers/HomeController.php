@@ -9,9 +9,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        
-        $articles = Article::with('media')->latest()->take(6)->get();
-        
+         
+        $articles = Article::with('media')->where('active', true)->latest()->take(6)->get();
 
         // Retourner la vue avec les articles
         return view('welcome', compact('articles'));

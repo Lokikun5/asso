@@ -12,7 +12,7 @@
     @endphp
     @include('components.breadcrumbs', ['breadcrumbs' => $breadcrumbs])
 
-    <section class="page-content py-5 background-gradient">
+    <section class="page-content py-5 ">
         <div class="container">
             <h1 class="text-center mb-4"><i class="fas fa-calendar"></i> Nos activités</h1>
 
@@ -33,7 +33,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <i class="fas fa-palette"></i> Ateliers de Découverte
+                        <i class="fas fa-palette"></i> Ateliers de découverte
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#activitiesAccordion">
@@ -51,7 +51,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <i class="fas fa-chalkboard-teacher"></i> Mentorat et Tutorat : « Un jeune, un mentor, un avenir éclairé »
+                        <i class="fas fa-chalkboard-teacher"></i> Mentorat et tutorat : « Un jeune, un mentor, un avenir éclairé »
                         </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#activitiesAccordion">
@@ -67,7 +67,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        <i class="fas fa-building"></i> Visites et Stages Immersifs
+                        <i class="fas fa-building"></i> Visites et stages immersifs
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#activitiesAccordion">
@@ -84,7 +84,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFour">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        <i class="fas fa-microphone"></i> Conférences et Tables Rondes
+                        <i class="fas fa-microphone"></i> Conférences et tables rondes
                         </button>
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#activitiesAccordion">
@@ -101,7 +101,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingFive">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        <i class="fas fa-laptop"></i> Création d’une Plateforme Numérique
+                        <i class="fas fa-laptop"></i> Création d’une plateforme numérique
                         </button>
                     </h2>
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#activitiesAccordion">

@@ -1,6 +1,5 @@
 // Classe générale pour les pages internes
 .page-content {
-    background-color: #f8f9fa;
     padding: 5rem;
     border-radius: 8px; // Coins arrondis pour un look moderne
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Ombre légère pour la section
@@ -58,7 +57,53 @@
         font-size: 2rem;
       }
     }
+
+    @media (max-width: 768px) {
+      padding: 2rem; // Réduction du padding pour petits écrans
+    }
   }
   span {
         font-weight: 600;
   }
+
+/* Pour la zone texte des pages articles et partenaires */
+  .content-section {
+    max-width: 800px;
+    line-height: 1.8;
+    font-size: 1.2rem; /* Taille de texte légèrement plus petite */
+    background-color: #f8f9fa; /* Couleur de fond claire */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Ombre légère */
+    margin: 0 auto 3rem auto; /* Centrer et espacer en bas */
+}
+
+/* Couleur des en-têtes actifs */
+.accordion-button:not(.collapsed) {
+  background-color: #137c49; /* Vert pour les boutons actifs */
+  color: #fff; /* Texte blanc */
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+
+/* Couleur des en-têtes au survol */
+.accordion-button:not(.collapsed):hover {
+  background-color: #105c38; /* Vert légèrement plus foncé pour le survol */
+}
+
+/* Supprimer le focus bleu par défaut */
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+
+.row .col-md-4 .flex-fill {
+  min-height: 300px; /* Ajustez cette valeur selon vos besoins */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* Ajout d'un espace homogène entre les cartes */
+.row.g-4 > [class*="col-"] {
+  margin-bottom: 1.5rem; /* Espacement uniforme */
+}

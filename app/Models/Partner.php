@@ -10,7 +10,7 @@ class Partner extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['first_name', 'last_name', 'description', 'text', 'slug', 'partner_link','profile_picture'];
+    protected $fillable = ['first_name', 'last_name', 'description', 'text', 'slug', 'partner_link','profile_picture','active'];
 
     /**
      * Générer un slug automatiquement avant la création du partenaire.

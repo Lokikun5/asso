@@ -10,7 +10,7 @@
             ['name' => 'Articles', 'url' => route('articles.index')]
         ];
     @endphp
-    <div class="mt-5">
+    <div class="mt-4">
     @include('components.breadcrumbs', ['breadcrumbs' => $breadcrumbs])
     </div>
 <div class="container py-5">

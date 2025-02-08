@@ -30,8 +30,18 @@ return [
     ],
 
     "article" => [
-        "title" => "Articles",
-        "description" => "A la une note actualité",
+        "title" => "Nos Articles - Explorez, apprenez et restez inspiré !",
+        "description" => "Retrouvez nos articles sur l’éducation, l’orientation professionnelle et les initiatives inspirantes. Restez informé des dernières tendances et découvrez des témoignages qui façonnent le monde de demain !",
+    ],
+
+    "etablissements" => [
+        "title" => "Nos Partenaires - Ensemble, inspirons et construisons l’avenir",
+        "description" => " Découvrez nos partenaires engagés dans la formation et l’accompagnement des talents de demain. Écoles, entreprises et institutions publiques unissent leurs forces pour offrir des opportunités concrètes aux jeunes. rejoignez-nous pour bâtir un futur prometteur ! ",
+    ],
+
+    "podcasts" => [
+        "title" => "Podcasts - Écoutez, Apprenez et Inspirez-vous !",
+        "description" => "Plongez dans nos podcasts éducatifs et inspirants ! Discussions, témoignages et conseils d’experts pour guider les jeunes vers un avenir prometteur. Écoutez dès maintenant !",
     ],
 
 ];

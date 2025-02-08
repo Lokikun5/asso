@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', config('meta.programmes.title'))
-@section('description', config('meta.programmes.description'))
+@section('title', config('meta.etablissements.title'))
+@section('description', config('meta.etablissements.description'))
 
 @section('content')
     @include('layouts.header')

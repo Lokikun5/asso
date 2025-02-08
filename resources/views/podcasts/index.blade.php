@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Podcasts')
+@section('title', config('meta.podcasts.title'))
+@section('description', config('meta.podcasts.description'))
 
 @section('content')
 @include('layouts.header')

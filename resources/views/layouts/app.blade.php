@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     @if(isset($load_tinymce) && $load_tinymce)
-        <script src="https://cdn.tiny.cloud/1/2j9xry6jul6ri51jnjmp3fgncjknf024pd879izabqmxlo5l/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="https://cdn.tiny.cloud/1/{{ config('services.tinymce.api_key') }}/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 
         <script>
                         document.addEventListener("DOMContentLoaded", function() {

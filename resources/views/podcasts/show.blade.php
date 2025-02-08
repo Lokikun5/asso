@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', $podcast->name)
+@section('description', $podcast->description)
 
 @section('content')
 @include('layouts.header')

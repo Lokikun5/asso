@@ -12422,112 +12422,113 @@ table {
 }
 
 .page-content {
-  padding: 5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  padding: 5rem !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  text-align: center !important;
 }
 
 .page-content h1, .page-content h2 {
-  color: #137c49;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  color: #137c49 !important;
+  font-weight: bold !important;
+  margin-bottom: 1rem !important;
 }
 
 .page-content h1 {
-  font-size: 2.5rem;
+  font-size: 2.5rem !important;
 }
 
 .page-content h2 {
-  font-size: 1.75rem;
+  font-size: 1.75rem !important;
 }
 
 .page-content h3 {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
 }
 
 .page-content p {
-  font-size: 1.2rem;
-  color: #495057;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+  font-size: 1.2rem !important;
+  color: #495057 !important;
+  line-height: 1.8 !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .page-content ul {
-  padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding-left: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .page-content ul li {
-  font-size: 1.2rem;
-  color: #495057;
-  margin-bottom: 1rem;
-  list-style-type: none;
-  line-height: 1.8;
+  font-size: 1.2rem !important;
+  color: #495057 !important;
+  margin-bottom: 1rem !important;
+  list-style-type: none !important;
+  line-height: 1.8 !important;
 }
 
 .page-content > h1 + p, .page-content > h2 + ul {
-  margin-top: 1.8rem;
+  margin-top: 1.8rem !important;
 }
 
 .page-content button {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+  display: flex !important;
+  gap: 1rem !important;
+  align-items: center !important;
 }
 
 .page-content button i {
-  font-size: 2rem;
+  font-size: 2rem !important;
 }
 
 @media (max-width: 768px) {
   .page-content {
-    padding: 2rem;
+    padding: 2rem !important;
   }
 }
 span {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
-/* Pour la zone texte des pages articles et partenaires */
+/* ✅ Zone texte des pages articles et partenaires */
 .content-section {
-  max-width: 800px;
-  line-height: 1.8;
-  font-size: 1.2rem; /* Taille de texte légèrement plus petite */
-  background-color: #f8f9fa; /* Couleur de fond claire */
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Ombre légère */
-  margin: 0 auto 3rem auto; /* Centrer et espacer en bas */
+  max-width: 800px !important;
+  line-height: 1.8 !important;
+  font-size: 1.2rem !important; /* Taille de texte légèrement plus petite */
+  background-color: #f8f9fa !important; /* Couleur de fond claire */
+  padding: 1.5rem !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important; /* Ombre légère */
+  margin: 0 auto 3rem auto !important; /* Centrer et espacer en bas */
 }
 
-/* Couleur des en-têtes actifs */
+/* ✅ Couleur des en-têtes actifs */
 .accordion-button:not(.collapsed) {
-  background-color: #137c49; /* Vert pour les boutons actifs */
-  color: #fff; /* Texte blanc */
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+  background-color: #137c49 !important; /* Vert pour les boutons actifs */
+  color: #fff !important; /* Texte blanc */
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125) !important;
 }
 
-/* Couleur des en-têtes au survol */
+/* ✅ Couleur des en-têtes au survol */
 .accordion-button:not(.collapsed):hover {
-  background-color: #105c38; /* Vert légèrement plus foncé pour le survol */
+  background-color: #105c38 !important; /* Vert légèrement plus foncé pour le survol */
 }
 
-/* Supprimer le focus bleu par défaut */
+/* ✅ Supprimer le focus bleu par défaut */
 .accordion-button:focus {
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
+/* ✅ Ajustement des cartes et flexbox */
 .row .col-md-4 .flex-fill {
-  min-height: 300px; /* Ajustez cette valeur selon vos besoins */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  min-height: 300px !important; /* Ajustez cette valeur selon vos besoins */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-around !important;
 }
 
-/* Ajout d'un espace homogène entre les cartes */
+/* ✅ Ajout d'un espace homogène entre les cartes */
 .row.g-4 > [class*=col-] {
-  margin-bottom: 1.5rem; /* Espacement uniforme */
+  margin-bottom: 1.5rem !important; /* Espacement uniforme */
 }
 
 .card {
@@ -12710,8 +12711,8 @@ span {
 }
 
 .podcast-buttons .btn-primary:hover {
-  background-color: rgb(12.2237762238, 79.7762237762, 46.965034965);
-  border-color: rgb(12.2237762238, 79.7762237762, 46.965034965);
+  background-color: #105c38 !important;
+  border-color: #105c38 !important;
 }
 
 html {
@@ -12895,24 +12896,24 @@ i {
 }
 
 .pagination .page-link {
-  font-size: 14px; /* Ajuste la taille de la police */
-  padding: 8px 12px; /* Ajuste l'espacement */
+  font-size: 14px !important;
+  padding: 8px 12px !important;
 }
 
 .pagination .page-item {
-  margin: 0 2px; /* Ajoute un espace entre les boutons */
+  margin: 0 2px !important;
 }
 
 .pagination .page-item.active .page-link {
-  background-color: #007bff; /* Couleur du bouton actif */
-  border-color: #007bff;
-  color: white;
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+  color: white !important;
 }
 
 .pagination .page-link svg {
-  width: 16px; /* Taille des flèches */
-  height: 16px;
-  vertical-align: middle;
+  width: 16px !important;
+  height: 16px !important;
+  vertical-align: middle !important;
 }
 
 @media (max-width: 768px) {

@@ -61,18 +61,20 @@
 
     <!-- Grid d'images avec Lightbox -->
     <div class="row justify-content-center g-3 mt-3">
-        @foreach($article->media as $index => $media)
-            <div class="col-md-4 col-sm-6">
-                <a href="{{ asset('storage/' . $media->file_name) }}" data-lightbox="gallery" data-title="{{ $media->name }}">
-                    <img 
-                        src="{{ asset('storage/' . $media->file_name) }}" 
-                        class="img-fluid rounded shadow-sm" 
-                        alt="{{ $media->name }}"
-                        style="height: 200px; object-fit: cover; width: 100%;">
-                </a>
-            </div>
-        @endforeach
+    @foreach($article->media as $index => $media)
+        <div class="col-md-4 col-sm-6">
+            <a href="{{ asset('storage/' . $media->file_name) }}" data-lightbox="gallery" data-title="{{ $media->name }}">
+                <img 
+                    src="{{ asset('storage/' . $media->file_name) }}" 
+                    class="img-fluid rounded shadow-sm" 
+                    alt="{{ $media->name }}"
+                    style="width: 100%; height: 250px; object-fit: cover; background-color: black;">
+            </a>
+        </div>
+    @endforeach
     </div>
+
+
 
     <!-- Modal Bootstrap pour le Carousel -->
     <div class="modal fade" id="imageCarouselModal" tabindex="-1" aria-labelledby="carouselLabel" aria-hidden="true">
@@ -86,9 +88,14 @@
                     <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             @foreach($article->media as $index => $media)
-                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                    <img src="{{ asset('storage/' . $media->file_name) }}" class="d-block w-100" alt="{{ $media->name }}" style="max-height: 500px; object-fit: cover;">
-                                </div>
+                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                <img 
+                                    src="{{ asset('storage/' . $media->file_name) }}" 
+                                    class="d-block w-100" 
+                                    alt="{{ $media->name }}" 
+                                    style="max-height: 500px; object-fit: contain; background-color: black;">
+                            </div>
+
                             @endforeach
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">

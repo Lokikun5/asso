@@ -48,8 +48,8 @@
         border: 2px solid #137c49;
   
         &:hover {
-          background-color: darken(#137c49, 10%); // Vert plus foncé au survol
-          border-color: darken(#137c49, 10%);
+          background-color: #105c38 !important; // ✅ Vert plus foncé au survol
+          border-color: #105c38 !important;
         }
       }
     }

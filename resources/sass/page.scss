@@ -1,109 +1,111 @@
 // Classe générale pour les pages internes
 .page-content {
-    padding: 5rem;
-    border-radius: 8px; // Coins arrondis pour un look moderne
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Ombre légère pour la section
-    text-align: center;
-  
-  
-    h1, h2 {
-      color: #137c49; 
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-  
-    h1 {
-      font-size: 2.5rem; // Taille plus grande pour les titres principaux
-    }
-  
-    h2 {
-      font-size: 1.75rem; // Taille intermédiaire pour les sous-titres
-    }
-    h3{
-      font-size: 1.50rem;
-    }
-  
-    p {
-      font-size: 1.2rem;
-      color: #495057; // Texte sombre
-      line-height: 1.8; // Espacement entre les lignes
-      margin-bottom: 1.5rem;
-    }
-  
-    ul {
-      padding-left: 1.5rem; // Indentation des listes
-      margin-bottom: 1.5rem;
-  
-      li {
-        font-size: 1.2rem;
-        color: #495057; // Texte sombre
-        margin-bottom: 1rem;
-        list-style-type: none;
-        line-height: 1.8;
-      }
-    }
-  
-    // Espacement entre sections internes (si nécessaire)
-    & > h1 + p,
-    & > h2 + ul {
-      margin-top: 1.8rem;
-    }
+  padding: 5rem !important;
+  border-radius: 8px !important; // Coins arrondis pour un look moderne
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important; // Ombre légère pour la section
+  text-align: center !important;
 
-    button{
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      i{
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      padding: 2rem; // Réduction du padding pour petits écrans
-    }
-  }
-  span {
-        font-weight: 600;
+  h1, h2 {
+    color: #137c49 !important;
+    font-weight: bold !important;
+    margin-bottom: 1rem !important;
   }
 
-/* Pour la zone texte des pages articles et partenaires */
-  .content-section {
-    max-width: 800px;
-    line-height: 1.8;
-    font-size: 1.2rem; /* Taille de texte légèrement plus petite */
-    background-color: #f8f9fa; /* Couleur de fond claire */
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Ombre légère */
-    margin: 0 auto 3rem auto; /* Centrer et espacer en bas */
+  h1 {
+    font-size: 2.5rem !important; // Taille plus grande pour les titres principaux
+  }
+
+  h2 {
+    font-size: 1.75rem !important; // Taille intermédiaire pour les sous-titres
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+  }
+
+  p {
+    font-size: 1.2rem !important;
+    color: #495057 !important; // Texte sombre
+    line-height: 1.8 !important; // Espacement entre les lignes
+    margin-bottom: 1.5rem !important;
+  }
+
+  ul {
+    padding-left: 1.5rem !important; // Indentation des listes
+    margin-bottom: 1.5rem !important;
+
+    li {
+      font-size: 1.2rem !important;
+      color: #495057 !important; // Texte sombre
+      margin-bottom: 1rem !important;
+      list-style-type: none !important;
+      line-height: 1.8 !important;
+    }
+  }
+
+  // Espacement entre sections internes (si nécessaire)
+  & > h1 + p,
+  & > h2 + ul {
+    margin-top: 1.8rem !important;
+  }
+
+  button {
+    display: flex !important;
+    gap: 1rem !important;
+    align-items: center !important;
+
+    i {
+      font-size: 2rem !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem !important; // Réduction du padding pour petits écrans
+  }
 }
 
-/* Couleur des en-têtes actifs */
+span {
+  font-weight: 600 !important;
+}
+
+/* ✅ Zone texte des pages articles et partenaires */
+.content-section {
+  max-width: 800px !important;
+  line-height: 1.8 !important;
+  font-size: 1.2rem !important; /* Taille de texte légèrement plus petite */
+  background-color: #f8f9fa !important; /* Couleur de fond claire */
+  padding: 1.5rem !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important; /* Ombre légère */
+  margin: 0 auto 3rem auto !important; /* Centrer et espacer en bas */
+}
+
+/* ✅ Couleur des en-têtes actifs */
 .accordion-button:not(.collapsed) {
-  background-color: #137c49; /* Vert pour les boutons actifs */
-  color: #fff; /* Texte blanc */
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+background-color: #137c49 !important; /* Vert pour les boutons actifs */
+color: #fff !important; /* Texte blanc */
+box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125) !important;
 }
 
-/* Couleur des en-têtes au survol */
+/* ✅ Couleur des en-têtes au survol */
 .accordion-button:not(.collapsed):hover {
-  background-color: #105c38; /* Vert légèrement plus foncé pour le survol */
+background-color: #105c38 !important; /* Vert légèrement plus foncé pour le survol */
 }
 
-/* Supprimer le focus bleu par défaut */
+/* ✅ Supprimer le focus bleu par défaut */
 .accordion-button:focus {
-  box-shadow: none;
+box-shadow: none !important;
 }
 
-
+/* ✅ Ajustement des cartes et flexbox */
 .row .col-md-4 .flex-fill {
-  min-height: 300px; /* Ajustez cette valeur selon vos besoins */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+min-height: 300px !important; /* Ajustez cette valeur selon vos besoins */
+display: flex !important;
+flex-direction: column !important;
+justify-content: space-around !important;
 }
 
-/* Ajout d'un espace homogène entre les cartes */
+/* ✅ Ajout d'un espace homogène entre les cartes */
 .row.g-4 > [class*="col-"] {
-  margin-bottom: 1.5rem; /* Espacement uniforme */
+margin-bottom: 1.5rem !important; /* Espacement uniforme */
 }

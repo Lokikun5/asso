@@ -6,6 +6,14 @@
 @use './breadcrumb';
 @use './btn';
 
+// Palette de couleurs (inspirée du logo)
+$primary-color: #137c49; // Vert principal
+$secondary-color: #FFCC00; // Jaune accent
+
+$light-color: #F0FFF4; // Vert très clair pour le fond
+$text-dark: #2C3E50; // Texte sombre
+$text-light: #FFFFFF; // Texte clair
+
 
 html {
   scroll-behavior: smooth;
@@ -36,15 +44,6 @@ body {
   background: -o-linear-gradient(90deg, rgba(19,124,73,0.15) 0%, #7eb95705 100%);
   }
   
-// Palette de couleurs (inspirée du logo)
-$primary-color: #137c49; // Vert principal
-$secondary-color: #FFCC00; // Jaune accent
-
-$light-color: #F0FFF4; // Vert très clair pour le fond
-$text-dark: #2C3E50; // Texte sombre
-$text-light: #FFFFFF; // Texte clair
-
-
 .new-green{
   color: $primary-color;
 }
@@ -222,25 +221,26 @@ i{
 }
 
 .pagination .page-link {
-  font-size: 14px; /* Ajuste la taille de la police */
-  padding: 8px 12px; /* Ajuste l'espacement */
+  font-size: 14px !important;
+  padding: 8px 12px !important;
 }
 
 .pagination .page-item {
-  margin: 0 2px; /* Ajoute un espace entre les boutons */
+  margin: 0 2px !important;
 }
 
 .pagination .page-item.active .page-link {
-  background-color: #007bff; /* Couleur du bouton actif */
-  border-color: #007bff;
-  color: white;
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+  color: white !important;
 }
 
 .pagination .page-link svg {
-  width: 16px; /* Taille des flèches */
-  height: 16px;
-  vertical-align: middle;
+  width: 16px !important;
+  height: 16px !important;
+  vertical-align: middle !important;
 }
+
 
 @media (max-width: 768px) {
   .marginbot{

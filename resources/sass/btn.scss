@@ -1,0 +1,57 @@
+// Boutons personnalisés pour la section podcast
+.podcast-buttons {
+    display: flex;
+    gap: 1rem; // Espacement entre les boutons
+  
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem; // Espacement entre l'icône et le texte
+      font-size: 1.2rem; // Taille du texte
+      font-weight: bold;
+      padding: 0.75rem 1.5rem; // Ajustement du padding
+      border-radius: 0.5rem; // Coins arrondis
+      transition: all 0.3s ease; // Transition fluide
+  
+      i {
+        font-size: 1.5rem; // Taille des icônes
+      }
+  
+      // Bouton Écouter (principal)
+      &-outline-secondary {
+        color: #137c49; // Texte et icône verts
+        border: 2px solid #137c49; // Bordure verte
+        background-color: transparent;
+  
+        &:hover {
+          background-color: #137c49; // Fond vert au survol
+          color: #fff; // Texte blanc
+        }
+      }
+  
+      // Bouton Partager
+      &-secondary {
+        color: #fff; // Texte blanc
+        background-color: #333; // Fond gris foncé
+        border: 2px solid #333;
+  
+        &:hover {
+          background-color: #444; // Légèrement plus clair au survol
+          color: #fff; // Texte blanc
+        }
+      }
+  
+      // Bouton Écouter le Podcast (petit format)
+      &-primary {
+        background-color: #137c49; // Fond vert
+        color: #fff; // Texte blanc
+        border: 2px solid #137c49;
+  
+        &:hover {
+          background-color: darken(#137c49, 10%); // Vert plus foncé au survol
+          border-color: darken(#137c49, 10%);
+        }
+      }
+    }
+  }
+  

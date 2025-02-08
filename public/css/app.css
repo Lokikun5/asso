@@ -12387,6 +12387,40 @@ table {
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
 }
 
+.podcast-card {
+  background-color: #f9f9f9; /* Couleur douce */
+  border: 1px solid #e6e6e6; /* Bordure légère */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.podcast-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.podcast-card .podcast-card-image {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid #ddd; /* Bordure autour de l'image */
+  transition: border-color 0.3s;
+}
+
+.podcast-card .podcast-card-image:hover {
+  border-color: #137c49; /* Couleur de bordure au survol */
+}
+
+.podcast-card .btn-outline-primary {
+  border-color: #137c49;
+  color: #137c49;
+}
+
+.podcast-card .btn-outline-primary:hover {
+  background-color: #137c49;
+  color: #fff;
+}
+
 .page-content {
   padding: 5rem;
   border-radius: 8px;
@@ -12627,6 +12661,59 @@ span {
   color: #6c757d;
 }
 
+.podcast-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.podcast-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.podcast-buttons .btn i {
+  font-size: 1.5rem;
+}
+
+.podcast-buttons .btn-outline-secondary {
+  color: #137c49;
+  border: 2px solid #137c49;
+  background-color: transparent;
+}
+
+.podcast-buttons .btn-outline-secondary:hover {
+  background-color: #137c49;
+  color: #fff;
+}
+
+.podcast-buttons .btn-secondary {
+  color: #fff;
+  background-color: #333;
+  border: 2px solid #333;
+}
+
+.podcast-buttons .btn-secondary:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+.podcast-buttons .btn-primary {
+  background-color: #137c49;
+  color: #fff;
+  border: 2px solid #137c49;
+}
+
+.podcast-buttons .btn-primary:hover {
+  background-color: rgb(12.2237762238, 79.7762237762, 46.965034965);
+  border-color: rgb(12.2237762238, 79.7762237762, 46.965034965);
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 300px;
@@ -12826,4 +12913,10 @@ i {
   width: 16px; /* Taille des flèches */
   height: 16px;
   vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .marginbot {
+    margin-bottom: 2px;
+  }
 }

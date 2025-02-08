@@ -26,6 +26,7 @@
         </div>
 
         <a class="nav-item nav-link {{ Request::routeIs('articles.index') ? 'active' : '' }}" href="{{ route('articles.index') }}">Articles</a>
+        <a class="nav-item nav-link {{ Request::routeIs('podcasts.index') ? 'active' : '' }}" href="{{ route('podcasts.index') }}">Podcast</a>
       </div>
     </div>
 

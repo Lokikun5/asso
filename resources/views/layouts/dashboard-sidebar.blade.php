@@ -19,5 +19,11 @@
                 <i class="fas fa-building"></i> Gestion des établissements partenaires
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('admin.podcasts.index') ? 'active fw-bold' : '' }}" 
+                href="{{ route('admin.podcasts.index') }}">
+                <i class="fas fa-microphone"></i> Gestion des podcast
+            </a>
+        </li>
     </ul>
 </div>

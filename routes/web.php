@@ -13,6 +13,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InstitutionPartnerController;
 use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\PodcastController;
 use App\Models\Article;
 use App\Models\Partner;
 use App\Models\InstitutionPartner;
@@ -37,6 +38,10 @@ Route::get('/Nos-partenaires/{slug}', [PartnerController::class, 'show'])->name(
 
 // ✅ Routes publiques des établissement partenaires (Front)
 Route::get('/etablissements-partenaires', [InstitutionPartnerController::class, 'index'])->name('etablissements.index');
+
+// ✅ Routes publiques des podcast (Front)
+Route::get('/podcasts', [PodcastController::class, 'index'])->name('podcasts.index');
+Route::get('/podcasts/{slug}', [PodcastController::class, 'show'])->name('podcasts.show');
 
 
 // ✅ Authentification
@@ -88,6 +93,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
     Route::post('/admin/articles/upload-media', [ArticleController::class, 'storeMedia'])->name('admin.articles.storeMedia');
     Route::delete('/admin/articles/delete-media/{id}', [ArticlesController::class, 'deleteMedia'])->name('admin.articles.deleteMedia');
+
+    Route::get('/podcasts', [PodcastController::class, 'adminIndex'])->name('admin.podcasts.index');
+    Route::get('/podcasts/create', [PodcastController::class, 'create'])->name('admin.podcasts.create');
+    Route::post('/podcasts', [PodcastController::class, 'store'])->name('admin.podcasts.store');
+    Route::get('/podcasts/{id}/edit', [PodcastController::class, 'edit'])->name('admin.podcasts.edit');
+    Route::put('/podcasts/{id}', [PodcastController::class, 'update'])->name('admin.podcasts.update');
+    Route::patch('/podcasts/{id}/toggle', [PodcastController::class, 'toggleActive'])->name('admin.podcasts.toggle');
+    Route::delete('/podcasts/{id}', [PodcastController::class, 'destroy'])->name('admin.podcasts.destroy');
 
 });
 

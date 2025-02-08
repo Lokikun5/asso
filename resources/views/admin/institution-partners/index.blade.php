@@ -5,7 +5,7 @@
     @include('layouts.dashboard-sidebar')
 
     <div class="flex-grow-1 p-3">
-    <div>
+        <div>
             <!-- Bouton Retour au Site -->
             <a href="{{ url('/') }}" class="btn btn-secondary me-2">🏠 Retour au Site</a>
 
@@ -61,7 +61,7 @@
         </table>
 
         <div class="mt-3">
-            {{ $institutionPartners->links() }}
+            {{ $institutionPartners->links('pagination::bootstrap-5') }}
         </div>
     </div>
 </div>

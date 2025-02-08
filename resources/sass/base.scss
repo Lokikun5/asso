@@ -88,4 +88,36 @@
   }
 }
 
-  
+
+.podcast-card {
+  background-color: #f9f9f9; /* Couleur douce */
+  border: 1px solid #e6e6e6; /* Bordure légère */
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .podcast-card-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border: 2px solid #ddd; /* Bordure autour de l'image */
+      transition: border-color 0.3s;
+
+      &:hover {
+          border-color: #137c49; /* Couleur de bordure au survol */
+      }
+  }
+
+  .btn-outline-primary {
+      border-color: #137c49;
+      color: #137c49;
+
+      &:hover {
+          background-color: #137c49;
+          color: #fff;
+      }
+  }
+}

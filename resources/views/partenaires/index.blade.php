@@ -26,7 +26,7 @@
                     <div>
                         <h3><i class="fas fa-handshake"></i> {{ $partner->first_name }} {{ $partner->last_name }}</h3>
                         <p>{{ Str::limit($partner->description, 100) }}</p>
-                        <a href="{{ route('partenaire.show', $partner->slug) }}" class="btn btn-color btn-primary">
+                        <a href="{{ route('partenaire.show', $partner->slug) }}" class="btn btn-color btn-primary marginbot">
                             Voir le partenaire
                         </a>
                         <a href="{{ $partner->partner_link }}" class="btn btn-color2 btn-primary">

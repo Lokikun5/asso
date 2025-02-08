@@ -14,7 +14,7 @@
     @include('components.breadcrumbs', ['breadcrumbs' => $breadcrumbs])
     </div>
 <div class="container py-5">
-    <h1 class="text-center mb-4">Tous les Articles</h1>
+    <h1 class="text-center fw-bold mb-4">Tous les articles</h1>
     <div class="row">
         @foreach($articles as $article)
         <div class="col-md-4 mb-4">

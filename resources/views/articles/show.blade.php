@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $article->title)
+@section('title', $article->title . ' - Découvrez notre article complète')
 @section('description', $article->description)
 @section('canonical', Request::url())
 

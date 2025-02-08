@@ -82,8 +82,10 @@
         || request()->is('Nos-programmes') 
         || request()->is('Les-activites-prevues') 
         || request()->is('Public-cible') 
+        || request()->is('podcasts') 
         || request()->is('articles/*')
         || request()->is('Nos-partenaires/*')
+        || request()->is('podcasts/*')
     )
         <meta name="robots" content="index, follow">
     @elseif (request()->is('admin/*'))

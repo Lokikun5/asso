@@ -1,64 +1,179 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# **Association A.N.G.**
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+📢 **Association A.N.G.** est un site vitrine construit avec **Laravel**, permettant la gestion des **articles**, **podcasts**, et autres contenus. Il inclut également un **back-office** pour l’administration des contenus.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## **📌 Fonctionnalités principales**
+- Site vitrine pour l'**Association A.N.G.**
+- Gestion des **articles** (ajout, modification, suppression)
+- Gestion des **podcasts** avec lecteur audio intégré
+- Interface **admin** pour gérer les contenus
+- Formulaire de contact avec envoi d'e-mails
+- **Sitemap** automatique pour le référencement SEO
+- **TinyMCE** pour l'édition des articles
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## **🚀 Installation et mise en place en local**
 
-## Learning Laravel
+### **📋 Prérequis**
+- **PHP** (>= 8.0)
+- **Composer** (gestionnaire de dépendances PHP)
+- **Node.js et NPM** (pour la compilation des assets)
+- **MySQL** (ou MariaDB) pour la base de données
+- **Un serveur local** (WAMP, MAMP, Laragon ou Laravel Sail)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### **🛠 Étapes d’installation**
 
-## Laravel Sponsors
+1️⃣ **Cloner le projet**
+```sh
+git clone https://github.com/ton-utilisateur/association-ang.git
+cd association-ang
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2️⃣ Installer les dépendances
 
-### Premium Partners
+composer install
+npm install
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+3️⃣ Créer et configurer le fichier .env
+Copie du fichier d'exemple :
 
-## Contributing
+cp .env.example .env
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Puis modifie les paramètres de la base de données et des emails dans .env.
 
-## Code of Conduct
+4️⃣ Configurer la base de données
+Crée une base de données nommée assoang et configure .env :
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=assoang
+DB_USERNAME=root
+DB_PASSWORD=
 
-## Security Vulnerabilities
+5️⃣ Générer la clé d’application
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+php artisan key:generate
 
-## License
+6️⃣ Exécuter les migrations et seeders
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+php artisan migrate --seed
+
+7️⃣ Compiler les assets
+
+npm run dev  # Mode développement
+npm run prod # Mode production
+
+8️⃣ Lancer le serveur local
+
+php artisan serve
+
+Le site sera accessible sur http://localhost:8000.
+✉️ Configuration des emails
+
+Dans .env, configure le service SMTP pour l'envoi d'e-mails :
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=d042de28bcedb6
+MAIL_PASSWORD=16db1976bac66d
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=quadjovie.antonio@gmail.com
+MAIL_FROM_NAME="Association A.N.G."
+
+🔹 MailTrap est utilisé pour tester les emails en local.
+🔹 Pour un serveur réel, utilise SendGrid, Mailgun ou Gmail SMTP.
+🔗 Mise en ligne du site
+
+Si tu ne fais pas la mise en ligne toi-même, voici les étapes pour la personne en charge.
+🌍 1️⃣ Choisir un hébergeur
+
+    Option 1 : Hébergement mutualisé (OVH, Infomaniak, LWS, PlanetHoster)
+    Option 2 : VPS / Serveur cloud (DigitalOcean, AWS, Linode)
+    Option 3 : Laravel Forge (déploiement automatisé)
+
+🔥 2️⃣ Déployer le projet
+a) Envoyer les fichiers sur le serveur
+
+Via FTP (FileZilla) ou en SSH :
+
+scp -r association-ang user@yourserver:/var/www/html/
+
+Ou avec Git + SSH :
+
+git clone https://github.com/ton-utilisateur/association-ang.git
+
+b) Installer les dépendances
+
+composer install --no-dev --optimize-autoloader
+npm install && npm run prod
+
+c) Configurer le serveur
+
+    Vérifier que le DocumentRoot pointe sur /public.
+    Activer mod_rewrite pour Apache :
+
+a2enmod rewrite
+service apache2 restart
+
+    Mettre à jour les permissions :
+
+chmod -R 775 storage bootstrap/cache
+chown -R www-data:www-data storage bootstrap/cache
+
+d) Configurer l’environnement
+
+php artisan key:generate
+php artisan migrate --force
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+
+e) Mettre en place un Cron Job
+
+Ajoute ceci dans crontab -e pour exécuter les tâches Laravel :
+
+* * * * * php /var/www/html/artisan schedule:run >> /dev/null 2>&1
+
+f) Redémarrer le serveur
+
+systemctl restart apache2  # Pour Apache
+systemctl restart nginx    # Pour Nginx
+
+⚡ Utilisation
+
+Accès au site :
+
+    Frontend (public) → http://localhost:8000
+    Back-Office (Admin) → http://localhost:8000/admin
+
+Compte administrateur (par défaut) :
+
+Email: admin@example.com
+Mot de passe: password
+
+⚠️ Changez le mot de passe après l’installation !
+📜 Technologies utilisées
+
+    Laravel - Framework PHP
+    MySQL - Base de données
+    Bootstrap - Interface responsive
+    TinyMCE - Éditeur de texte
+    Lightbox2 - Galerie d’images
+    FontAwesome - Icônes
+
+📌 Améliorations futures
+
+    🔹 Ajout d’une API pour les podcasts
+    🔹 Optimisation SEO avancée
+    🔹 Ajout d’une recherche avancée
+    🔹 Gestion des utilisateurs avec rôles
+
+📩 Support
+
+Pour toute question, contacte-moi à quadjovie.antonio@gmail.com.

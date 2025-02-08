@@ -48,6 +48,14 @@
             <div class="mb-3">
                 <label for="file" class="form-label">Fichier Audio (MP3, WAV, OGG)</label>
                 <input type="file" class="form-control" id="file" name="file" accept=".mp3,.wav,.ogg" required>
+
+                <!-- Loader -->
+                <div id="upload-loader" class="text-center mt-3 d-none">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Upload en cours, veuillez patienter...</span>
+                    </div>
+                    <p class="mt-2 text-muted">Upload en cours, veuillez patienter...</p>
+                </div>
             </div>
 
             <div class="mb-3">
@@ -66,4 +74,22 @@
         </form>
     </div>
 </div>
+
+@section('extra-js')
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let form = document.querySelector("form");
+        let uploadLoader = document.getElementById("upload-loader");
+        let submitButton = form.querySelector("button[type='submit']");
+
+        form.addEventListener("submit", function(event) {
+            let fileInput = document.getElementById("file");
+
+            if (fileInput.files.length > 0) {
+                uploadLoader.classList.remove("d-none"); // Afficher le loader
+                submitButton.disabled = true; // Désactiver le bouton pour éviter les doubles soumissions
+            }
+        });
+    });
+</script>
 @endsection

@@ -1,5 +1,5 @@
 @if($articles->count())
-<section class="">
+<section>
     <div class="container">
         <h2 class="text-center fw-bold pt-5">Découvrez nos articles</h2>
 

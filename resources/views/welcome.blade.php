@@ -8,6 +8,8 @@
     @include('layouts.split_section')
     @include('article_section')
     @include('layouts.split_section')
+    @include('podcast_section')
+    @include('layouts.split_section')
     @include('from_section')
     </main>
     @include('layouts.footer')

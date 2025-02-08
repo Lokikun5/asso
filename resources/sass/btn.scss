@@ -1,6 +1,8 @@
 // Boutons personnalisés pour la section podcast
 .podcast-buttons {
     display: flex;
+    flex-direction: column;
+    width: 40%;
     gap: 1rem; // Espacement entre les boutons
   
     .btn {

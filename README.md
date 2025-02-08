@@ -1,4 +1,4 @@
-Voici ton **README.md** en **Markdown bien formaté** pour une meilleure lisibilité :
+
 
 ---
 
@@ -182,12 +182,12 @@ systemctl restart nginx    # Pour Nginx
 
 📌 **Accès au site** :
 - 🌍 **Frontend (public)** → http://localhost:8000  
-- 🔑 **Back-Office (Admin)** → http://localhost:8000/admin  
+- 🔑 **Back-Office (Admin)** → http://localhost:8000/admin/dashboard 
 
 📌 **Compte administrateur (par défaut)** :
 ```yaml
 Email: admin@example.com
-Mot de passe: password
+Mot de passe: password123
 ```
 ⚠ **Changez le mot de passe après l’installation !**
 

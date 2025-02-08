@@ -4,46 +4,45 @@
         <script src="https://cdn.tiny.cloud/1/{{ config('services.tinymce.api_key') }}/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 
         <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-            if (typeof tinymce !== 'undefined') {
-                tinymce.init({
-                    selector: 'textarea.editor',
-                    menubar: true,
-                    plugins: 'lists link image',
-                    toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
-                    images_upload_url: '/upload-image', // Route Laravel pour l'upload
-                    images_upload_handler: (blobInfo) => {
-                        return new Promise((resolve, reject) => {
-                            let formData = new FormData();
-                            formData.append('file', blobInfo.blob(), blobInfo.filename());
+            document.addEventListener("DOMContentLoaded", function() {
+                if (typeof tinymce !== 'undefined') {
+                    tinymce.init({
+                        selector: 'textarea.editor',
+                        menubar: true,
+                        plugins: 'lists link image',
+                        toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
+                        images_upload_url: '/upload-image',
+                        images_upload_handler: (blobInfo) => {
+                            return new Promise((resolve, reject) => {
+                                let formData = new FormData();
+                                formData.append('file', blobInfo.blob(), blobInfo.filename());
 
-                            fetch('/upload-image', {
-                                method: 'POST',
-                                body: formData,
-                                headers: {
-                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                                }
-                            })
-                            .then(response => response.json())
-                            .then(result => {
-                                if (result && result.location) {
-                                    resolve(result.location); // ✅ Succès : URL de l’image
-                                } else {
-                                    reject("L'upload a échoué."); // ❌ Erreur
-                                }
-                            })
-                            .catch(() => {
-                                reject("Erreur lors de l'upload."); // ❌ Erreur réseau
+                                fetch('/upload-image', {
+                                    method: 'POST',
+                                    body: formData,
+                                    headers: {
+                                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                                    }
+                                })
+                                .then(response => response.json())
+                                .then(result => {
+                                    if (result && result.location) {
+                                        resolve(result.location);
+                                    } else {
+                                        reject("L'upload a échoué.");
+                                    }
+                                })
+                                .catch(() => {
+                                    reject("Erreur lors de l'upload.");
+                                });
                             });
-                        });
-                    },
-                    content_css: '//www.tiny.cloud/css/codepen.min.css'
-                });
-            } else {
-                console.error("❌ TinyMCE n'a pas été chargé correctement !");
-            }
-        });
-
+                        },
+                        content_css: '//www.tiny.cloud/css/codepen.min.css'
+                    });
+                } else {
+                    console.error("❌ TinyMCE n'a pas été chargé correctement !");
+                }
+            });
         </script>
     @endif
 
@@ -52,24 +51,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-
-
         <title>@yield('title', config('meta.default.title'))</title>
         @yield('meta')
         <meta name="description" content="@yield('description', config('meta.default.description'))">
 
-            {{-- ✅ Balises Open Graph de base --}}
+        {{-- ✅ Balises Open Graph de base --}}
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:title" content="@yield('title', config('app.name'))">
         <meta property="og:description" content="@yield('description', 'Découvrez notre plateforme dédiée aux jeunes talents.')">
-        
+
         {{-- ✅ Gestion des images dynamiques Open Graph pour les articles --}}
-        @if(request()->routeIs('articles.show') && isset($article))
+        @if(request()->routeIs('front.articles.show') && isset($article))
             <meta property="og:image" content="{{ asset('storage/' . $article->img_banner) }}">
             <meta property="og:image:alt" content="{{ $article->title }}">
         @else
-            {{-- ✅ Image Open Graph par défaut --}}
             <meta property="og:image" content="{{ asset('image/default-og-image.webp') }}">
             <meta property="og:image:alt" content="Image de présentation">
         @endif
@@ -86,38 +82,40 @@
         || request()->is('articles/*')
         || request()->is('Nos-partenaires/*')
         || request()->is('podcasts/*')
-    )
-        <meta name="robots" content="index, follow">
-    @elseif (request()->is('admin/*'))
-        <meta name="robots" content="noindex, nofollow">
-    @else
-        <meta name="robots" content="noindex, nofollow">
-    @endif
+        )
+            <meta name="robots" content="index, follow">
+        @elseif (request()->is('admin/*'))
+            <meta name="robots" content="noindex, nofollow">
+        @else
+            <meta name="robots" content="noindex, nofollow">
+        @endif
 
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
         <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
-
-
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-       
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900&family=Roboto:ital,wght@0,100..900&display=swap" rel="stylesheet">
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-
+        <!-- ✅ Ajout conditionnel du CSS -->
+        @yield('extra-css')
     </head>
-    <body>
 
+    <body>
         @yield('content')
+
+        <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}"></script>
         <script src="{{ asset('js/contact.js') }}"></script>
         <script src="{{ asset('js/media-upload.js') }}"></script>
 
+        <!-- ✅ Ajout conditionnel du JS -->
+        @yield('extra-js')
     </body>
 </html>

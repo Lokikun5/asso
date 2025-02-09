@@ -1,4 +1,4 @@
-Voici un **README.md** formaté en **Markdown** pour ton dépôt GitHub avec un **tutoriel détaillé** pour déployer ton projet Laravel sur **Hostinger**. 🚀
+
 
 ---
 

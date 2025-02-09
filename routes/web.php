@@ -14,6 +14,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InstitutionPartnerController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\PodcastController;
+use App\Http\Controllers\AdminUserController;
 use App\Models\Article;
 use App\Models\Partner;
 use App\Models\InstitutionPartner;
@@ -101,6 +102,17 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::put('/podcasts/{id}', [PodcastController::class, 'update'])->name('admin.podcasts.update');
     Route::patch('/podcasts/{id}/toggle', [PodcastController::class, 'toggleActive'])->name('admin.podcasts.toggle');
     Route::delete('/podcasts/{id}', [PodcastController::class, 'destroy'])->name('admin.podcasts.destroy');
+
+    Route::get('/profile', [AdminUserController::class, 'profile'])->name('admin.profile');
+    Route::post('/profile/update', [AdminUserController::class, 'updateProfile'])->name('admin.profile.update');
+    
+    Route::get('/users/create', [AdminUserController::class, 'create'])->name('admin.users.create'); 
+    Route::get('/users/{user}/edit', [AdminUserController::class, 'edit'])->name('admin.users.edit');
+    Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
+    Route::post('/users', [AdminUserController::class, 'store'])->name('admin.users.store');
+    Route::put('/users/{user}', [AdminUserController::class, 'update'])->name('admin.users.update');
+    Route::delete('/users/{user}', [AdminUserController::class, 'destroy'])->name('admin.users.destroy');
+
 
 });
 

@@ -25,5 +25,10 @@
                 <i class="fas fa-microphone"></i> Gestion des podcast
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.users.index') }}">
+                <i class="fas fa-users"></i> Gestion des utilisateurs
+            </a>
+        </li>
     </ul>
 </div>

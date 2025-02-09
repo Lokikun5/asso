@@ -12,8 +12,11 @@
         <div class="col-md-9">
             <div class="d-flex justify-content-between align-items-center bg-light p-3 mb-4 shadow-sm">
                 <h3 class="m-0"><i class="fas fa-tools"></i> Tableau de Bord</h3>
+                <div>{{ Auth::user()->name }} - {{ Auth::user()->role }}</div>
+
 
                 <div>
+                    <a class="btn btn-secondary me-2" href="{{ route('admin.profile') }}">Mon Profil</a>
                     <!-- Bouton Retour au Site -->
                     <a href="{{ url('/') }}" class="btn btn-secondary me-2">🏠 Retour au Site</a>
 

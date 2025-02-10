@@ -10,7 +10,7 @@ class InstitutionPartnerController extends Controller
     
     public function index()
     {
-        $institutionPartners = InstitutionPartner::where('active', true)->get();
+        $institutionPartners = InstitutionPartner::where('active', true)->where('category', 'Écoles et universités')->get();
 
         $categorySubtitles = [
             'Écoles et universités' => "Co-organisation d'activités sur site",

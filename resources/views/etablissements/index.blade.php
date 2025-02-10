@@ -16,18 +16,18 @@
 
     @php
         $breadcrumbs = [
-            ['name' => 'Nos partenaires', 'url' => route('etablissements.index')]
+            ['name' => 'Écoles et universités', 'url' => route('etablissements.index')]
         ];
     @endphp
 
     @include('components.breadcrumbs', ['breadcrumbs' => $breadcrumbs])
 <section class="page-content py-5">
 <div class="container py-5">
-    <h1 class="text-center mb-4">Nos partenaires</h1>
+    <h1 class="text-center mb-4">Nos partenaires - écoles et universités</h1>
 
     <p class="text-center">
         Désireuse de donner aux jeunes les moyens de rêver et de réussir, notre association est le trait d’union entre les talents de demain et les acteurs qui façonnent le monde d’aujourd’hui. 
-        En collaborant avec les écoles et universités pour inspirer sur le terrain, les entreprises pour offrir des opportunités concrètes d’immersion et avec les services publics pour mobiliser des ressources, nous créons ensemble une dynamique d’impact. 
+        En collaborant avec les <span>écoles et universités</span> pour inspirer sur le terrain, les entreprises pour offrir des opportunités concrètes d’immersion et avec les services publics pour mobiliser des ressources, nous créons ensemble une dynamique d’impact. 
         Votre engagement à nos côtés, c’est l’assurance de laisser une empreinte durable, de révéler des talents, et d’inspirer une génération à changer le monde. 
     </p>
 

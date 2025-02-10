@@ -15,6 +15,8 @@ use App\Http\Controllers\InstitutionPartnerController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\PodcastController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\PrivateSectorCompanyController;
+use App\Http\Controllers\SectorUtilitiesController;
 use App\Models\Article;
 use App\Models\Partner;
 use App\Models\InstitutionPartner;
@@ -39,6 +41,9 @@ Route::get('/Nos-partenaires/{slug}', [PartnerController::class, 'show'])->name(
 
 // ✅ Routes publiques des établissement partenaires (Front)
 Route::get('/etablissements-partenaires', [InstitutionPartnerController::class, 'index'])->name('etablissements.index');
+
+Route::get('/entreprises-du-secteur-privé', [PrivateSectorCompanyController::class, 'index'])->name('private.companies');
+Route::get('/services-publics', [SectorUtilitiesController::class, 'index'])->name('sector.utilities');
 
 // ✅ Routes publiques des podcast (Front)
 Route::get('/podcasts', [PodcastController::class, 'index'])->name('podcasts.index');

@@ -1,5 +1,12 @@
-<section class="hero text-center py-5">
-    <div class="container">
+@php
+    $heroImage = '/image/hero-bg.jpg'; // Image spécifique par défaut
+
+    if (isset($pageHeroImage) && file_exists(public_path($pageHeroImage))) {
+        $heroImage = $pageHeroImage;
+    }
+@endphp
+<section class="hero text-center py-5" style="background-image: url('{{ asset($heroImage) }}');">
+    <div class="hero-content container">
         <h1 class="display-4">Association A.N.G.</h1>
         <p class="lead fst-italic">« Inspirer des vocations, élargir le champ des possibles… »</p>
     </div>

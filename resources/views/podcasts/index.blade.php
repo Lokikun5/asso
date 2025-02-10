@@ -1,3 +1,11 @@
+@php
+    $defaultBanner = '/image/banner.webp';
+    $bannerImage = '/image/programmes-banner.jpg'; // Image spécifique à la page
+
+    if (!file_exists(public_path($bannerImage))) {
+        $bannerImage = $defaultBanner;
+    }
+@endphp
 @extends('layouts.app')
 
 @section('title', config('meta.podcasts.title'))

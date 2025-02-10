@@ -12358,12 +12358,22 @@ table {
 
 .parallax-banner {
   position: relative;
-  height: 400px;
+  height: 80vh;
   background-image: url("/image/banner.webp");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.parallax-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .parallax-banner .banner-content {
@@ -12829,17 +12839,40 @@ i {
 }
 
 .hero {
-  background: linear-gradient(135deg, #0097b2, #7eb957);
+  position: relative;
+  background: url("/image/hero-bg.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #FFFFFF;
 }
 
-.hero h1 {
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero .hero-content h1 {
   font-size: 3rem;
   font-weight: bold;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
-.hero p {
+.hero .hero-content p {
   font-size: 1.25rem;
   margin-top: 1rem;
   color: #F0FFF4;

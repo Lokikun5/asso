@@ -58,12 +58,22 @@
   // Parallax Banner
 .parallax-banner {
   position: relative;
-  height: 400px; // Hauteur de la bannière
+  height: 80vh; // Hauteur de la bannière
   background-image: url('/image/banner.webp'); // Chemin vers l'image de la bannière
   background-attachment: fixed; // Fixe l'image pour l'effet parallax
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
 
   // Contenu de la bannière
   .banner-content {

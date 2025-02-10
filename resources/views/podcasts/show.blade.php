@@ -10,9 +10,14 @@
     <meta property="og:type" content="article">
 @endsection
 
+{{-- ✅ Chargement conditionnel du CSS Lightbox2 --}}
+@section('extra-css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+@endsection
 
 @section('content')
 @include('layouts.header')
+
 <div class="mt-3">
 @php
     $breadcrumbs = [
@@ -29,6 +34,7 @@
     <div class="container d-flex flex-wrap align-items-center">
         <div class="col-md-6">
             <h1 class="display-5 fw-bold">{{ $podcast->name }}</h1>
+            <p>{{ $podcast->category }}</p>
             <p class="mb-3">
                 Publié le {{ $podcast->created_at->format('d M, Y') }}
             </p>
@@ -59,7 +65,6 @@
                     </a>
                 </div>
             </div>
-
         </div>
         <div class="col-md-6 text-center">
             <img src="{{ asset('storage/' . $podcast->image) }}" alt="{{ $podcast->name }}" class="img-fluid rounded shadow">
@@ -71,12 +76,83 @@
 <section class="container page-content">
     <h2 class="mb-4">À propos de ce podcast</h2>
     <p>{{ $podcast->page_content }}</p>
+
+    <!-- Galerie associée -->
+    @if($podcast->media->count())
+    <h2 class="mt-5 text-center fw-bold"><i class="fas fa-images"></i> Galerie du Podcast</h2>
+    <p class="text-muted text-center">Découvrez les images associées à ce podcast.</p>
+    
+
+    <!-- Grid d'images avec Lightbox -->
+    <div class="row justify-content-center g-3 mt-3">
+        @foreach($podcast->media as $media)
+            <div class="col-md-4 col-sm-6">
+                <a href="{{ asset('storage/' . $media->file_name) }}" data-lightbox="podcast-gallery" data-title="{{ $media->name }}">
+                    <img 
+                        src="{{ asset('storage/' . $media->file_name) }}" 
+                        class="img-fluid rounded shadow-sm" 
+                        alt="{{ $media->name }}"
+                        style="width: 100%; height: 250px; object-fit: cover;">
+                </a>
+            </div>
+        @endforeach
+    </div>
+
+    <!-- Modal Bootstrap pour le Carousel -->
+    <div class="modal fade" id="podcastImageCarousel" tabindex="-1" aria-labelledby="carouselLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carouselLabel">Galerie du Podcast</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach($podcast->media as $index => $media)
+                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                    <img 
+                                        src="{{ asset('storage/' . $media->file_name) }}" 
+                                        class="d-block w-100" 
+                                        alt="{{ $media->name }}" 
+                                        style="max-height: 500px; object-fit: contain; background-color: black;">
+                                </div>
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Précédent</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Suivant</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endif
 </section>
 
 @include('layouts.footer')
+
+{{-- ✅ Chargement conditionnel du JS Lightbox2 et Bootstrap Carousel --}}
 @section('extra-js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        if (typeof lightbox !== 'undefined' && typeof lightbox.option === 'function') {
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true,
+                'albumLabel': "Image %1 sur %2"
+            });
+            console.log("✅ Lightbox2 a bien été chargé !");
+        } else {
+            console.error("❌ Lightbox2 ne s'est pas chargé correctement !");
+        }
+
         let shareBtn = document.getElementById("share-btn");
         let shareButtons = document.getElementById("social-share-buttons");
 
@@ -85,27 +161,19 @@
             return;
         }
 
-        // Récupération des informations du podcast
-        let podcastUrl = encodeURIComponent(window.location.href); // ✅ Récupération correcte de l'URL
+        let podcastUrl = encodeURIComponent(window.location.href);
         let podcastTitle = encodeURIComponent("{{ $podcast->name }}");
         let podcastDescription = encodeURIComponent("{{ $podcast->description }}");
-        let podcastImage = encodeURIComponent("{{ asset('storage/' . $podcast->image) }}");
 
-        // URLs de partage avec fallback si Open Graph ne fonctionne pas
         let facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${podcastUrl}`;
-        let linkedinUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${podcastUrl}&title=${podcastTitle}&summary=${podcastDescription}&source={{ config('app.name') }}`;
+        let linkedinUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${podcastUrl}&title=${podcastTitle}&summary=${podcastDescription}`;
 
-        // Ajouter les liens aux boutons
         document.getElementById("share-facebook").setAttribute("href", facebookUrl);
         document.getElementById("share-linkedin").setAttribute("href", linkedinUrl);
 
-        // Afficher les boutons de partage
         shareBtn.addEventListener("click", function() {
             shareButtons.classList.toggle("d-none");
         });
-
-        console.log("✅ Partage Facebook : ", facebookUrl);
-        console.log("✅ Partage LinkedIn : ", linkedinUrl);
     });
 </script>
 @endsection

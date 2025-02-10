@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav gap-3">
         <a class="nav-item nav-link {{ Request::routeIs('programmes') ? 'active' : '' }}" href="{{ route('programmes') }}">Nos programmes</a>
-        <a class="nav-item nav-link {{ Request::routeIs('activity') ? 'active' : '' }}" href="{{ route('activity') }}">Les activités prévues</a>
+        <a class="nav-item nav-link {{ Request::routeIs('activity') ? 'active' : '' }}" href="{{ route('activity') }}">Activités</a>
         <a class="nav-item nav-link {{ Request::routeIs('target') ? 'active' : '' }}" href="{{ route('target') }}">Public cible</a>
 
         <!-- Section Partenaire avec un dropdown -->
@@ -20,13 +20,13 @@
             Partenaires
           </a>
           <ul class="dropdown-menu" aria-labelledby="partnerDropdown">
-            <li><a class="dropdown-item {{ Request::routeIs('partenaires') ? 'active' : '' }}" href="{{ route('partenaires') }}">Membres formateur et bénévoles</a></li>
+            <li><a class="dropdown-item {{ Request::routeIs('partenaires') ? 'active' : '' }}" href="{{ route('partenaires') }}">Formateurs et bénévoles</a></li>
             <li><a class="dropdown-item {{ Request::routeIs('etablissements.index') ? 'active' : '' }}" href="{{ route('etablissements.index') }}">Établissements partenaires</a></li>
           </ul>
         </div>
 
         <a class="nav-item nav-link {{ Request::routeIs('articles.index') ? 'active' : '' }}" href="{{ route('articles.index') }}">Articles</a>
-        <a class="nav-item nav-link {{ Request::routeIs('podcasts.index') ? 'active' : '' }}" href="{{ route('podcasts.index') }}">Podcast</a>
+        <a class="nav-item nav-link {{ Request::routeIs('podcasts.index') ? 'active' : '' }}" href="{{ route('podcasts.index') }}">Podcasts</a>
       </div>
     </div>
 

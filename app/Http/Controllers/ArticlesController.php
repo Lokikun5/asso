@@ -52,7 +52,7 @@ class ArticlesController extends Controller
 
         $article->save();
 
-        return redirect()->route('admin.articles.edit', $article->id)->with('success', 'Article ajouté avec succès.');
+        return redirect()->route('admin.dashboard', $article->id)->with('success', 'Article ajouté avec succès.');
     }
 
     public function edit($id)
@@ -67,6 +67,7 @@ class ArticlesController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'text' => 'required',
+            'type' => 'required|string',
             'img_banner' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
@@ -74,6 +75,7 @@ class ArticlesController extends Controller
         $article->title = $request->title;
         $article->description = $request->description;
         $article->text = $request->text;
+        $article->type = $request->type;
         $article->slug = Str::slug($request->title);
 
         // ✅ Gestion de l'image principale
@@ -110,7 +112,7 @@ class ArticlesController extends Controller
             }
         }
 
-        return redirect()->route('admin.articles.edit', $article->id)->with('success', 'Article mis à jour avec succès.');
+        return redirect()->route('admin.dashboard', $article->id)->with('success', 'Article mis à jour avec succès.');
     }
 
     public function toggle($id)
@@ -137,7 +139,7 @@ class ArticlesController extends Controller
 
         $article->delete();
 
-        return redirect()->route('admin.articles.index')->with('success', 'Article supprimé avec succès.');
+        return redirect()->route('admin.dashboard')->with('success', 'Article supprimé avec succès.');
     }
 
     // ✅ 📌 Méthode pour uploader une image dans la galerie

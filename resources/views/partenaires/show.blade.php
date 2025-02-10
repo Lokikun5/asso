@@ -34,21 +34,20 @@
             style="width: 150px; height: 150px; object-fit: cover;">
     </div>
 
-    <!-- Lien vers le site du partenaire -->
-    @if ($partner->partner_link)
-        <div class="text-center mb-5">
-            <a href="{{ $partner->partner_link }}" target="_blank" class="btn btn-outline-success btn-lg px-5">
-                <i class="fas fa-globe"></i> Voir le site du partenaire
-            </a>
-        </div>
-    @endif
-
     <!-- Contenu détaillé -->
     
         <div class="content-section">
             {!! $partner->text !!}
         </div>
-   
+   <!-- Lien vers le site du partenaire -->
+   @if ($partner->partner_link)
+        <div class="text-center mb-5">
+            <a href="{{ $partner->partner_link }}" target="_blank" class="btn btn-outline-success btn-lg px-5">
+                <i class="fas fa-globe"></i> Suivre sur LinkedIn
+            </a>
+        </div>
+    @endif
+
 
     <!-- Bouton de retour -->
     <div class="text-center mt-5">

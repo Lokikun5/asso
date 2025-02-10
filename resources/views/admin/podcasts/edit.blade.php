@@ -66,6 +66,25 @@
                     <img src="{{ asset('storage/' . $podcast->image) }}" alt="{{ $podcast->name }}" class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;">
                 </div>
             </div>
+            <h3 class="mt-5"><i class="fas fa-camera"></i> Galerie du Podcast</h3>
+            <p class="text-muted">Ajoutez ou supprimez des images associées à ce podcast.</p>
+
+            <div class="mb-3">
+                <input type="file" id="gallery-upload" name="gallery[]" multiple>
+            </div>
+
+            <div class="row my-5">
+                @foreach($podcast->media as $media)
+                    <div class="col-md-3">
+                        <div class="gallery-item position-relative">
+                            <img src="{{ asset('storage/' . $media->file_name) }}" class="img-fluid rounded shadow-sm">
+                            <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 delete-media" data-id="{{ $media->id }}">🗑️</button>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+
 
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="active" name="active" value="1" {{ $podcast->active ? 'checked' : '' }}>
@@ -78,6 +97,39 @@
 </div>
 @section('extra-js')
 <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    let deleteButtons = document.querySelectorAll(".delete-media");
+
+    deleteButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            let mediaId = this.getAttribute("data-id");
+            let confirmation = confirm("Voulez-vous vraiment supprimer cette image ?");
+
+            if (confirmation) {
+                fetch(`/admin/podcasts/delete-media/${mediaId}`, {
+                    method: "DELETE",
+                    headers: {
+                        "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        this.closest(".gallery-item").remove();
+                    } else {
+                        alert("Erreur lors de la suppression.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Erreur:", error);
+                    alert("Une erreur s'est produite.");
+                });
+            }
+        });
+    });
+});
+
     document.addEventListener("DOMContentLoaded", function() {
         let form = document.querySelector("form");
         let uploadLoader = document.getElementById("upload-loader");
@@ -92,5 +144,6 @@
             }
         });
     });
+
 </script>
 @endsection

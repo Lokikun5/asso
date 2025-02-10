@@ -23,4 +23,9 @@ class Podcast extends Model
             $podcast->slug = Str::slug($podcast->name);
         });
     }
+
+    public function media()
+    {
+        return $this->hasMany(Media::class);
+    }
 }

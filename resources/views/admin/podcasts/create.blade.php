@@ -63,6 +63,17 @@
                 <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
             </div>
 
+            <!-- ✅ Galerie du Podcast -->
+            <h3 class="mt-5"><i class="fas fa-camera"></i> Galerie du Podcast</h3>
+            <p class="text-muted">Ajoutez des images associées à ce podcast.</p>
+
+            <div class="mb-3">
+                <input type="file" id="gallery-upload" name="gallery[]" multiple>
+            </div>
+
+            <!-- Zone où les images uploadées s'afficheront dynamiquement -->
+            <div id="gallery-preview" class="row my-5"></div>
+
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="active" name="active" value="1">
                 <label class="form-check-label" for="active">Activer ce Podcast</label>
@@ -86,8 +97,34 @@
             let fileInput = document.getElementById("file");
 
             if (fileInput.files.length > 0) {
-                uploadLoader.classList.remove("d-none"); // Afficher le loader
-                submitButton.disabled = true; // Désactiver le bouton pour éviter les doubles soumissions
+                uploadLoader.classList.remove("d-none"); // ✅ Afficher le loader si un fichier est sélectionné
+                submitButton.disabled = true; // ✅ Désactiver le bouton pour éviter les doubles soumissions
+            }
+        });
+
+        // ✅ Affichage des images sélectionnées pour la galerie
+        let galleryInput = document.getElementById("gallery-upload");
+        let galleryPreview = document.getElementById("gallery-preview");
+
+        galleryInput.addEventListener("change", function(event) {
+            galleryPreview.innerHTML = ""; // ✅ Effacer l'aperçu précédent
+            let files = event.target.files;
+
+            for (let i = 0; i < files.length; i++) {
+                let fileReader = new FileReader();
+
+                fileReader.onload = function(e) {
+                    let imgElement = document.createElement("div");
+                    imgElement.classList.add("col-md-3");
+                    imgElement.innerHTML = `
+                        <div class="gallery-item position-relative">
+                            <img src="${e.target.result}" class="img-fluid rounded shadow-sm">
+                        </div>
+                    `;
+                    galleryPreview.appendChild(imgElement);
+                };
+
+                fileReader.readAsDataURL(files[i]);
             }
         });
     });

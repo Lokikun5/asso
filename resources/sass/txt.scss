@@ -1,16 +1,31 @@
 // Polices globales
 body {
-    font-family: 'Open Sans', Arial, sans-serif; // Police pour le texte global
+    font-family: 'Trirong','Open Sans', Arial, sans-serif; // Police pour le texte global
   }
   
   // Navbar
   .navbar {
-    font-family: 'Poppins', Arial, sans-serif; // Police pour la navbar
+    font-family: 'Trirong', 'Poppins', Arial, sans-serif; // Police pour la navbar
     font-weight: 600; // Police en gras
   }
   
   // Headings (h1, h2, h3, etc.)
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', Arial, sans-serif; // Police pour les titres
-    font-weight: 600; // Gras pour mettre en valeur
+    font-family: 'Trirong', 'Poppins', Arial, sans-serif; // Police pour les titres
+    font-weight: 600;
   }
+
+  .text-responsive{
+    text-align: justify;
+  }
+
+  @media (max-width: 768px) {
+    .text-responsive{
+      text-align: center;
+    }
+  }
+
+.min-font-weigth{
+  font-weight: 300 !important;
+
+}

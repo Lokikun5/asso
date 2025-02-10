@@ -102,6 +102,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::put('/podcasts/{id}', [PodcastController::class, 'update'])->name('admin.podcasts.update');
     Route::patch('/podcasts/{id}/toggle', [PodcastController::class, 'toggleActive'])->name('admin.podcasts.toggle');
     Route::delete('/podcasts/{id}', [PodcastController::class, 'destroy'])->name('admin.podcasts.destroy');
+    Route::delete('/podcasts/delete-media/{id}', [PodcastController::class, 'deleteMedia'])->name('admin.podcasts.deleteMedia');
 
     Route::get('/profile', [AdminUserController::class, 'profile'])->name('admin.profile');
     Route::post('/profile/update', [AdminUserController::class, 'updateProfile'])->name('admin.profile.update');

@@ -18,10 +18,11 @@
         <div class="container">
             <h1 class="text-center mb-4">Nos programmes</h1>
 
-            <p class="text-center">
-                <strong>Le programme "Transfert Générationnel, la passerelle pour demain"</strong> 
-                a pour objectif d’offrir aux jeunes hommes et femmes :
-            </p>
+            <h2 class="text-center"><i class="fas fa-star"></i>
+                Le Programme TGPD
+                <span class="min-font-weigth"> «Transfert Générationnel, la Passerelle pour Demain »</span>
+        
+            </h2>
 
             <div class="row mt-4">
                 <div class="col-md-6">
@@ -55,23 +56,24 @@
 
                 <div class="col-md-6 mt-4">
                     <div class="p-4 border rounded shadow-sm">
-                        <h3><i class="fas fa-book"></i> L’Inclusion éducative</h3>
+                        <h3><i class="fas fa-book"></i> L’Inclusion éducative et la création d’un réseau de soutien</h3>
                         <p>Offrir ces opportunités à des jeunes issus de milieux diversifiés.</p>
-                        <h4> La Création d’un Réseau de Soutien</h4>
                         <p>Favoriser l'accès à des réseaux professionnels et à des mentors.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Deuxième partie : Objectifs du programme féminin -->
-            <h2 id="programme-feminin" class="text-center mt-5"><i class="fas fa-star"></i> Le Programme : "Lycéennes, étudiantes, osez et rêvez grand"</h2>
+            <h2 id="programme-feminin" class="text-center mt-5"><i class="fas fa-star"></i> 
+            Le Programme FORV
+            <span class="min-font-weigth">« Lycéennes, étudiantes, Osez et Rêvez Grand »</span></h2>
             <div class="row mt-4">
                 <div class="col-md-6">
                     <div class="p-4 border rounded shadow-sm">
                         <h3><i class="fas fa-lightbulb"></i> Promouvoir des modèles féminins inspirants</h3>
                         <p>
                             Mettre en lumière des femmes leaders dans les secteurs de l’ingénierie, 
-                            l’informatique, la médecine et les nouvelles technologies, afin de démontrer qu’il est 
+                            l’informatique, la santé et les nouvelles technologies, afin de démontrer qu’il est 
                             possible de réussir et d’exceller dans ces professions.
                         </p>
                     </div>

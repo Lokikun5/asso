@@ -35,8 +35,8 @@
             <div class="col-md-4 d-flex">
                 <div class="p-4 border rounded shadow-sm flex-fill d-flex flex-column">
                     <h3><i class="fas fa-graduation-cap"></i> Jeunes Élèves et Étudiants</h3>
-                    <p>
-                        Collégiens, lycéens et universitaires en quête d’orientation et d’opportunités professionnelles.
+                    <p class="text-responsive">
+                        Collégien(e)s, lycéen(ne)s et universitaires en quête d’orientation et d’opportunités professionnelles.
                     </p>
                 </div>
             </div>
@@ -45,7 +45,7 @@
             <div class="col-md-4 d-flex">
                 <div class="p-4 border rounded shadow-sm flex-fill d-flex flex-column">
                     <h3><i class="fas fa-school"></i> Institutions</h3>
-                    <p>
+                    <p class="text-responsive">
                         Établissements scolaires, universités et services gouvernementaux désireux de renforcer l'accompagnement éducatif.
                     </p>
                 </div>
@@ -54,10 +54,10 @@
             <!-- Entreprises -->
             <div class="col-md-4 d-flex">
                 <div class="p-4 border rounded shadow-sm flex-fill d-flex flex-column">
-                    <h3><i class="fas fa-building"></i> Entreprises du Secteur Privé</h3>
-                    <p>
-                        Acteurs des domaines de l’ingénierie, de l’informatique, de la médecine et des nouvelles technologies,
-                        souhaitant contribuer à l’accompagnement des jeunes talents.
+                    <h3><i class="fas fa-building"></i> Organisme du secteur public</h3>
+                    <p class="text-responsive">
+                        Acteurs des domaines de l’ingénierie, de l’informatique, de la santé et des nouvelles technologies.
+                       
                     </p>
                 </div>
             </div>

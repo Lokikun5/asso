@@ -5,6 +5,7 @@
 @use './card.scss';
 @use './breadcrumb';
 @use './btn';
+@use'./txt';
 
 // Palette de couleurs (inspirée du logo)
 $primary-color: #137c49; // Vert principal
@@ -146,9 +147,9 @@ i{
     }
   
     p {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       line-height: 1.1;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       color: #495057;
 
       span{

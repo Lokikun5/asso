@@ -34,11 +34,7 @@
     </div>
     <div class="mb-3">
         <label for="type" class="form-label">Type d'Article</label>
-        <select class="form-control" id="type" name="type" required>
-            <option value="news">Actualité</option>
-            <option value="blog">Blog</option>
-            <option value="event">Événement</option>
-        </select>
+        <input class="form-control" id="type" name="type" required>
     </div>
 
     <div class="mb-3">

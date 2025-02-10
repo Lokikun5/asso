@@ -33,6 +33,11 @@
             <label for="description" class="form-label">Description</label>
             <textarea class="form-control" id="description" name="description" rows="3">{{ $article->description }}</textarea>
         </div>
+        
+        <div class="mb-3">
+            <label for="type" class="form-label">Type d'Article</label>
+            <input class="form-control" id="type" name="type" required>
+        </div>
 
         <div class="mb-3">
             <label for="text" class="form-label">Contenu</label>

@@ -39,6 +39,15 @@ return [
         "description" => " Découvrez nos partenaires engagés dans la formation et l’accompagnement des talents de demain. Écoles, entreprises et institutions publiques unissent leurs forces pour offrir des opportunités concrètes aux jeunes. rejoignez-nous pour bâtir un futur prometteur ! ",
     ],
 
+    "entreprises-du-secteur-privé" => [
+        "title" => "Nos Partenaires - Entreprises du Secteur Privé | Opportunités & Collaboration",
+        "description" => "Découvrez comment notre association connecte les talents de demain aux entreprises du secteur privé. Accueil de stagiaires, sponsoring et collaborations stratégiques pour façonner les leaders de demain. Rejoignez-nous pour inspirer et bâtir l’excellence.",
+    ],
+    "services-publics" => [
+        "title" => "Nos Partenaires - Services Publics | Engagement & Opportunités",
+        "description" => "Notre association collabore avec les services publics pour offrir aux jeunes les moyens de réussir. Soutien aux talents, accès aux subventions et mobilisation des ressources pour un impact durable. Rejoignez-nous pour inspirer et façonner l’avenir.",
+    ],
+
     "podcasts" => [
         "title" => "Podcasts - Écoutez, Apprenez et Inspirez-vous !",
         "description" => "Plongez dans nos podcasts éducatifs et inspirants ! Discussions, témoignages et conseils d’experts pour guider les jeunes vers un avenir prometteur. Écoutez dès maintenant !",

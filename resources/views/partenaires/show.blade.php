@@ -11,7 +11,6 @@
 @section('title', $partner->first_name . ' ' . $partner->last_name)
 @section('description', $partner->first_name . ' ' . $partner->description)
 @section('content')
-@include('layouts.header')
 @include('layouts.banner')
 
 @php
@@ -64,6 +63,4 @@
         </a>
     </div>
 </div>
-
-@include('layouts.footer')
 @endsection

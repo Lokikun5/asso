@@ -3,8 +3,6 @@
 @section('description', config('meta.article.description'))
 
 @section('content')
-@include('layouts.header')
-
 @php
         $breadcrumbs = [
             ['name' => 'Articles', 'url' => route('articles.index')]
@@ -51,5 +49,4 @@
         @endforelse
     </div>
 </div>
-@include('layouts.footer')
 @endsection

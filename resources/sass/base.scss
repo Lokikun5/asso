@@ -131,3 +131,72 @@
       }
   }
 }
+
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent; // Fond semi-transparent noir
+  border: 2px solid white; // Bordure blanche épaisse
+  color: white; // Icône blanche
+  border-radius: 50%; // Rend le bouton circulaire
+  display: none; // Caché par défaut
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); // Ombre subtile
+  transition: all 0.3s ease-in-out;
+
+  i {
+    font-size: 1.2rem;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2); // Changement de couleur au survol
+    color: white;
+    border-color: white;
+    transform: scale(1.1); // Effet d'agrandissement au survol
+  }
+}
+
+/* ✅ Popup LinkedIn discrète */
+.linkedin-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 250px;
+  background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  display: none; /* Caché par défaut */
+  z-index: 1050; /* Au-dessus du contenu */
+  
+  .linkedin-popup-content {
+      text-align: center;
+  }
+
+  h5 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+  }
+
+  p {
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+  }
+
+  a {
+      width: 100%;
+  }
+
+  .btn-close {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: #fff;
+  }
+}
+

@@ -36,10 +36,7 @@
       @if(Auth::user()->role === 'admin')
         <a href="{{ route('admin.dashboard') }}" class="btn btn-primary">📌 Tableau de Bord</a>
       @endif
-      <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-        @csrf
-        <button type="submit" class="btn btn-danger">Déconnexion</button>
-      </form>
+      
     @endif
   </div>
 </nav>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container d-flex">
+<div class="container d-flex mt-5">
     @include('layouts.dashboard-sidebar')
 
     <div class="flex-grow-1 p-3">
@@ -16,6 +16,8 @@
             </form>
         </div>
         <h2 class="my-4">📚 Gestion des Établissements Partenaires</h2>
+
+
         <a href="{{ route('admin.institution-partners.create') }}" class="btn btn-primary my-2">➕ Ajouter un Établissement</a>
 
         @if(session('success'))

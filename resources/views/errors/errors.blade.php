@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body class="text-center">
-    <div class="container py-5">
+    <div class="container py-5 min-vh-100">
         <h1 class="display-4 text-danger">{{ $exception->getStatusCode() }}</h1>
         <p class="lead">
             @if ($exception->getStatusCode() == 404)

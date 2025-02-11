@@ -11,7 +11,6 @@
 @section('description', config('meta.etablissements.description'))
 
 @section('content')
-    @include('layouts.header')
     @include('layouts.banner')
 
     @php
@@ -72,5 +71,4 @@
     @endif
 </div>
 </section>
-@include('layouts.footer')
 @endsection

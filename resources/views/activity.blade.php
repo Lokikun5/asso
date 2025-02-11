@@ -11,7 +11,6 @@
 @section('description', config('meta.activity.description'))
 
 @section('content')
-    @include('layouts.header')
     @include('layouts.banner')
     @php
         $breadcrumbs = [
@@ -123,11 +122,6 @@
                 </div>
 
             </div>
-
-            <!-- Section Finale avec un message motivant -->
-        
         </div>
     </section>
-
-    @include('layouts.footer')
 @endsection

@@ -11,7 +11,6 @@
 @section('description', config('meta.target.description'))
 
 @section('content')
-    @include('layouts.header')
     @include('layouts.banner')
 
     @php
@@ -79,6 +78,4 @@
             </p>
         </div>
     </section>
-
-    @include('layouts.footer')
 @endsection

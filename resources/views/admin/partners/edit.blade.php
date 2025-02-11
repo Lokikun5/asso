@@ -2,11 +2,15 @@
 
 @section('content')
 @php $load_tinymce = true; @endphp
-<div class="container d-flex">
+<div class="container d-flex mt-5">
     @include('layouts.dashboard-sidebar')
 
     <div class="flex-grow-1 p-3">
         <h2 class="my-4">✏️ Modifier le Partenaire</h2>
+
+        <a href="{{ route('admin.partenaires.index') }}" class="btn btn-secondary mb-3">
+                <i class="fas fa-arrow-left"></i> Retour à la liste des Formateurs / bénévoles
+        </a>
 
         @if ($errors->any())
             <div class="alert alert-danger">

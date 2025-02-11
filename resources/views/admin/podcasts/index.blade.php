@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container d-flex">
+<div class="container d-flex mt-5">
     @include('layouts.dashboard-sidebar')
 
     <div class="flex-grow-1 p-3">

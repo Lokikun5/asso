@@ -12431,6 +12431,73 @@ table {
   color: #fff;
 }
 
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+#scrollTopBtn i {
+  font-size: 1.2rem;
+}
+
+#scrollTopBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-color: white;
+  transform: scale(1.1);
+}
+
+/* ✅ Popup LinkedIn discrète */
+.linkedin-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 250px;
+  background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  display: none; /* Caché par défaut */
+  z-index: 1050; /* Au-dessus du contenu */
+}
+
+.linkedin-popup .linkedin-popup-content {
+  text-align: center;
+}
+
+.linkedin-popup h5 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.linkedin-popup p {
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.linkedin-popup a {
+  width: 100%;
+}
+
+.linkedin-popup .btn-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #fff;
+}
+
 .page-content {
   padding: 5rem !important;
   border-radius: 8px !important;
@@ -12741,6 +12808,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+h2 {
+  font-size: 2.5rem;
+}
+
 .text-responsive {
   text-align: justify;
 }
@@ -12801,15 +12872,23 @@ i {
 }
 
 .navbar .dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   border: none;
   background-color: #e8f5e9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  min-width: 200px;
+  z-index: 1050;
 }
 
 .navbar .dropdown-menu .dropdown-item {
   color: #137c49;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .navbar .dropdown-menu .dropdown-item:hover {
@@ -12823,6 +12902,13 @@ i {
   font-weight: bold;
 }
 
+.navbar .dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 .navbar .dropdown-toggle::after {
   content: "";
   display: inline-block;
@@ -12830,6 +12916,11 @@ i {
   border-top: 0.4em solid;
   border-right: 0.4em solid transparent;
   border-left: 0.4em solid transparent;
+  transition: transform 0.3s ease;
+}
+
+.navbar .show > .dropdown-toggle::after {
+  transform: rotate(180deg);
 }
 
 .navbar-nav .nav-link.active {
@@ -12884,7 +12975,7 @@ i {
 }
 
 .mission h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #343a40;
   margin-bottom: 3rem;

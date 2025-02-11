@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container d-flex">
+<div class="container d-flex mt-5">
     @include('layouts.dashboard-sidebar')
 
     <div class="flex-grow-1 p-3">
@@ -16,6 +16,10 @@
             </form>
         </div>
         <h2 class="my-4">➕ Ajouter un Établissement Partenaire</h2>
+
+        <a href="{{ route('admin.institution-partners.index') }}" class="btn btn-secondary mb-5">
+                <i class="fas fa-arrow-left"></i> Retour à la liste des Établissement Partenaire
+        </a>
 
         <form action="{{ route('admin.institution-partners.store') }}" method="POST">
             @csrf

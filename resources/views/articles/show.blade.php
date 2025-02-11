@@ -10,12 +10,11 @@
 @endsection
 
 @section('content')
-@include('layouts.header')
 
 @php
     $breadcrumbs = [
         ['name' => 'Articles', 'url' => route('articles.index')],
-        ['name' => $article->title, 'url' => route('articles.show', $article->id)]
+        ['name' => $article->title, 'url' => route('articles.show', $article->slug)]
     ];
 @endphp
 
@@ -45,11 +44,10 @@
     <div class="content-section">
         {!! $article->text !!}
     </div>
-  
 
     <!-- Galerie associée -->
     @if($article->media->count())
-    <h2 class="mt-5 text-center fw-bold"><i class="fas fa-camera"></i> Galerie</h2>
+    <h2 id="gallerySection" class="mt-5 text-center fw-bold"><i class="fas fa-camera"></i> Galerie</h2>
     <p class="text-muted text-center">Découvrez les photos associées à cet article.</p>
 
     <!-- Bouton d'ouverture du carousel -->
@@ -74,8 +72,6 @@
     @endforeach
     </div>
 
-
-
     <!-- Modal Bootstrap pour le Carousel -->
     <div class="modal fade" id="imageCarouselModal" tabindex="-1" aria-labelledby="carouselLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -95,7 +91,6 @@
                                     alt="{{ $media->name }}" 
                                     style="max-height: 500px; object-fit: contain; background-color: black;">
                             </div>
-
                             @endforeach
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
@@ -113,7 +108,6 @@
     </div>
 @endif
 
-
     <!-- Bouton de retour -->
     <div class="text-center mt-5">
         <a href="{{ route('articles.index') }}" class="btn btn-outline-secondary btn-lg px-5">
@@ -122,8 +116,10 @@
     </div>
 </div>
 
-@include('layouts.footer')
-{{-- ✅ Chargement conditionnel du JS Lightbox2 --}}
+@include('component.bouton-scroll-top')
+
+@endsection
+
 @section('extra-js')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
     <script>
@@ -138,6 +134,31 @@
             } else {
                 console.error("❌ Lightbox2 ne s'est pas chargé correctement !");
             }
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let scrollTopBtn = document.getElementById("scrollTopBtn");
+
+            // Afficher le bouton si on descend
+            window.addEventListener("scroll", function() {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.style.display = "block";
+                } else {
+                    scrollTopBtn.style.display = "none";
+                }
+            });
+
+            // Scroll vers le haut en douceur
+            scrollTopBtn.addEventListener("click", function() {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+
+            // ✅ Scroll automatique vers la galerie si une image est cliquée
+            document.querySelectorAll("[data-lightbox='gallery']").forEach(function(image) {
+                image.addEventListener("click", function() {
+                    document.getElementById("gallerySection").scrollIntoView({ behavior: "smooth" });
+                });
+            });
         });
     </script>
 @endsection

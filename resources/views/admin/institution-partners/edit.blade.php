@@ -1,11 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container d-flex">
+<div class="container d-flex mt-5">
     @include('layouts.dashboard-sidebar')
 
     <div class="flex-grow-1 p-3">
         <h2 class="my-4">✏️ Modifier l’Établissement Partenaire</h2>
+
+        <a href="{{ route('admin.institution-partners.index') }}" class="btn btn-secondary mb-5">
+                <i class="fas fa-arrow-left"></i> Retour à la liste des Établissement Partenaire
+        </a>
 
         @if(session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>

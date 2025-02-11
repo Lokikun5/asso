@@ -16,22 +16,21 @@
 @endsection
 
 @section('content')
-@include('layouts.header')
 
 <div class="mt-3">
-@php
-    $breadcrumbs = [
-        ['name' => 'Podcast', 'url' => route('podcasts.index')],
-        ['name' => $podcast->name, 'url' => route('podcasts.show', $podcast->slug)]
-    ];
-@endphp
+    @php
+        $breadcrumbs = [
+            ['name' => 'Podcast', 'url' => route('podcasts.index')],
+            ['name' => $podcast->name, 'url' => route('podcasts.show', $podcast->slug)]
+        ];
+    @endphp
 
-@include('components.breadcrumbs', ['breadcrumbs' => $breadcrumbs])
+    @include('components.breadcrumbs', ['breadcrumbs' => $breadcrumbs])
 </div>
 
 <!-- Section Hero -->
 <section class="py-5 bg-dark text-white">
-    <div class="container d-flex flex-wrap align-items-center">
+    <div class="container row align-items-center">
         <div class="col-md-6">
             <h1 class="display-5 fw-bold">{{ $podcast->name }}</h1>
             <p>{{ $podcast->category }}</p>
@@ -79,63 +78,25 @@
 
     <!-- Galerie associée -->
     @if($podcast->media->count())
-    <h2 class="mt-5 text-center fw-bold"><i class="fas fa-images"></i> Galerie du Podcast</h2>
-    <p class="text-muted text-center">Découvrez les images associées à ce podcast.</p>
-    
+        <h2 class="mt-5 text-center fw-bold"><i class="fas fa-images"></i> Galerie du Podcast</h2>
+        <p class="text-muted text-center">Découvrez les images associées à ce podcast.</p>
 
-    <!-- Grid d'images avec Lightbox -->
-    <div class="row justify-content-center g-3 mt-3">
-        @foreach($podcast->media as $media)
-            <div class="col-md-4 col-sm-6">
-                <a href="{{ asset('storage/' . $media->file_name) }}" data-lightbox="podcast-gallery" data-title="{{ $media->name }}">
-                    <img 
-                        src="{{ asset('storage/' . $media->file_name) }}" 
-                        class="img-fluid rounded shadow-sm" 
-                        alt="{{ $media->name }}"
-                        style="width: 100%; height: 250px; object-fit: cover;">
-                </a>
-            </div>
-        @endforeach
-    </div>
-
-    <!-- Modal Bootstrap pour le Carousel -->
-    <div class="modal fade" id="podcastImageCarousel" tabindex="-1" aria-labelledby="carouselLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="carouselLabel">Galerie du Podcast</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- Grid d'images avec Lightbox -->
+        <div class="row justify-content-center g-3 mt-3">
+            @foreach($podcast->media as $media)
+                <div class="col-md-4 col-sm-6">
+                    <a href="{{ asset('storage/' . $media->file_name) }}" data-lightbox="podcast-gallery" data-title="{{ $media->name }}">
+                        <img 
+                            src="{{ asset('storage/' . $media->file_name) }}" 
+                            class="img-fluid rounded shadow-sm" 
+                            alt="{{ $media->name }}"
+                            style="width: 100%; height: 250px; object-fit: cover;">
+                    </a>
                 </div>
-                <div class="modal-body">
-                    <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            @foreach($podcast->media as $index => $media)
-                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                    <img 
-                                        src="{{ asset('storage/' . $media->file_name) }}" 
-                                        class="d-block w-100" 
-                                        alt="{{ $media->name }}" 
-                                        style="max-height: 500px; object-fit: contain; background-color: black;">
-                                </div>
-                            @endforeach
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Précédent</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Suivant</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
-    </div>
-@endif
+    @endif
 </section>
-
-@include('layouts.footer')
 
 {{-- ✅ Chargement conditionnel du JS Lightbox2 et Bootstrap Carousel --}}
 @section('extra-js')

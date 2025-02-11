@@ -12,7 +12,6 @@
 @section('description', config('meta.podcasts.description'))
 
 @section('content')
-@include('layouts.header')
 @include('layouts.banner')
 
 @php
@@ -68,6 +67,4 @@
         </div>
     @endif
 </div>
-
-@include('layouts.footer')
 @endsection

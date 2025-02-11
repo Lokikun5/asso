@@ -3,7 +3,7 @@
     <meta name="robots" content="noindex, nofollow">
 @endsection
 @section('content')
-<div class="container">
+<div class="container mt-5 min-vh-100">
     <h2 class="text-center">Connexion</h2>
 
     @if ($errors->any())

@@ -7,9 +7,10 @@
     }
 @endphp
 @extends('layouts.app')
+@section('title', config('meta.services-publics.title'))
+@section('description', config('meta.services-publics.description'))
 
 @section('content')
-    @include('layouts.header')
     @include('layouts.banner')
     @php
         $breadcrumbs = [
@@ -51,5 +52,4 @@
             <p class="fst-italic">Recherche d’autres partenaires en cours</p>
         </div>
     </section>
-    @include('layouts.footer')
 @endsection

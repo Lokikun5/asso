@@ -7,9 +7,10 @@
     }
 @endphp
 @extends('layouts.app')
+@section('title', config('meta.entreprises-du-secteur-privé.title'))
+@section('description', config('meta.entreprises-du-secteur-privé.description'))
 
 @section('content')
-    @include('layouts.header')
     @include('layouts.banner')
     @php
         $breadcrumbs = [
@@ -52,5 +53,4 @@
             @endif
         </div>
     </section>
-    @include('layouts.footer')
 @endsection

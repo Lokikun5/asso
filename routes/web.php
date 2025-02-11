@@ -131,7 +131,11 @@ Route::get('/sitemap.xml', function () {
         ->add(Url::create(route('target')))
         ->add(Url::create(route('articles.index')))
         ->add(Url::create(route('partenaires')))
-        ->add(Url::create(route('etablissements.index')));
+        ->add(Url::create(route('etablissements.index')))
+        ->add(Url::create(route('private.companies')))
+        ->add(Url::create(route('sector.utilities')))
+        ->add(Url::create(route('podcasts.index')));
+        
 
     foreach (Article::where('active', true)->get() as $article) {
         $sitemap->add(Url::create(route('articles.show', ['slug' => $article->slug])));
@@ -139,6 +143,10 @@ Route::get('/sitemap.xml', function () {
 
     foreach (Partner::where('active', true)->get() as $partner) {
         $sitemap->add(Url::create(route('partenaire.show', ['slug' => $partner->slug])));
+    }
+
+    foreach (Partner::where('active', true)->get() as $podcast) {
+        $sitemap->add(Url::create(route('podcasts.show', ['slug' => $podcast->slug])));
     }
 
     return response($sitemap->render(), 200)

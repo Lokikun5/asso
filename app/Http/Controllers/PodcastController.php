@@ -13,11 +13,23 @@ class PodcastController extends Controller
     /**
      * Affiche tous les podcasts actifs (frontend)
      */
-    public function index()
+    public function index(Request $request)
     {
-        $podcasts = Podcast::where('active', true)->latest()->paginate(10);
-        return view('podcasts.index', compact('podcasts'));
+        $query = Podcast::where('active', true)->latest();
+
+        // Filtrer par catégorie si sélectionnée
+        if ($request->has('category')) {
+            $query->where('category', $request->category);
+        }
+
+        $podcasts = $query->paginate(10);
+
+        // Récupérer les catégories uniques (sans doublons)
+        $categories = Podcast::where('active', true)->pluck('category')->unique();
+
+        return view('podcasts.index', compact('podcasts', 'categories'));
     }
+
 
     /**
      * Affiche un podcast spécifique

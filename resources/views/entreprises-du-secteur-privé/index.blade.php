@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     @endforeach
-                
+                    <p class="fst-italic">Recherche d’autres partenaires en cours</p>
                 </div>
             @endif
         </div>

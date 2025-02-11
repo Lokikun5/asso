@@ -10,11 +10,26 @@ use Illuminate\Support\Facades\Storage;
 
 class ArticlesController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::with('media')->where('active', true)->latest()->get();
-        return view('articles.index', compact('articles'));
+        // Récupère tous les types d'articles uniques
+        $types = Article::where('active', true)->pluck('type')->unique();
+
+        // Vérifie si un filtre est appliqué
+        $selectedType = $request->query('type');
+
+        // Filtre les articles en fonction du type sélectionné
+        $articles = Article::with('media')
+                    ->where('active', true)
+                    ->when($selectedType, function ($query) use ($selectedType) {
+                        return $query->where('type', $selectedType);
+                    })
+                    ->latest()
+                    ->get();
+
+        return view('articles.index', compact('articles', 'types', 'selectedType'));
     }
+
 
     public function show($slug)
     {

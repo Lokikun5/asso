@@ -38,7 +38,7 @@
     <h2 class="text-center m-5">Nos partenaires nous font confiance pour façonner les leaders de demain</h2>
 
     @if($institutionPartners->isEmpty())
-        <p class="text-center text-muted">Aucun établissement partenaire pour le moment.</p>
+        <p>Recherche d’autres partenaires en cours</p>
     @else
             <div class="row mt-4">
             @foreach($institutionPartners->groupBy('category') as $category => $partners)
@@ -67,12 +67,10 @@
             </div>
         </div>
     @endforeach
-
+    <p class="fst-italic">Recherche d’autres partenaires en cours</p>
         </div>
     @endif
 </div>
 </section>
-
-
 @include('layouts.footer')
 @endsection

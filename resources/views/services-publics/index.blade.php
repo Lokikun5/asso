@@ -48,6 +48,7 @@
                 
                 </div>
             @endif
+            <p class="fst-italic">Recherche d’autres partenaires en cours</p>
         </div>
     </section>
     @include('layouts.footer')

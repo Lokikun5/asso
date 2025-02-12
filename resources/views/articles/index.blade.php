@@ -1,27 +1,36 @@
+@php
+    $defaultBanner = '/image/banner.webp';
+    $bannerImage = '/image/article-banner.webp'; // Image spécifique à la page
+
+    if (!file_exists(public_path($bannerImage))) {
+        $bannerImage = $defaultBanner;
+    }
+@endphp
 @extends('layouts.app')
 @section('title', config('meta.article.title'))
 @section('description', config('meta.article.description'))
 
 @section('content')
+@include('layouts.banner')
 @php
         $breadcrumbs = [
             ['name' => 'Articles', 'url' => route('articles.index')]
         ];
     @endphp
-    <div class="mt-4">
+    
     @include('components.breadcrumbs', ['breadcrumbs' => $breadcrumbs])
-    </div>
+   
 <div class="container py-5">
     <h1 class="text-center fw-bold mb-4">Tous les articles</h1>
 
     <!-- FILTRES -->
     <div class="text-center mb-4">
-        <a href="{{ route('articles.index') }}" class="btn btn-outline-dark mx-1 fw-bold border-2 mx-1 px-3 py-2 {{ request('type') ? '' : 'active' }}">
+        <a href="{{ route('articles.index') }}#articles-section" class="btn btn-outline-dark btn-light mx-1 fw-bold border-2 mx-1 px-3 py-2 {{ request('type') ? '' : 'active-filter' }}">
             Tous
         </a>
 
         @foreach($types as $type)
-            <a href="{{ route('articles.index', ['type' => $type]) }}" class="btn btn-color btn-primary border-2 mx-1 px-3 py-2 fw-bold {{ request('type') == $type ? 'active' : '' }}">
+            <a href="{{ route('articles.index', ['type' => $type]) }} #articles-section" class="btn btn-outline-dark btn-light mx-1 fw-bold border-2 mx-1 px-3 py-2 {{ request('type') == $type ? 'active-filter' : '' }}">
                 {{ ucfirst($type) }}
             </a>
         @endforeach
@@ -31,7 +40,7 @@
     <div class="row">
         @forelse($articles as $article)
             <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm border-0 rounded">
+                <div id="articles-section" class="card h-100 shadow-sm border-0 rounded">
                     <img src="{{ asset('storage/' . $article->img_banner) }}" class="card-img-top rounded-top" alt="{{ $article->title }}">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ $article->title }}</h5>

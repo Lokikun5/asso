@@ -1,5 +1,5 @@
 @php
-    $heroImage = '/image/hero-bg.jpg'; // Image spécifique par défaut
+    $heroImage = '/image/hero-bg.webp'; // Image spécifique par défaut
 
     if (isset($pageHeroImage) && file_exists(public_path($pageHeroImage))) {
         $heroImage = $pageHeroImage;
@@ -29,6 +29,9 @@
             <div class="col-md-6">
                 <div class="programme p-4 border rounded shadow-sm">
                     <h3>1. Le Programme TGPD <br> <span class="min-font-weigth"> « Transfert Générationnel, la Passerelle pour Demain » </span></h3>
+                    <div class ="img-pages">
+                        <img src="{{ asset('image/pages/programme-TGPD.webp') }}" alt="programme-TGPD">
+                    </div>
                     <div class="text-responsive">
                         <p>
                             Ce programme s'adresse <span> aux jeunes élèves, étudiants et étudiantes africain(e)s,</span> 
@@ -50,6 +53,9 @@
             <div class="col-md-6">
                 <div class="programme p-4 border rounded shadow-sm">
                     <h3>2. Le Programme FORV <br> <span class="min-font-weigth"> « Lycéennes, étudiantes, Osez et Rêvez Grand »</span></h3>
+                    <div class ="img-pages">
+                        <img src="{{ asset('image/pages/programme-FORV.webp') }}" alt="programme-FORV">
+                    </div>
                     <div class="text-responsive">
                         <p>
                             Ce programme est né de l’idée de faire découvrir aux <span>jeunes filles des collèges, lycées et universités </span> l’éventail de

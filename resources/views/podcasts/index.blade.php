@@ -1,6 +1,6 @@
 @php
     $defaultBanner = '/image/banner.webp';
-    $bannerImage = '/image/programmes-banner.jpg'; // Image spécifique à la page
+    $bannerImage = '/image/podcast-banner.webp'; // Image spécifique à la page
 
     if (!file_exists(public_path($bannerImage))) {
         $bannerImage = $defaultBanner;
@@ -27,12 +27,12 @@
 
     <!-- FILTRES PAR CATÉGORIE -->
     <div class="text-center mb-4">
-        <a href="{{ route('podcasts.index') }}#podcasts-section" class="btn btn-outline-dark mx-1 fw-bold border-2 mx-1 px-3 py-2 {{ request('category') ? '' : 'active' }}">
+        <a href="{{ route('podcasts.index') }}#podcasts-section" class="btn btn-outline-dark btn-light mx-1 fw-bold border-2 mx-1 px-3 py-2 {{ request('category') ? '' : 'active-filter' }}">
             Tous
         </a>
 
         @foreach($categories as $category)
-            <a href="{{ route('podcasts.index', ['category' => $category]) }} #podcasts-section"  class="btn btn-color btn-primary border-2 mx-1 px-3 py-2 fw-bold {{ request('category') == $category ? 'active' : '' }}">
+            <a href="{{ route('podcasts.index', ['category' => $category]) }} #podcasts-section"  class="btn btn-outline-dark btn-light mx-1 fw-bold border-2 mx-1 px-3 py-2 {{ request('category') == $category ? 'active-filter' : '' }}">
                 {{ ucfirst($category) }}
             </a>
         @endforeach

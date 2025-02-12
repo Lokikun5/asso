@@ -200,3 +200,39 @@
   }
 }
 
+@mixin img-pages($img-width: 100%, $img-height: 300px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: $img-height;
+  margin-bottom: 3rem;
+
+  img {
+    width: $img-width;  
+    object-fit: cover;
+    height: 100%;
+    border: solid 2px #137c49;
+  }
+}
+
+.img-pages {
+  @include img-pages(); 
+}
+
+.img-pages2 {
+  @include img-pages(70%,400px); 
+}
+
+.active-filter {
+  background-color: #0097b2 !important; /* Couleur du filtre actif */
+  color: white !important; /* Texte en blanc */
+  border-color: #137c49 !important; /* Bordure accordée */
+  box-shadow: 0px 4px 8px rgba(19, 124, 73, 0.3); /* Effet léger */
+  transition: all 0.3s ease-in-out;
+}
+
+.active-filter:hover {
+  background-color: #0f5c36 !important; /* Assombrir au hover */
+  border-color: #0f5c36 !important;
+}

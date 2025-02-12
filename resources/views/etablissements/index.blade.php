@@ -1,6 +1,6 @@
 @php
     $defaultBanner = '/image/banner.webp';
-    $bannerImage = '/image/programmes-banner.jpg'; // Image spécifique à la page
+    $bannerImage = '/image/etablissements-banner.webp'; // Image spécifique à la page
 
     if (!file_exists(public_path($bannerImage))) {
         $bannerImage = $defaultBanner;

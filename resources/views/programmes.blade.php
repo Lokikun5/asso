@@ -1,6 +1,6 @@
 @php
-    $defaultBanner = '/image/banner.webp';
-    $bannerImage = '/image/programmes-banner.jpg'; // Image spécifique à la page
+    $defaultBanner = '/image/banner.jpg';
+    $bannerImage = '/image/programmes-banner.webp'; // Image spécifique à la page
 
     if (!file_exists(public_path($bannerImage))) {
         $bannerImage = $defaultBanner;
@@ -30,6 +30,9 @@
                 <span class="min-font-weigth"> «Transfert Générationnel, la Passerelle pour Demain »</span>
         
             </h2>
+            <div class ="img-pages2 mt-5">
+                <img src="{{ asset('image/pages/promouvoir.webp') }}" alt="promouvoir">
+            </div>
 
             <div class="row mt-4">
                 <div class="col-md-6">
@@ -74,6 +77,9 @@
             <h2 id="programme-feminin" class="text-center mt-5"><i class="fas fa-star"></i> 
             Le Programme FORV
             <span class="min-font-weigth">« Lycéennes, étudiantes, Osez et Rêvez Grand »</span></h2>
+            <div class ="img-pages2 mt-5">
+                <img src="{{ asset('image/pages/programme-page-FORV.webp') }}" alt="programme FORV">
+            </div>
             <div class="row mt-4">
                 <div class="col-md-6">
                     <div class="p-4 border rounded shadow-sm">

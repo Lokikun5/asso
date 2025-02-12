@@ -116,47 +116,17 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/contact.js') }}" defer></script>
     <script src="{{ asset('js/media-upload.js') }}" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- ✅ Ajout conditionnel du JS -->
     @yield('extra-js')
-    <script>
+    
+<script>
     document.addEventListener("DOMContentLoaded", function () {
-    var dropdowns = document.querySelectorAll('.dropdown-toggle');
-
-    dropdowns.forEach(function (dropdown) {
-        dropdown.addEventListener("click", function (event) {
-            event.preventDefault(); // Empêche le lien de s'exécuter
-            let menu = this.nextElementSibling;
-
-            if (menu.classList.contains("show")) {
-                menu.classList.remove("show");
-                this.setAttribute("aria-expanded", "false");
-            } else {
-                document.querySelectorAll(".dropdown-menu.show").forEach(function (openMenu) {
-                    openMenu.classList.remove("show");
-                });
-
-                menu.classList.add("show");
-                this.setAttribute("aria-expanded", "true");
-            }
+        let dropdowns = document.querySelectorAll('.dropdown-toggle');
+        dropdowns.forEach(dropdown => {
+            new bootstrap.Dropdown(dropdown);
         });
     });
-
-    // ✅ Fermer le dropdown en cliquant ailleurs
-    document.addEventListener("click", function (event) {
-        if (!event.target.closest(".dropdown")) {
-            document.querySelectorAll(".dropdown-menu.show").forEach(function (menu) {
-                menu.classList.remove("show");
-            });
-        }
-    });
-
-    console.log("✅ Bootstrap Dropdown activé !");
-});
-
-
 </script>
-
 </body>
 </html>

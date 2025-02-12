@@ -44,6 +44,11 @@
     <div class="content-section">
         {!! $article->text !!}
     </div>
+    <div class="d-flex d-flex justify-content-center align-items-center">
+        <a href="#" class="btn btn-outline-dark mx-1 fw-bold">
+            suivez notre actualité sur linkedin
+        </a>
+    </div>
 
     <!-- Galerie associée -->
     @if($article->media->count())
@@ -52,7 +57,7 @@
 
     <!-- Bouton d'ouverture du carousel -->
     <div class="text-center my-4">
-        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#imageCarouselModal">
+        <button type="button" class="btn btn-outline-secondary btn-lg px-5" data-bs-toggle="modal" data-bs-target="#imageCarouselModal">
             📷 Voir en plein écran
         </button>
     </div>

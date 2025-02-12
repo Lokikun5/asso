@@ -12498,6 +12498,53 @@ table {
   color: #fff;
 }
 
+.img-pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 3rem;
+}
+
+.img-pages img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  border: solid 2px #137c49;
+}
+
+.img-pages2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 3rem;
+}
+
+.img-pages2 img {
+  width: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  border: solid 2px #137c49;
+}
+
+.active-filter {
+  background-color: #0097b2 !important; /* Couleur du filtre actif */
+  color: white !important; /* Texte en blanc */
+  border-color: #137c49 !important; /* Bordure accordée */
+  box-shadow: 0px 4px 8px rgba(19, 124, 73, 0.3); /* Effet léger */
+  transition: all 0.3s ease-in-out;
+}
+
+.active-filter:hover {
+  background-color: #0f5c36 !important; /* Assombrir au hover */
+  border-color: #0f5c36 !important;
+}
+
 .page-content {
   padding: 5rem !important;
   border-radius: 8px !important;
@@ -12568,14 +12615,14 @@ span {
 
 /* ✅ Zone texte des pages articles et partenaires */
 .content-section {
-  max-width: 800px !important;
-  line-height: 1.8 !important;
-  font-size: 1.2rem !important; /* Taille de texte légèrement plus petite */
-  background-color: #f8f9fa !important; /* Couleur de fond claire */
-  padding: 1.5rem !important;
-  border-radius: 0.5rem !important;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important; /* Ombre légère */
-  margin: 0 auto 3rem auto !important; /* Centrer et espacer en bas */
+  max-width: 800px;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  margin: 0 auto 3rem auto;
 }
 
 /* ✅ Couleur des en-têtes actifs */

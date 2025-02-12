@@ -70,14 +70,14 @@ span {
 
 /* ✅ Zone texte des pages articles et partenaires */
 .content-section {
-  max-width: 800px !important;
-  line-height: 1.8 !important;
-  font-size: 1.2rem !important; /* Taille de texte légèrement plus petite */
-  background-color: #f8f9fa !important; /* Couleur de fond claire */
-  padding: 1.5rem !important;
-  border-radius: 0.5rem !important;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important; /* Ombre légère */
-  margin: 0 auto 3rem auto !important; /* Centrer et espacer en bas */
+  max-width: 800px ;
+  line-height: 1.8 ;
+  font-size: 1.2rem ;
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
+  margin: 0 auto 3rem auto;
 }
 
 /* ✅ Couleur des en-têtes actifs */

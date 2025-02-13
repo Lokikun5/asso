@@ -120,13 +120,5 @@
     <!-- ✅ Ajout conditionnel du JS -->
     @yield('extra-js')
     
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let dropdowns = document.querySelectorAll('.dropdown-toggle');
-        dropdowns.forEach(dropdown => {
-            new bootstrap.Dropdown(dropdown);
-        });
-    });
-</script>
 </body>
 </html>

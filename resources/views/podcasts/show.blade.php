@@ -29,7 +29,7 @@
 </div>
 
 <!-- Section Hero -->
-<section class="py-5 bg-dark text-white">
+<section class="py-5 px-5 bg-dark text-white">
     <div class="container row align-items-center">
         <div class="col-md-6">
             <h1 class="display-5 fw-bold">{{ $podcast->name }}</h1>
@@ -56,10 +56,10 @@
                 </button>
 
                 <div id="social-share-buttons" class="d-none mt-3">
-                    <a href="#" id="share-facebook" class="btn btn-primary me-2 mb-2" target="_blank">
-                        <i class="fab fa-facebook-f"></i> Facebook
+                    <a href="#" id="share-facebook" class="btn social-btn facebook-btn me-2 mb-2" target="_blank">
+                        <i class="fab fa-facebook-f"></i>Facebook
                     </a>
-                    <a href="#" id="share-linkedin" class="btn btn-info" target="_blank">
+                    <a href="#" id="share-linkedin" class="btn social-btn linkedin-btn me-2 mb-2" target="_blank">
                         <i class="fab fa-linkedin-in"></i> LinkedIn
                     </a>
                 </div>

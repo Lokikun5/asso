@@ -213,6 +213,7 @@
     object-fit: cover;
     height: 100%;
     border: solid 2px #137c49;
+    border-radius: 1%;
   }
 }
 
@@ -221,7 +222,13 @@
 }
 
 .img-pages2 {
-  @include img-pages(70%,400px); 
+  @include img-pages(50%,400px); 
+}
+
+@media (max-width: 768px) {
+  .img-pages2 {
+    @include img-pages(100%,400px); 
+  }
 }
 
 .active-filter {
@@ -235,4 +242,44 @@
 .active-filter:hover {
   background-color: #0f5c36 !important; /* Assombrir au hover */
   border-color: #0f5c36 !important;
+}
+
+@mixin social-button($bg-color, $hover-color) {
+  background-color: $bg-color;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease-in-out;
+  border: none;
+
+  i {
+      color: white !important;
+      font-size: 1.2rem;
+  }
+
+  &:hover {
+      background-color: $hover-color;
+      box-shadow: 0px 4px 8px rgba($bg-color, 0.3);
+      transform: scale(1.05);
+  }
+}
+
+// Appliquer la mixin aux boutons spécifiques
+.facebook-btn {
+  @include social-button(#1877F2, #145dbf); // Bleu Facebook
+}
+
+.linkedin-btn {
+  @include social-button(#0077B5, #005582); // Bleu LinkedIn
+}
+
+.truncate-text {
+  white-space: nowrap;   /* Empêche le retour à la ligne */
+  overflow: hidden;      /* Cache le texte dépassant */
+  text-overflow: ellipsis; /* Affiche "..." pour le texte tronqué */
+  max-width: 300px; /* Ajuste la largeur max selon tes besoins */
 }

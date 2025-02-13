@@ -52,7 +52,7 @@
                                 {{ $podcast->created_at->format('d M, Y') }}
                             </p>
                             <p>{{ $podcast->category }}</p>
-                            <p>{{ Str::limit($podcast->description, 150) }}</p>
+                            <p class="truncate-text">{{ Str::limit($podcast->description, 150) }}</p>
                             <a href="{{ route('podcasts.show', $podcast->slug) }}" class="btn btn-outline-primary btn-sm">
                                 <i class="fas fa-play"></i> Écouter le Podcast
                             </a>

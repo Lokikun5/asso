@@ -9,9 +9,9 @@ return new class extends Migration {
     public function up(): void
     {
         DB::table('users')->insert([
-            'name' => 'Antonyo',
-            'email' => 'antonyo@gmail.com',
-            'password' => Hash::make('Hikarichan123456'),
+            'name' => 'Eva Harmony GOZAN',
+            'email' => 'gevaharmony@gmail.com',
+            'password' => Hash::make('Passworduser123456'),
             'role' => 'super-admin',
             'created_at' => now(),
             'updated_at' => now(),
@@ -20,6 +20,6 @@ return new class extends Migration {
 
     public function down(): void
     {
-        DB::table('users')->where('email', 'antonio@gmail.com')->delete();
+        DB::table('users')->where('email', 'gevaharmony@gmail.com')->delete();
     }
 };

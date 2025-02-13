@@ -66,6 +66,15 @@ Route::middleware(['auth', 'admin'])->group(function () {
     })->name('dashboard');
 });
 
+Route::middleware(['auth', 'super-admin'])->group(function () {
+    Route::get('/users/create', [AdminUserController::class, 'create'])->name('admin.users.create'); 
+    Route::get('/users/{user}/edit', [AdminUserController::class, 'edit'])->name('admin.users.edit');
+    Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
+    Route::post('/users', [AdminUserController::class, 'store'])->name('admin.users.store');
+    Route::put('/users/{user}', [AdminUserController::class, 'update'])->name('admin.users.update');
+    Route::delete('/users/{user}', [AdminUserController::class, 'destroy'])->name('admin.users.destroy');
+});
+
 // ✅ 🛠️ Tableau de bord & Gestion des contenus (Back-office)
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     // 🏠 Tableau de bord
@@ -111,13 +120,6 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
     Route::get('/profile', [AdminUserController::class, 'profile'])->name('admin.profile');
     Route::post('/profile/update', [AdminUserController::class, 'updateProfile'])->name('admin.profile.update');
-    
-    Route::get('/users/create', [AdminUserController::class, 'create'])->name('admin.users.create'); 
-    Route::get('/users/{user}/edit', [AdminUserController::class, 'edit'])->name('admin.users.edit');
-    Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
-    Route::post('/users', [AdminUserController::class, 'store'])->name('admin.users.store');
-    Route::put('/users/{user}', [AdminUserController::class, 'update'])->name('admin.users.update');
-    Route::delete('/users/{user}', [AdminUserController::class, 'destroy'])->name('admin.users.destroy');
 
 
 });

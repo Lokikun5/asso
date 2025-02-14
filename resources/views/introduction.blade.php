@@ -47,7 +47,7 @@
                             En promouvant l'égalité des chances, ce programme offre à chacun des ressources et un réseau adapté pour construire un avenir prometteur.
                         </p>
                     </div>
-                    <a href="{{ route('programmes') }}" class="btn btn-primary btn-color mt-auto">En savoir plus</a>
+                    <a href="{{ route('programmes') }}" class="btn btn-base-color mt-auto">En savoir plus</a>
                 </div>
             </div>
             <div class="col-md-6">
@@ -72,7 +72,7 @@
                         une société plus équitable et innovante, et nous œuvrons à réduire cette disparité.
                         </p>
                     </div>
-                    <a href="{{ route('programmes') }}#programme-feminin" class="btn btn-primary btn-color mt-1">En savoir plus</a>
+                    <a href="{{ route('programmes') }}#programme-feminin" class="btn btn-base-color mt-1">En savoir plus</a>
                 </div>
             </div>
         </div>

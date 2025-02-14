@@ -34,10 +34,9 @@
     </div>
 
     @if(Auth::check())
-      @if(Auth::user()->role === 'admin')
+      @if(in_array(Auth::user()->role, ['admin', 'super-admin']))
         <a href="{{ route('admin.dashboard') }}" class="btn btn-primary">📌 Tableau de Bord</a>
       @endif
-      
     @endif
   </div>
 </nav>

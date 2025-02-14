@@ -12431,6 +12431,15 @@ table {
   color: #fff;
 }
 
+.podcast-card .btn-outline-primary:hover i {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .podcast-card {
+    flex-direction: column;
+  }
+}
 #scrollTopBtn {
   position: fixed;
   bottom: 20px;
@@ -12552,72 +12561,19 @@ table {
     border-radius: 1%;
   }
 }
-.active-filter {
-  background-color: #0097b2 !important; /* Couleur du filtre actif */
-  color: white !important; /* Texte en blanc */
-  border-color: #137c49 !important; /* Bordure accordée */
-  box-shadow: 0px 4px 8px rgba(19, 124, 73, 0.3); /* Effet léger */
-  transition: all 0.3s ease-in-out;
-}
-
-.active-filter:hover {
-  background-color: #0f5c36 !important; /* Assombrir au hover */
-  border-color: #0f5c36 !important;
-}
-
-.facebook-btn {
-  background-color: #1877F2;
-  color: white;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease-in-out;
-  border: none;
-}
-
-.facebook-btn i {
-  color: white !important;
-  font-size: 1.2rem;
-}
-
-.facebook-btn:hover {
-  background-color: #145dbf;
-  box-shadow: 0px 4px 8px rgba(24, 119, 242, 0.3);
-  transform: scale(1.05);
-}
-
-.linkedin-btn {
-  background-color: #0077B5;
-  color: white;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease-in-out;
-  border: none;
-}
-
-.linkedin-btn i {
-  color: white !important;
-  font-size: 1.2rem;
-}
-
-.linkedin-btn:hover {
-  background-color: #005582;
-  box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
-  transform: scale(1.05);
-}
-
 .truncate-text {
   white-space: nowrap; /* Empêche le retour à la ligne */
   overflow: hidden; /* Cache le texte dépassant */
   text-overflow: ellipsis; /* Affiche "..." pour le texte tronqué */
   max-width: 300px; /* Ajuste la largeur max selon tes besoins */
+}
+
+.filter-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .page-content {
@@ -12793,30 +12749,6 @@ span {
   border-color: #0097b2 !important;
 }
 
-.btn-color {
-  background-color: #137c49 !important;
-  border-color: #137c49 !important;
-  color: #fff !important;
-  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-}
-
-.btn-color:hover {
-  background-color: #0097b2 !important;
-  border-color: #0097b2 !important;
-}
-
-.btn-color2 {
-  background-color: #0097b2 !important;
-  border-color: #0097b2 !important;
-  color: #fff !important;
-  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-}
-
-.btn-color2:hover {
-  background-color: #137c49 !important;
-  border-color: #137c49 !important;
-}
-
 .breadcrumb-container {
   background: linear-gradient(135deg, #f8f9fa, #e9ecef);
   padding: 12px 20px;
@@ -12894,6 +12826,10 @@ span {
   color: #fff;
 }
 
+.podcast-buttons .btn-outline-secondary:hover i {
+  color: #fff;
+}
+
 .podcast-buttons .btn-secondary {
   color: #fff;
   background-color: #333;
@@ -12914,6 +12850,90 @@ span {
 .podcast-buttons .btn-primary:hover {
   background-color: #105c38 !important;
   border-color: #105c38 !important;
+}
+
+.btn-base-color {
+  background-color: #137c49 !important;
+  border-color: #137c49 !important;
+  color: #fff !important;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.btn-base-color:hover {
+  background-color: #0097b2 !important;
+  border-color: #0097b2 !important;
+}
+
+.btn-color2 {
+  background-color: #0097b2 !important;
+  border-color: #0097b2 !important;
+  color: #fff !important;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.btn-color2:hover {
+  background-color: #137c49 !important;
+  border-color: #137c49 !important;
+}
+
+.active-filter {
+  background-color: #0097b2 !important; /* Couleur du filtre actif */
+  color: white !important; /* Texte en blanc */
+  box-shadow: 0px 4px 8px rgba(19, 124, 73, 0.3); /* Effet léger */
+  transition: all 0.3s ease-in-out;
+}
+
+.active-filter:hover {
+  background-color: #0f5c36 !important; /* Assombrir au hover */
+  border-color: #0f5c36 !important;
+}
+
+.facebook-btn {
+  background-color: #1877F2;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+.facebook-btn i {
+  color: white !important;
+  font-size: 1.2rem;
+}
+
+.facebook-btn:hover {
+  background-color: #145dbf;
+  box-shadow: 0px 4px 8px rgba(24, 119, 242, 0.3);
+  transform: scale(1.05);
+}
+
+.linkedin-btn {
+  background-color: #0077B5;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+.linkedin-btn i {
+  color: white !important;
+  font-size: 1.2rem;
+}
+
+.linkedin-btn:hover {
+  background-color: #005582;
+  box-shadow: 0px 4px 8px rgba(0, 119, 181, 0.3);
+  transform: scale(1.05);
 }
 
 body {

@@ -24,13 +24,13 @@
     <h1 class="text-center fw-bold mb-4">Tous les articles</h1>
 
     <!-- FILTRES -->
-    <div class="text-center mb-4">
-        <a href="{{ route('articles.index') }}#articles-section" class="btn btn-outline-dark btn-light mx-1 fw-bold border-2 mx-1 px-3 py-2 {{ request('type') ? '' : 'active-filter' }}">
+    <div class="text-center mb-4 filter-display">
+        <a href="{{ route('articles.index') }}#articles-section" class="btn btn-base-color {{ request('type') ? '' : 'active-filter' }}">
             Tous
         </a>
 
         @foreach($types as $type)
-            <a href="{{ route('articles.index', ['type' => $type]) }} #articles-section" class="btn btn-outline-dark btn-light mx-1 fw-bold border-2 mx-1 px-3 py-2 {{ request('type') == $type ? 'active-filter' : '' }}">
+            <a href="{{ route('articles.index', ['type' => $type]) }} #articles-section" class="btn btn-base-color {{ request('type') == $type ? 'active-filter' : '' }}">
                 {{ ucfirst($type) }}
             </a>
         @endforeach
@@ -43,11 +43,13 @@
                 <div id="articles-section" class="card h-100 shadow-sm border-0 rounded">
                     <img src="{{ asset('storage/' . $article->img_banner) }}" class="card-img-top rounded-top" alt="{{ $article->title }}">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">{{ $article->title }}</h5>
-                        <p class="text-muted small">
-                            <i class="far fa-calendar-alt"></i> {{ $article->created_at->format('d M Y') }}
-                        </p>
-                        <p>{{ $article->type }}</p>
+                        <h5 class="card-title truncate-text">{{ $article->title }}</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <p class="text-muted small">
+                                <i class="far fa-calendar-alt"></i> {{ $article->created_at->format('d M Y') }}
+                            </p>
+                            <p class="fw-bold">{{ $article->type }}</p>
+                        </div>
                         <p class="card-text">{{ Str::limit($article->description, 100) }}</p>
                         <a href="{{ route('articles.show', $article->slug) }}" class="btn btn-color btn-primary mt-auto">Lire la suite</a>
                     </div>

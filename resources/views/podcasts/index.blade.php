@@ -26,13 +26,13 @@
     <h1 class="text-center fw-bold mb-4"><i class="fas fa-microphone"></i> Émission podcast</h1>
 
     <!-- FILTRES PAR CATÉGORIE -->
-    <div class="text-center mb-4">
-        <a href="{{ route('podcasts.index') }}#podcasts-section" class="btn btn-outline-dark btn-light mx-1 fw-bold border-2 mx-1 px-3 py-2 {{ request('category') ? '' : 'active-filter' }}">
+    <div class="text-center mb-4 filter-display">
+        <a href="{{ route('podcasts.index') }}#podcasts-section" class="btn btn-base-color {{ request('category') ? '' : 'active-filter' }}">
             Tous
         </a>
 
         @foreach($categories as $category)
-            <a href="{{ route('podcasts.index', ['category' => $category]) }} #podcasts-section"  class="btn btn-outline-dark btn-light mx-1 fw-bold border-2 mx-1 px-3 py-2 {{ request('category') == $category ? 'active-filter' : '' }}">
+            <a href="{{ route('podcasts.index', ['category' => $category]) }} #podcasts-section"  class="btn btn-base-color {{ request('category') == $category ? 'active-filter' : '' }}">
                 {{ ucfirst($category) }}
             </a>
         @endforeach
@@ -43,8 +43,8 @@
     @else
         <div class="row">
             @foreach ($podcasts as $podcast)
-                <div class="col-md-6 mb-4">
-                    <div id="podcasts-section" class="podcast-card d-flex align-items-start p-3 rounded shadow-sm">
+                <div class="col-md-6 mb-4 ">
+                    <div id="podcasts-section" class="podcast-card flex-col-mobi d-flex align-items-start p-3 rounded shadow-sm">
                         <img src="{{ asset('storage/' . $podcast->image) }}" alt="{{ $podcast->name }}" class="podcast-card-image rounded">
                         <div class="ms-3">
                             <h2 class="h5 fw-bold">{{ $podcast->name }}</h2>

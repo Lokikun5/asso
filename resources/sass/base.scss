@@ -128,7 +128,16 @@
       &:hover {
           background-color: #137c49;
           color: #fff;
+          i{
+            color: #fff;
+          }
       }
+  }
+}
+
+@media (max-width: 768px) {
+  .podcast-card {
+    flex-direction: column; 
   }
 }
 
@@ -231,55 +240,17 @@
   }
 }
 
-.active-filter {
-  background-color: #0097b2 !important; /* Couleur du filtre actif */
-  color: white !important; /* Texte en blanc */
-  border-color: #137c49 !important; /* Bordure accordée */
-  box-shadow: 0px 4px 8px rgba(19, 124, 73, 0.3); /* Effet léger */
-  transition: all 0.3s ease-in-out;
-}
-
-.active-filter:hover {
-  background-color: #0f5c36 !important; /* Assombrir au hover */
-  border-color: #0f5c36 !important;
-}
-
-@mixin social-button($bg-color, $hover-color) {
-  background-color: $bg-color;
-  color: white;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 5px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease-in-out;
-  border: none;
-
-  i {
-      color: white !important;
-      font-size: 1.2rem;
-  }
-
-  &:hover {
-      background-color: $hover-color;
-      box-shadow: 0px 4px 8px rgba($bg-color, 0.3);
-      transform: scale(1.05);
-  }
-}
-
-// Appliquer la mixin aux boutons spécifiques
-.facebook-btn {
-  @include social-button(#1877F2, #145dbf); // Bleu Facebook
-}
-
-.linkedin-btn {
-  @include social-button(#0077B5, #005582); // Bleu LinkedIn
-}
-
 .truncate-text {
   white-space: nowrap;   /* Empêche le retour à la ligne */
   overflow: hidden;      /* Cache le texte dépassant */
   text-overflow: ellipsis; /* Affiche "..." pour le texte tronqué */
   max-width: 300px; /* Ajuste la largeur max selon tes besoins */
+}
+
+.filter-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }

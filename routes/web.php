@@ -17,6 +17,8 @@ use App\Http\Controllers\PodcastController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\PrivateSectorCompanyController;
 use App\Http\Controllers\SectorUtilitiesController;
+use App\Http\Controllers\Admin\AdminGeneriquePageController;
+use App\Http\Controllers\GeneriquePageController;
 use App\Models\Article;
 use App\Models\Partner;
 use App\Models\InstitutionPartner;
@@ -34,6 +36,8 @@ Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/Nos-programmes', fn() => view('programmes'))->name('programmes');
 Route::get('/Les-activites-prevues', fn() => view('activity'))->name('activity');
 Route::get('/Public-cible', fn() => view('target'))->name('target');
+
+Route::get('/page/{page:slug}', [GeneriquePageController::class, 'show'])->name('pages.show');
 
 // ✅ Routes publiques des partenaires (Front)
 Route::get('/Nos-partenaires', [PartnerController::class, 'index'])->name('partenaires');
@@ -120,6 +124,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
     Route::get('/profile', [AdminUserController::class, 'profile'])->name('admin.profile');
     Route::post('/profile/update', [AdminUserController::class, 'updateProfile'])->name('admin.profile.update');
+
+    Route::get('pages', [AdminGeneriquePageController::class, 'index'])->name('admin.pages.index');
+    Route::get('pages/create', [AdminGeneriquePageController::class, 'create'])->name('admin.pages.create');
+    Route::post('pages', [AdminGeneriquePageController::class, 'store'])->name('admin.pages.store');
+    Route::get('pages/{page}/edit', [AdminGeneriquePageController::class, 'edit'])->name('admin.pages.edit');
+    Route::put('pages/{page}', [AdminGeneriquePageController::class, 'update'])->name('admin.pages.update');
+    Route::delete('pages/{page}', [AdminGeneriquePageController::class, 'destroy'])->name('admin.pages.destroy');
 
 
 });

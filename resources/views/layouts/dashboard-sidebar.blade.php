@@ -26,6 +26,11 @@
             </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.pages.index') }}">
+                <i class="fas fa-users"></i> Gestion des pages
+            </a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="{{ route('admin.users.index') }}">
                 <i class="fas fa-users"></i> Gestion des utilisateurs
             </a>

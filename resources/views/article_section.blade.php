@@ -14,7 +14,7 @@
                                 <p>{{ $article->type }}</p>
                                 <p>{{ $article->created_at->format('d/m/Y') }}</p>
                             </div>
-                            <h5 class="card-title">{{ $article->title }}</h5>
+                            <h5 class="card-title truncate-text">{{ $article->title }}</h5>
                             <p class="card-text">{{ Str::limit($article->description, 100) }}</p>
                             <a href="{{ route('articles.show', $article->slug) }}" class="btn btn-color btn-primary mt-auto">Lire la suite</a>
                         </div>

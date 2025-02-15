@@ -59,38 +59,39 @@
     @if(isset($load_tinymce) && $load_tinymce)
         <script src="https://cdn.tiny.cloud/1/{{ config('services.tinymce.api_key') }}/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
         <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    if (typeof tinymce !== 'undefined') {
-                        tinymce.init({
-                            selector: 'textarea.editor',
-                            menubar: true,
-                            plugins: 'lists link image',
-                            toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
-                            images_upload_url: '/upload-image',
-                            images_upload_handler: (blobInfo, success, failure) => {
-        let formData = new FormData();
-        formData.append('file', blobInfo.blob(), blobInfo.filename());
+            document.addEventListener("DOMContentLoaded", function() {
+                if (typeof tinymce !== 'undefined') {
+                    tinymce.init({
+                        selector: 'textarea.editor',
+                        menubar: true,
+                        plugins: 'lists link image',
+                        toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
+                        images_upload_url: '/upload-image',
+                        images_upload_handler: (blobInfo) => {
+                            return new Promise((resolve, reject) => {
+                                let formData = new FormData();
+                                formData.append('file', blobInfo.blob(), blobInfo.filename());
 
-        fetch('/upload-image', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            }
-        })
-        .then(response => response.json())
-        .then(result => {
-            if (result && result.location) {
-                success(result.location);
-            } else {
-                failure("L'upload a échoué.");
-            }
-        })
-        .catch(() => {
-            failure("Erreur lors de l'upload.");
-        });
-    },
-
+                                fetch('/upload-image', {
+                                    method: 'POST',
+                                    body: formData,
+                                    headers: {
+                                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                                    }
+                                })
+                                .then(response => response.json())
+                                .then(result => {
+                                    if (result && result.location) {
+                                        resolve(result.location);
+                                    } else {
+                                        reject("L'upload a échoué.");
+                                    }
+                                })
+                                .catch(() => {
+                                    reject("Erreur lors de l'upload.");
+                                });
+                            });
+                        },
                         content_css: '//www.tiny.cloud/css/codepen.min.css'
                     });
                 } else {

@@ -229,8 +229,7 @@ i{
 
 // Footer
 .footer {
-  background-color: $primary-color; // Vert principal pour le fond
-  color: $text-light;
+ 
 
   .footer-logo {
     width: 50px; 
@@ -262,7 +261,7 @@ i{
         text-decoration: none;
         &:hover {
           text-decoration: underline;
-          color: $secondary-color; // Lien en jaune sur hover
+          color: $secondary-color !important; // Lien en jaune sur hover
         }
       }
     }

@@ -13150,11 +13150,6 @@ i {
   color: #495057;
 }
 
-.footer {
-  background-color: #137c49;
-  color: #FFFFFF;
-}
-
 .footer .footer-logo {
   width: 50px;
   height: auto;
@@ -13187,7 +13182,7 @@ i {
 
 .footer ul li a:hover {
   text-decoration: underline;
-  color: #FFCC00;
+  color: #FFCC00 !important;
 }
 
 .pagination .page-link {

@@ -24,7 +24,7 @@ class AdminGeneriquePageController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'meta_description' => 'nullable|string|max:255',
-            'slug' => 'required|string|max:255|unique:generique_pages,slug',
+            'slug' => 'required|string|max:255|regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/|unique:generique_pages,slug',
             'content' => 'nullable|string',
         ]);
 
@@ -43,7 +43,7 @@ class AdminGeneriquePageController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'meta_description' => 'nullable|string|max:255',
-            'slug' => 'required|string|max:255|unique:generique_pages,slug,' . $page->id,
+            'slug' => 'required|string|max:255|regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/|unique:generique_pages,slug,' . $page->id,
             'content' => 'nullable|string',
         ]);
 

@@ -36,7 +36,7 @@
         
         <div class="mb-3">
             <label for="type" class="form-label">Type d'Article</label>
-            <input class="form-control" id="type" name="type" required>
+            <input class="form-control" id="type" name="type" value="{{ $article->type }}" required>
         </div>
 
         <div class="mb-3">

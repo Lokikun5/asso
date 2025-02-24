@@ -4,13 +4,13 @@
       <div class="header-logo">
         <img src="{{ asset('image/assologo-1.webp') }}" alt="logo">
       </div>
-</div>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav gap-3">
-      <a class="nav-item nav-link {{ Request::routeIs('welcome') ? 'active' : '' }}" href="{{ route('welcome') }}">Accueil</a>
+        <a class="nav-item nav-link {{ Request::routeIs('welcome') ? 'active' : '' }}" href="{{ route('welcome') }}">Accueil</a>
         <a class="nav-item nav-link {{ Request::routeIs('programmes') ? 'active' : '' }}" href="{{ route('programmes') }}">Programmes</a>
         <a class="nav-item nav-link {{ Request::routeIs('activity') ? 'active' : '' }}" href="{{ route('activity') }}">Activités</a>
         <a class="nav-item nav-link {{ Request::routeIs('target') ? 'active' : '' }}" href="{{ route('target') }}">Public cible</a>
@@ -28,8 +28,19 @@
           </ul>
         </div>
 
-        <a class="nav-item nav-link {{ Request::routeIs('articles.index') ? 'active' : '' }}" href="{{ route('articles.index') }}">Articles</a>
-        <a class="nav-item nav-link {{ Request::routeIs('podcasts.index') ? 'active' : '' }}" href="{{ route('podcasts.index') }}">Podcasts</a>
+        <!-- Nouveau menu déroulant "Media" -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle {{ Request::routeIs('articles.index') || Request::routeIs('podcasts.index') ? 'active' : '' }}" href="#" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Média
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="mediaDropdown">
+            <li><a class="dropdown-item {{ Request::routeIs('articles.index') ? 'active' : '' }}" href="{{ route('articles.index') }}">Articles</a></li>
+            <li><a class="dropdown-item {{ Request::routeIs('podcasts.index') ? 'active' : '' }}" href="{{ route('podcasts.index') }}">Podcasts</a></li>
+          </ul>
+        </div>
+
+        <!-- Lien Contact -->
+        <a class="nav-item nav-link" href="mailto:example@gmail.com">Contact</a>
       </div>
     </div>
 

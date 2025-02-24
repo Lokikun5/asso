@@ -12704,7 +12704,7 @@ span {
 .accordion-body ul li::before {
   content: "✔";
   font-size: 1rem;
-  color: #007BFF;
+  color: #137c49;
   flex-shrink: 0;
 }
 

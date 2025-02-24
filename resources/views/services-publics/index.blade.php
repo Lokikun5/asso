@@ -22,8 +22,12 @@
         <div class="container">
             <h1 class="mb-4">Nos partenaires - secteur privé</h1>
             <p class="text-responsive mt-5 mb-5">
-                Désireuse de donner aux jeunes les moyens de rêver et de réussir, notre association est le trait d’union entre les talents de demain et les acteurs qui façonnent le monde d’aujourd’hui. 
-                En collaborant avec les écoles et universités pour inspirer sur le terrain, les entreprises pour offrir des opportunités concrètes d’immersion et avec les <span>services publics</span> pour mobiliser des ressources, nous créons ensemble une dynamique d’impact. 
+                Désireuse de donner aux jeunes les moyens de rêver et de réussir, notre association est le trait d’union entre les talents de demain et les acteurs qui façonnent le monde d’aujourd’hui.
+            </p>   
+            <p class="text-responsive"> 
+                En collaborant avec les écoles et universités pour inspirer sur le terrain, les entreprises pour offrir des opportunités concrètes d’immersion et avec les <span>services publics</span> pour mobiliser des ressources, nous créons ensemble une dynamique d’impact.
+            </p> 
+            <p class="text-responsive"> 
                 Votre engagement à nos côtés, c’est l’assurance de laisser une empreinte durable, de révéler des talents, et d’inspirer une génération à changer le monde. 
             </p>
             <p class="text-center font-weight-bold">Rejoignez-nous aujourd’hui pour contribuer, promouvoir

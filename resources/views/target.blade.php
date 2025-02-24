@@ -26,7 +26,7 @@
             <h1 class="text-center mb-4"><i class="fas fa-bullseye"></i> Public cible</h1>
 
             <p class="text-center">
-                Notre initiative s’adresse à un public varié, uni par une ambition commune :
+                Notre initiative s’adresse à un public varié, uni par une ambition commune,
                 préparer la prochaine génération à réussir dans des domaines clés.
             </p>
 
@@ -41,7 +41,7 @@
             <!-- Jeunes élèves et étudiants -->
             <div class="col-md-4 d-flex">
                 <div class="p-4 border rounded shadow-sm flex-fill d-flex flex-column">
-                    <h3><i class="fas fa-graduation-cap"></i> Jeunes Élèves et Étudiants</h3>
+                    <h3><i class="fas fa-graduation-cap"></i> Jeunes Élèves et Étudiantes</h3>
                     <p class="text-responsive">
                         Collégien(e)s, lycéen(ne)s et universitaires en quête d’orientation et d’opportunités professionnelles.
                     </p>
@@ -61,7 +61,7 @@
             <!-- Entreprises -->
             <div class="col-md-4 d-flex">
                 <div class="p-4 border rounded shadow-sm flex-fill d-flex flex-column">
-                    <h3><i class="fas fa-building"></i> Organisme du secteur public</h3>
+                    <h3><i class="fas fa-building"></i>Entreprises du secteur privé</h3>
                     <p class="text-responsive">
                         Acteurs des domaines de l’ingénierie, de l’informatique, de la santé et des nouvelles technologies.
                        

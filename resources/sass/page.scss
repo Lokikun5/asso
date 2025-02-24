@@ -24,7 +24,7 @@
   }
 
   p {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
     color: #495057 !important; 
     line-height: 1.8 !important;
     margin-bottom: 1.5rem !important;
@@ -108,4 +108,32 @@ justify-content: space-around !important;
 /* ✅ Ajout d'un espace homogène entre les cartes */
 .row.g-4 > [class*="col-"] {
 margin-bottom: 1.5rem !important; /* Espacement uniforme */
+}
+
+.accordion-body {
+  ul {
+      list-style: none; // Supprime les puces par défaut
+      padding: 0;
+      margin: 0;
+
+      li {
+          position: relative;
+          display: flex;
+          align-items: center; // Alignement vertical correct
+          gap: 8px; // Réduit l’espace entre l’icône et le texte
+          padding-left: 0; // Supprime le décalage trop important
+          margin-bottom: 10px;
+          font-size: 1rem;
+          color: #333;
+          font-weight: 500;
+
+          // Ajoute une icône avant chaque élément
+          &::before {
+              content: "✔"; 
+              font-size: 1rem;
+              color: #007BFF; // Couleur de l’icône
+              flex-shrink: 0; // Empêche l’icône de se réduire sur petits écrans
+          }
+      }
+  }
 }

@@ -24,13 +24,17 @@
 <div class="container py-5">
     <h1 class="text-center mb-4">Nos partenaires - écoles et universités</h1>
 
-    <p class="text-center">
-        Désireuse de donner aux jeunes les moyens de rêver et de réussir, notre association est le trait d’union entre les talents de demain et les acteurs qui façonnent le monde d’aujourd’hui. 
-        En collaborant avec les <span>écoles et universités</span> pour inspirer sur le terrain, les entreprises pour offrir des opportunités concrètes d’immersion et avec les services publics pour mobiliser des ressources, nous créons ensemble une dynamique d’impact. 
-        Votre engagement à nos côtés, c’est l’assurance de laisser une empreinte durable, de révéler des talents, et d’inspirer une génération à changer le monde. 
+    <p class="text-responsive">
+        Désireuse de donner aux jeunes les moyens de rêver et de réussir, notre association est le trait d’union entre les talents de demain et les acteurs qui façonnent le monde d’aujourd’hui.
+    </p>
+    <p class="text-responsive">
+        En collaborant avec les <span>écoles et universités</span> pour inspirer sur le terrain, les entreprises pour offrir des opportunités concrètes d’immersion et avec les services publics pour mobiliser des ressources, nous créons ensemble une dynamique d’impact.
+    </p>
+    <p class="text-responsive">
+    Votre engagement à nos côtés, c’est l’assurance de laisser une empreinte durable, de révéler des talents, et d’inspirer une génération à changer le monde. 
     </p>
 
-    <p class="text-center font-weight-bold">Rejoignez-nous aujourd’hui pour contribuer, promouvoir
+    <p class="text-center font-weight-bold mt-5">Rejoignez-nous aujourd’hui pour contribuer, promouvoir
          et construire l’excellence de demain.
     </p>
 

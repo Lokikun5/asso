@@ -24,7 +24,7 @@
             <li><a class="dropdown-item {{ Request::routeIs('partenaires') ? 'active' : '' }}" href="{{ route('partenaires') }}">Formateurs et bénévoles</a></li>
             <li><a class="dropdown-item {{ Request::routeIs('etablissements.index') ? 'active' : '' }}" href="{{ route('etablissements.index') }}">Écoles et universités</a></li>
             <li><a class="dropdown-item {{ Request::routeIs('private.companies') ? 'active' : '' }}" href="{{ route('private.companies') }}">Entreprises du secteur privé</a></li>
-            <li><a class="dropdown-item {{ Request::routeIs('sector.utilities') ? 'active' : '' }}" href="{{ route('sector.utilities') }}">Services publics</a></li>
+            <li><a class="dropdown-item {{ Request::routeIs('sector.utilities') ? 'active' : '' }}" href="{{ route('sector.utilities') }}">Secteur privé</a></li>
           </ul>
         </div>
 

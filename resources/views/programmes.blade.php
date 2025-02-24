@@ -49,7 +49,7 @@
                     <div class="p-4 border rounded shadow-sm">
                         <h3><i class="fas fa-rocket"></i> Promouvoir des métiers d'avenir</h3>
                         <p>
-                            Sensibiliser les jeunes africains aux métiers d'avenir dans les domaines technologiques, médicaux et techniques.
+                            Sensibiliser les jeunes africain(en)s aux métiers d'avenir dans les domaines technologiques, médicaux et techniques.
                         </p>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                     <div class="p-4 border rounded shadow-sm">
                         <h3><i class="fas fa-book"></i> L’Inclusion éducative et la création d’un réseau de soutien</h3>
                         <p>Offrir ces opportunités à des jeunes issus de milieux diversifiés.</p>
-                        <p>Favoriser l'accès à des réseaux professionnels et à des mentors.</p>
+                        <p>Favoriser l'accès à des réseaux professionnels et à des mentores.</p>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@
                     <div class="p-4 border rounded shadow-sm">
                         <h3><i class="fas fa-handshake"></i> Créer un réseau de soutien</h3>
                         <p>
-                            Connecter les participantes avec des mentors, des pairs et des institutions engagées, 
+                            Connecter les participantes avec des mentores, des pairs et des institutions engagées, 
                             pour les soutenir dans leurs parcours académiques et professionnels.
                         </p>
                     </div>

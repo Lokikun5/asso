@@ -48,7 +48,7 @@
                             <ul>
                                 <li>Organisation de sessions pratiques et semaines des métiers, animées par des professionnel(le)s.</li>
                                 <li>Démonstrations techniques (équipements d’ingénierie, outils informatiques).</li>
-                                <li>Partages d'expériences sur les parcours académiques et professionnels.</li>
+                                <li>Partages d'expériences sur les parcours académiques et professionnel(le)s.</li>
                             </ul>
                         </div>
                     </div>

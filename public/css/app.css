@@ -12521,7 +12521,6 @@ table {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
-  border: solid 2px #137c49;
   border-radius: 1%;
 }
 
@@ -12539,7 +12538,6 @@ table {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
-  border: solid 2px #137c49;
   border-radius: 1%;
 }
 
@@ -12557,7 +12555,6 @@ table {
     -o-object-fit: cover;
        object-fit: cover;
     height: 100%;
-    border: solid 2px #137c49;
     border-radius: 1%;
   }
 }
@@ -12965,6 +12962,11 @@ h2 {
 }
 .min-font-weigth {
   font-weight: 300 !important;
+  display: inline-block;
+  white-space: normal;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
 }
 
 html {
@@ -12974,6 +12976,7 @@ html {
 
 .header-logo img {
   width: 6rem;
+  border-radius: 50%;
 }
 
 body {
@@ -12991,7 +12994,7 @@ i {
 }
 
 .navbar {
-  background-color: #137c49;
+  background-color: #f5f4e9;
   color: #2C3E50;
 }
 
@@ -13005,7 +13008,7 @@ i {
 }
 
 .navbar .navbar-nav .nav-link {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #2C3E50;
 }
 
@@ -13106,7 +13109,7 @@ i {
 }
 
 .hero .hero-content p {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   margin-top: 1rem;
   color: #F0FFF4;
 }
@@ -13124,8 +13127,8 @@ i {
 }
 
 .mission p {
-  font-size: 1.5rem;
-  line-height: 1.1;
+  font-size: 1.1rem;
+  line-height: 1.6;
   margin-bottom: 3rem;
   color: #495057;
 }
@@ -13134,11 +13137,23 @@ i {
   font-weight: 800;
 }
 
+.mission .programme {
+  max-width: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
 .mission .programme h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #137c49;
   margin-bottom: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  white-space: normal;
+  text-align: center;
 }
 
 .mission .programme h4 {
@@ -13146,7 +13161,7 @@ i {
 }
 
 .mission .programme p {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: #495057;
 }
 

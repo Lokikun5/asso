@@ -20,7 +20,7 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.articles.update', $article->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.articles.update', $article->id) }}" method="POST" enctype="multipart/form-data" id="articleForm">
         @csrf
         @method('PUT')
 
@@ -40,8 +40,9 @@
         </div>
 
         <div class="mb-3">
-            <label for="text" class="form-label">Contenu</label>
-            <textarea class="form-control editor" id="text" name="text" rows="8" required>{{ $article->text }}</textarea>
+            <label for="textEditor" class="form-label">Contenu</label>
+            <textarea class="form-control editor" id="textEditor">{{ $article->text }}</textarea>
+            <input type="hidden" id="hiddenText" name="text" required>
         </div>
 
         <div class="mb-3">
@@ -72,7 +73,61 @@
         </div>
 
     </form>
-
 </div>
-@endsection
 
+{{-- ✅ Script pour TinyMCE (Uniquement sur les pages nécessaires) --}}
+@if(request()->routeIs(['admin.articles.edit']))
+<script src="https://cdn.tiny.cloud/1/{{ config('services.tinymce.api_key') }}/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("✅ DOM chargé, vérification de TinyMCE...");
+
+    if (typeof tinymce !== "undefined") {
+        console.log("✅ TinyMCE détecté, initialisation...");
+        
+        tinymce.init({
+            selector: 'textarea.editor',
+            menubar: true,
+            plugins: 'lists link image',
+            toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
+            setup: function(editor) {
+                editor.on('init', function() {
+                    console.log("✅ TinyMCE prêt");
+                    tinymce.triggerSave();
+                    document.getElementById('hiddenText').value = editor.getContent();
+                });
+
+                editor.on('change', function() {
+                    tinymce.triggerSave();
+                    document.getElementById('hiddenText').value = editor.getContent();
+                });
+
+                editor.on('blur', function() {
+                    tinymce.triggerSave();
+                    document.getElementById('hiddenText').value = editor.getContent();
+                });
+            }
+        });
+
+        // ✅ Avant soumission, s'assurer que la valeur de TinyMCE est bien enregistrée
+        document.getElementById('articleForm').addEventListener('submit', function(event) {
+            tinymce.triggerSave();
+            let editorContent = tinymce.get("textEditor").getContent();
+            document.getElementById('hiddenText').value = editorContent;
+
+            console.log("✅ Contenu de TinyMCE enregistré :", editorContent);
+
+            if (!editorContent.trim()) {
+                alert("Veuillez remplir le contenu avant de soumettre.");
+                event.preventDefault();
+                return;
+            }
+        });
+    } else {
+        console.error("❌ TinyMCE non chargé");
+    }
+});
+</script>
+@endif
+
+@endsection

@@ -15,7 +15,7 @@ $light-color: #F0FFF4; // Vert très clair pour le fond
 $text-dark: #2C3E50; // Texte sombre
 $text-light: #FFFFFF; // Texte clair
 
-
+$text-size : 1.1rem;
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 300px;
@@ -27,6 +27,7 @@ html {
     img{
 
         width: 6rem;
+        border-radius: 50%;
         
     }
     
@@ -48,12 +49,12 @@ body {
 .new-green{
   color: $primary-color;
 }
-i{
+i {
   color: $primary-color;
 }
 // Header
 .navbar {
-  background-color: $primary-color;
+  background-color: #f5f4e9;
   color: $text-dark;
 
   .navbar-brand {
@@ -66,7 +67,7 @@ i{
   }
 
   .navbar-nav .nav-link {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: $text-dark;
 
     &:hover {
@@ -174,12 +175,13 @@ i{
     }
 
     p {
-      font-size: 1.25rem;
+      font-size: $text-size;
       margin-top: 1rem;
       color: $light-color;
     }
   }
 }
+
 
 // Section : Mission
 .mission {
@@ -195,8 +197,8 @@ i{
     }
   
     p {
-      font-size: 1.5rem;
-      line-height: 1.1;
+      font-size: $text-size;
+      line-height: 1.6;
       margin-bottom: 3rem;
       color: #495057;
 
@@ -206,19 +208,30 @@ i{
     }
   
     .programme {
+      max-width: 100%;
+      overflow: hidden;
+      word-wrap: break-word;
   
       h3 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: 600;
         color: $primary-color;
         margin-bottom: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        white-space: normal; 
+        text-align: center;
+        
       }
+
       h4{
         font-size: 1.2rem; 
       }
   
       p {
-        font-size: 1.25rem;
+        font-size: $text-size;
         color: #495057;
       }
     }

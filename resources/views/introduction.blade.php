@@ -27,8 +27,11 @@
 
         <div class="row">
             <div class="col-md-6">
-                <div class="programme p-4 border rounded shadow-sm">
-                    <h3>1. Le Programme TGPD <br> <span class="min-font-weigth"> « Transfert Générationnel, la Passerelle pour Demain » </span></h3>
+                <div class="programme p-4 shadow-sm">
+                    <h3>
+                        <span> 1. Le Programme TGPD</span>
+                        <span class="min-font-weigth"> « Transfert Générationnel, la Passerelle pour Demain » </span>
+                    </h3>
                     <div class ="img-pages">
                         <img src="{{ asset('image/pages/programme-TGPD.webp') }}" alt="programme-TGPD">
                     </div>
@@ -51,7 +54,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="programme p-4 border rounded shadow-sm">
+                <div class="programme p-4 shadow-sm">
                     <h3>2. Le Programme FORV <br> <span class="min-font-weigth"> « Lycéennes, étudiantes, Osez et Rêvez Grand »</span></h3>
                     <div class ="img-pages">
                         <img src="{{ asset('image/pages/programme-FORV.webp') }}" alt="programme-FORV">

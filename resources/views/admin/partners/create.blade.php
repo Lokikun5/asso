@@ -9,7 +9,7 @@
         <h2 class="my-4">➕ Ajouter un Partenaire</h2>
 
         <a href="{{ route('admin.partenaires.index') }}" class="btn btn-secondary mb-3">
-                <i class="fas fa-arrow-left"></i> Retour à la liste des Formateurs / bénévoles
+            <i class="fas fa-arrow-left"></i> Retour à la liste des Formateurs / bénévoles
         </a>
 
         @if ($errors->any())
@@ -22,7 +22,7 @@
             </div>
         @endif
 
-        <form action="{{ route('admin.partenaires.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.partenaires.store') }}" method="POST" enctype="multipart/form-data" id="partenaireForm">
             @csrf
 
             <div class="mb-3">
@@ -41,8 +41,9 @@
             </div>
 
             <div class="mb-3">
-                <label for="text" class="form-label">Présentation complète</label>
-                <textarea class="form-control editor" id="text" name="text" rows="8" required></textarea>
+                <label for="textEditor" class="form-label">Présentation complète</label>
+                <textarea class="form-control editor" id="textEditor"></textarea>
+                <input type="hidden" id="hiddenText" name="text" required>
             </div>
 
             <div class="mb-3">
@@ -61,4 +62,55 @@
         </form>
     </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("✅ DOM chargé");
+
+    if (window.tinymce) {
+        console.log("✅ TinyMCE détecté");
+
+        tinymce.init({
+            selector: 'textarea.editor',
+            menubar: true,
+            plugins: 'lists link image',
+            toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
+            setup: function(editor) {
+                editor.on('init', function() {
+                    console.log("✅ TinyMCE prêt");
+                    tinymce.triggerSave();
+                    document.getElementById('hiddenText').value = editor.getContent();
+                });
+
+                editor.on('change', function() {
+                    tinymce.triggerSave();
+                    document.getElementById('hiddenText').value = editor.getContent();
+                });
+
+                editor.on('blur', function() {
+                    tinymce.triggerSave();
+                    document.getElementById('hiddenText').value = editor.getContent();
+                });
+            }
+        });
+
+        // ✅ Avant soumission, s'assurer que la valeur de TinyMCE est bien enregistrée
+        document.getElementById('partenaireForm').addEventListener('submit', function(event) {
+            tinymce.triggerSave();
+            let editorContent = tinymce.get("textEditor").getContent();
+            document.getElementById('hiddenText').value = editorContent;
+
+            console.log("✅ Contenu de TinyMCE enregistré :", editorContent);
+
+            if (!editorContent.trim()) {
+                alert("Veuillez remplir la présentation complète avant de soumettre.");
+                event.preventDefault();
+                return;
+            }
+        });
+    } else {
+        console.error("❌ TinyMCE non chargé");
+    }
+});
+</script>
 @endsection

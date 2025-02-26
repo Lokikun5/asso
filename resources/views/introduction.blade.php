@@ -15,7 +15,7 @@
 <section class="mission py-5 ">
     <div class="container">
         <h2 class="text-center mb-4">Notre mission</h2>
-        <p>La mission de l'association A.N.G est de faciliter le transfert de connaissances et d'expériences professionnelles entre des experts actifs dans les domaines de l'ingénierie, 
+        <p class="text-responsive">La mission de l'association A.N.G est de faciliter le transfert de connaissances et d'expériences professionnelles entre des experts actifs dans les domaines de l'ingénierie, 
             de l'informatique, de la santé et des nouvelles technologies,
              et les jeunes élèves, étudiant(e)s africain(e)s. 
         </p>

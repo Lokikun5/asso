@@ -22,6 +22,11 @@
    
 <div class="container py-5">
     <h1 class="text-center fw-bold mb-4">Tous les articles</h1>
+    <div class="d-flex d-flex justify-content-center align-items-center m-5">
+        <a href="https://www.linkedin.com/company/africa-next-generation/" class="btn btn-outline-dark mx-1 fw-bold">
+            suivez notre actualité sur linkedin
+        </a>
+    </div>
 
     <!-- FILTRES -->
     <div class="text-center mb-4 filter-display">

@@ -25,12 +25,12 @@
         <div class="container">
             <h1 class="text-center mb-4"><i class="fas fa-bullseye"></i> Public cible</h1>
 
-            <p class="text-center">
+            <p class="text-responsive">
                 Notre initiative s’adresse à un public varié, uni par une ambition commune,
                 préparer la prochaine génération à réussir dans des domaines clés.
             </p>
 
-            <p class="text-center">
+            <p class="text-responsive">
                 Que vous soyez un jeune en quête de repères, une institution éducative ou 
                 une entreprise souhaitant transmettre son expertise, notre programme est conçu pour créer des passerelles entre ces acteurs 
                 afin d’inspirer, guider et construire l’avenir ensemble.

@@ -1,10 +1,10 @@
-<footer class="footer bg-light py-5">
+<footer class="footer py-5">
     <div class="container">
         <div class="row align-items-center">
             <!-- Logo et nom -->
             <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
                 <div class="d-flex align-items-center gap-3 justify-content-center justify-content-md-start">
-                    <img src="{{ asset('image/assologo.webp') }}" alt="Logo Association A.N.G." class="footer-logo">
+                    <img src="{{ asset('image/assologo-3.webp') }}" alt="Logo Association A.N.G." class="footer-logo">
                     <h3 class="mb-0 new-green">Association A.N.G.</h3>
                 </div>
                 <p class="mt-2 text-muted">&copy; {{ date('Y') }} Association A.N.G. - Tous droits réservés.</p>
@@ -30,10 +30,14 @@
                         <i class="bi bi-envelope-fill me-2"></i>
                         <a href="mailto:contact@africa-next-generation.org" class="text-decoration-none text-muted">contact@africa-next-generation.org</a>
                     </li>
-                     <!--<li class="mb-2">
+                     <li class="mb-2">
                         <i class="bi bi-telephone-fill me-2"></i>
-                        <a href="tel:+1234567890" class="text-decoration-none text-muted">+12 34 56 78 90</a>
-                    </li>-->
+                        <a href="tel:+228 70 63 49 89" class="text-decoration-none text-muted">+228 70 63 49 89</a>
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-telephone-fill me-2"></i>
+                        <a href="tel:+22898933501" class="text-decoration-none text-muted">+228 98 93 35 01</a>
+                    </li>
                     <li class="mb-2">
                         <i class="bi bi-geo-alt-fill me-2"></i>
                         Adresse : Lomé-TOGO

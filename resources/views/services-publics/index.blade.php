@@ -14,13 +14,13 @@
     @include('layouts.banner')
     @php
         $breadcrumbs = [
-            ['name' => 'secteur privé', 'url' => route('sector.utilities')]
+            ['name' => 'Secteur public', 'url' => route('sector.utilities')]
         ];
     @endphp
     @include('components.breadcrumbs', ['breadcrumbs' => $breadcrumbs])
     <section class="page-content py-5">
         <div class="container">
-            <h1 class="mb-4">Nos partenaires - secteur privé</h1>
+            <h1 class="mb-4">Nos partenaires - Secteur public</h1>
             <p class="text-responsive mt-5 mb-5">
                 Désireuse de donner aux jeunes les moyens de rêver et de réussir, notre association est le trait d’union entre les talents de demain et les acteurs qui façonnent le monde d’aujourd’hui.
             </p>   

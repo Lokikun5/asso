@@ -23,12 +23,12 @@
         <div class="container">
             <h1 class="text-center mb-4"><i class="fas fa-calendar"></i> Nos activités</h1>
 
-            <p class="text-center">
+            <p class="text-responsive">
                 Pour atteindre nos objectifs et permettre aux jeunes de découvrir, d’apprendre et de se projeter
                 dans leur avenir professionnel, notre association propose un ensemble d'activités diversifiées et enrichissantes.
             </p>
 
-            <p class="text-center">
+            <p class="text-responsive">
                 Ces initiatives, pensées pour inspirer et accompagner, offrent des opportunités concrètes de rencontres 
                 et d’échanges avec des professionnels afin de découvrir les métiers d’avenir et de mieux préparer leur future carrière.
             </p>

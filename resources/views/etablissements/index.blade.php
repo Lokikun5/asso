@@ -56,7 +56,7 @@
                     <div class="col-md-6 mt-4">
                         <div class="p-4 border rounded shadow-sm">
                             <h3><i class="fas fa-handshake"></i> {{ $partner->name }}</h3>
-                            <p>{{ $partner->description }}</p>
+                            <p class="text-responsive">{{ $partner->description }}</p>
                             @if($partner->additional_info)
                                 <ul>
                                     @foreach($partner->additional_info as $info)

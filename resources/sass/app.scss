@@ -242,10 +242,12 @@ i {
 
 // Footer
 .footer {
+
+  background-color: #f5f4e9;
  
 
   .footer-logo {
-    width: 50px; 
+    width: 100px; 
     height: auto;
   }
 
@@ -274,7 +276,7 @@ i {
         text-decoration: none;
         &:hover {
           text-decoration: underline;
-          color: $secondary-color !important; // Lien en jaune sur hover
+          color: $primary-color !important;
         }
       }
     }

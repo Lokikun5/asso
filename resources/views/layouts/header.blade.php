@@ -24,14 +24,14 @@
             <li><a class="dropdown-item {{ Request::routeIs('partenaires') ? 'active' : '' }}" href="{{ route('partenaires') }}">Formateurs et bénévoles</a></li>
             <li><a class="dropdown-item {{ Request::routeIs('etablissements.index') ? 'active' : '' }}" href="{{ route('etablissements.index') }}">Écoles et universités</a></li>
             <li><a class="dropdown-item {{ Request::routeIs('private.companies') ? 'active' : '' }}" href="{{ route('private.companies') }}">Entreprises du secteur privé</a></li>
-            <li><a class="dropdown-item {{ Request::routeIs('sector.utilities') ? 'active' : '' }}" href="{{ route('sector.utilities') }}">Secteur privé</a></li>
+            <li><a class="dropdown-item {{ Request::routeIs('sector.utilities') ? 'active' : '' }}" href="{{ route('sector.utilities') }}">Secteur public</a></li>
           </ul>
         </div>
 
         <!-- Nouveau menu déroulant "Media" -->
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle {{ Request::routeIs('articles.index') || Request::routeIs('podcasts.index') ? 'active' : '' }}" href="#" id="mediaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Média
+            Médias
           </a>
           <ul class="dropdown-menu" aria-labelledby="mediaDropdown">
             <li><a class="dropdown-item {{ Request::routeIs('articles.index') ? 'active' : '' }}" href="{{ route('articles.index') }}">Articles</a></li>

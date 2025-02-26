@@ -58,7 +58,7 @@
     <!-- Bouton d'ouverture du carousel -->
     <div class="text-center my-4">
         <button type="button" class="btn btn-outline-secondary btn-lg px-5" data-bs-toggle="modal" data-bs-target="#imageCarouselModal">
-            📷 Voir en plein écran
+            Voir en plein écran
         </button>
     </div>
 

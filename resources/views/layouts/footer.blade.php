@@ -30,17 +30,17 @@
                         <i class="bi bi-envelope-fill me-2"></i>
                         <a href="mailto:contact@africa-next-generation.org" class="text-decoration-none text-muted">contact@africa-next-generation.org</a>
                     </li>
-                    <li class="mb-2">
+                     <!--<li class="mb-2">
                         <i class="bi bi-telephone-fill me-2"></i>
                         <a href="tel:+1234567890" class="text-decoration-none text-muted">+12 34 56 78 90</a>
-                    </li>
+                    </li>-->
                     <li class="mb-2">
                         <i class="bi bi-geo-alt-fill me-2"></i>
-                        Adresse complète (à compléter)
+                        Adresse : Lomé-TOGO
                     </li>
                     <li class="mb-2">
                         <i class="fab fa-linkedin me-2"></i>
-                        <a href="#" class="text-decoration-none text-muted">LinkedIn</a>
+                        <a href="https://www.linkedin.com/company/africa-next-generation/" class="text-decoration-none text-muted">LinkedIn</a>
                     </li>
                     <li class="mb-2">
                         <i class="fab fa-facebook me-2"></i>

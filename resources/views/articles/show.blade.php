@@ -45,7 +45,7 @@
         {!! $article->text !!}
     </div>
     <div class="d-flex d-flex justify-content-center align-items-center">
-        <a href="#" class="btn btn-outline-dark mx-1 fw-bold">
+        <a href="https://www.linkedin.com/company/africa-next-generation/" class="btn btn-outline-dark mx-1 fw-bold">
             suivez notre actualité sur linkedin
         </a>
     </div>
@@ -82,7 +82,7 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="carouselLabel">Galerie d'images</h5>
+                    <h5 class="modal-title" id="carouselLabel">Galerie photo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

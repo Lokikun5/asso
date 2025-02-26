@@ -12600,7 +12600,6 @@ table {
 
 .page-content p {
   font-size: 1rem !important;
-  color: #495057 !important;
   line-height: 1.8 !important;
   margin-bottom: 1.5rem !important;
 }
@@ -12708,6 +12707,56 @@ span {
   flex-shrink: 0;
 }
 
+.partner-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.partner-card-image {
+  width: 100%;
+  height: 80vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  display: block;
+  border-radius: 8px;
+}
+
+.partner-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+}
+
+.partner-card-overlay a {
+  margin: 0.5rem;
+}
+
+.partner-card:hover .partner-card-overlay {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .partner-card .partner-card-overlay {
+    opacity: 1;
+  }
+}
 .card {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

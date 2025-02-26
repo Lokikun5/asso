@@ -27,21 +27,28 @@
             
             <div class="row mt-4">
             @foreach($partners as $partner)
-            <div class="col-md-6 mb-4">
-                <div class="p-4 border rounded shadow-sm d-flex align-items-center">
-                    <img src="{{ asset($partner->profile_picture) }}" alt="{{ $partner->first_name }}" class="rounded-circle me-3" width="80" height="80">
-                    <div>
+                <div class="col-md-4 mb-4">
+                    <div class="partner-card">
+                    <!-- Image du partenaire -->
+                    <img 
+                        src="{{ asset($partner->profile_picture) }}" 
+                        alt="{{ $partner->first_name }}" 
+                        class="partner-card-image"
+                    >
+                
+                    <!-- Overlay affiché au survol / clic -->
+                    <div class="partner-card-overlay">
                         <h3><i class="fas fa-chalkboard-teacher"></i> {{ $partner->first_name }} {{ $partner->last_name }}</h3>
-                        <p>{{ Str::limit($partner->description, 100) }}</p>
-                        <a href="{{ route('partenaire.show', $partner->slug) }}" class="btn btn-color btn-primary marginbot">
-                        Découvrir le partenaire
-                        </a>
-                        <a href="{{ $partner->partner_link }}" class="btn btn-color2">
-                            Linkedin
-                        </a>
+                        <p class="des-colors">{{ Str::limit($partner->description, 100) }}</p>
+                            <a href="{{ route('partenaire.show', $partner->slug) }}" class="btn btn-color btn-primary marginbot">
+                                Découvrir le partenaire
+                            </a>
+                            <a href="{{ $partner->partner_link }}" class="btn btn-color2" target="_blank">
+                                Linkedin
+                            </a>
                     </div>
-                </div>
             </div>
+        </div>
         @endforeach
         </div>
 

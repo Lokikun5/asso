@@ -54,6 +54,15 @@
             <button type="submit" class="btn btn-success">✅ Publier</button>
         </div>
     </form>
+    <form action="{{ route('admin.articles.importLinkedin') }}" method="POST">
+    @csrf
+    <div class="mb-3">
+        <label for="linkedin_url" class="form-label">URL de l'article LinkedIn</label>
+        <input type="url" class="form-control" id="linkedin_url" name="linkedin_url" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Importer</button>
+</form>
+
 </div>
 
 {{-- ✅ Script pour TinyMCE (Uniquement sur les pages nécessaires) --}}

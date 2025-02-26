@@ -7,6 +7,8 @@ use App\Models\Media;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use DOMDocument;
+use DOMXPath;
 
 class ArticlesController extends Controller
 {
@@ -201,5 +203,54 @@ class ArticlesController extends Controller
         $media->delete();
 
         return response()->json(['success' => true]);
+    }
+
+
+    public function importLinkedin(Request $request)
+    {
+        $request->validate([
+            'linkedin_url' => 'required|url'
+        ]);
+
+        $url = $request->input('linkedin_url');
+        $data = $this->fetchLinkedinMetadata($url);
+
+        if (!$data['title']) {
+            return back()->with('error', 'Impossible d’extraire l’article LinkedIn.');
+        }
+
+        // Sauvegarde dans la base de données
+        $article = new Article();
+        $article->title = $data['title'];
+        $article->text = "Article importé depuis LinkedIn";
+        $article->image = $data['image'] ?? null;
+        $article->source_url = $url;
+        $article->save();
+
+        return redirect()->route('admin.articles.index')->with('success', 'Article importé avec succès !');
+    }
+
+    private function fetchLinkedinMetadata($url)
+    {
+        $html = file_get_contents($url);
+        libxml_use_internal_errors(true);
+        $doc = new DOMDocument();
+        $doc->loadHTML($html);
+        $xpath = new DOMXPath($doc);
+
+        $data = [
+            'title' => '',
+            'image' => '',
+            'description' => ''
+        ];
+
+        foreach (['title', 'image', 'description'] as $property) {
+            $node = $xpath->query("//meta[@property='og:{$property}']");
+            if ($node->length > 0) {
+                $data[$property] = $node->item(0)->getAttribute('content');
+            }
+        }
+
+        return $data;
     }
 }

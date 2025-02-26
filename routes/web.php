@@ -93,6 +93,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::delete('/articles/{id}', [ArticlesController::class, 'destroy'])->name('admin.articles.destroy');
     Route::patch('/articles/{id}/toggle', [ArticlesController::class, 'toggle'])->name('admin.articles.toggle');
 
+    Route::post('/articles/import-linkedin', [ArticlesController::class, 'importLinkedin'])->name('admin.articles.importLinkedin');
+
+
     // ✅ Gestion des Partenaires
     Route::get('/partenaires', [PartnerController::class, 'adminIndex'])->name('admin.partenaires.index');
     Route::get('/partenaires/create', [PartnerController::class, 'create'])->name('admin.partenaires.create');

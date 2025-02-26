@@ -28,7 +28,7 @@
                 <ul class="list-unstyled">
                     <li class="mb-2">
                         <i class="bi bi-envelope-fill me-2"></i>
-                        <a href="mailto:example@associationang.com" class="text-decoration-none text-muted">example@associationang.com</a>
+                        <a href="mailto:contact@africa-next-generation.org" class="text-decoration-none text-muted">contact@africa-next-generation.org</a>
                     </li>
                     <li class="mb-2">
                         <i class="bi bi-telephone-fill me-2"></i>

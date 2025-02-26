@@ -40,7 +40,7 @@
         </div>
 
         <!-- Lien Contact -->
-        <a class="nav-item nav-link" href="mailto:example@gmail.com">Contact</a>
+        <a class="nav-item nav-link" href="mailto:contact@africa-next-generation.org">Contact</a>
       </div>
     </div>
 

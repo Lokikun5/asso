@@ -40,7 +40,17 @@
         </div>
 
         <!-- Lien Contact -->
-        <a class="nav-item nav-link" href="mailto:contact@africa-next-generation.org">Contact</a>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Contact
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+            <li><a class="dropdown-item" href="tel:+228 70 63 49 89"><i class="fa-solid fa-phone"></i> Téléphone</a></li>
+            <li><a class="dropdown-item" href="mailto:contact@africa-next-generation.org"><i class="fa-solid fa-envelope"></i> Mail</a></li>
+          </ul>
+        </div>
+        <a class="linkedin-icon" href="https://www.linkedin.com/company/africa-next-generation" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
       </div>
     </div>
 

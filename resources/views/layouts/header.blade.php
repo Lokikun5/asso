@@ -45,7 +45,7 @@
             Contact
           </a>
           <ul class="dropdown-menu" aria-labelledby="contactDropdown">
-            <li><a class="dropdown-item" href="tel:+228 70 63 49 89"><i class="fa-solid fa-phone"></i> Téléphone</a></li>
+            <li><a class="dropdown-item" href="tel:+228 92 40 55 08"><i class="fa-solid fa-phone"></i> Téléphone</a></li>
             <li><a class="dropdown-item" href="mailto:contact@africa-next-generation.org"><i class="fa-solid fa-envelope"></i> Mail</a></li>
           </ul>
         </div>

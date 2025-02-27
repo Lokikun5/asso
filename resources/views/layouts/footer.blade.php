@@ -32,7 +32,7 @@
                     </li>
                      <li class="mb-2">
                         <i class="bi bi-telephone-fill me-2"></i>
-                        <a href="tel:+228 70 63 49 89" class="text-decoration-none text-muted">+228 70 63 49 89</a>
+                        <a href="tel:+228 92 40 55 08" class="text-decoration-none text-muted">+228 92 40 55 08</a>
                     </li>
                     <li class="mb-2">
                         <i class="bi bi-telephone-fill me-2"></i>

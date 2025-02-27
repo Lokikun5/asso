@@ -35,11 +35,11 @@
             </p>
 
             <h2 class="text-center m-5">Nos partenaires nous font confiance pour façonner les leaders de demain</h2>
-            <h2 class="text-center mt-2"><i class="fas fa-landmark"></i> Entreprises du secteur privé</h2>
+            <h2 class="text-center mt-2"><i class="fas fa-landmark"></i> Secteur public</h2>
             <p class="mb-5">Soutien pour accéder à des subventions</p>
 
             @if($utilities->isEmpty())
-                <p>Recherche d’autres partenaires en cours</p>
+                <p>Aucun partenaire pour le moment.</p>
             @else
                 <div class="row justify-content-center">
                     @foreach($utilities as $utilitie)

@@ -28,7 +28,7 @@
 <div class="container py-5">
     <!-- Titre du partenaire -->
     <div class="text-center mb-5">
-        <h1 class="display-5 fw-bold">{{ $partner->first_name }} {{ $partner->last_name }}</h1>
+        <h1 class="display-5c fw-bold">{{ $partner->first_name }} {{ $partner->last_name }}</h1>
         <p class="text-muted">{{ $partner->description }}</p>
     </div>
 

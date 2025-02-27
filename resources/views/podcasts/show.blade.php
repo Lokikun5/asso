@@ -32,7 +32,7 @@
 <section class="py-5 px-5 bg-dark text-white">
     <div class="container row align-items-center">
         <div class="col-md-6">
-            <h1 class="display-5 fw-bold">{{ $podcast->name }}</h1>
+            <h1 class="display-5c fw-bold">{{ $podcast->name }}</h1>
             <p>{{ $podcast->category }}</p>
             <p class="mb-3">
                 Publié le {{ $podcast->created_at->format('d M, Y') }}

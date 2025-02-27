@@ -2,7 +2,7 @@
   <div class="container-fluid gap-3">
     <div class="navbar-brand">
       <div class="header-logo">
-        <img src="{{ asset('image/assologo-1.webp') }}" alt="logo">
+        <img src="{{ asset('image/assologo-3.webp') }}" alt="logo">
       </div>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

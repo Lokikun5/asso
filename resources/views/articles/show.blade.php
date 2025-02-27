@@ -26,7 +26,7 @@
 <div class="container py-5">
     <!-- Titre de l'article -->
     <div class="text-center mb-5">
-        <h1 class="fw-bold display-5">{{ $article->title }}</h1>
+        <h1 class="fw-bold display-5c">{{ $article->title }}</h1>
         <p>{{ $article->created_at->format('d/m/Y') }}</p>
         <p class="text-muted">{{ $article->description }}</p>
     </div>

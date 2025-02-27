@@ -27,7 +27,7 @@
             
             <div class="row mt-4">
             @foreach($partners as $partner)
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-4">
                     <div class="partner-card">
                     <!-- Image du partenaire -->
                     <img 

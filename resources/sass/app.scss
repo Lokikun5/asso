@@ -15,7 +15,7 @@ $light-color: #F0FFF4; // Vert très clair pour le fond
 $text-dark: #2C3E50; // Texte sombre
 $text-light: #FFFFFF; // Texte clair
 
-$text-size : 1.1rem;
+$text-size : 1rem;
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 300px;
@@ -190,9 +190,9 @@ i {
     text-align: center;
   
     h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
-      color: #343a40;
+      color: $primary-color;
       margin-bottom: 3rem;
     }
   

@@ -23,13 +23,13 @@
       display: flex;
       flex-direction: column;
       background-color: #f8f9fa;
-      justify-content: space-between; // Permet d'aligner le bouton en bas
-      flex-grow: 1; // Étend le contenu pour uniformiser la hauteur des cartes
+      justify-content: space-between;
+      flex-grow: 1;
       padding: 1rem;
   }
 
   .card-title {
-      font-size: 1.25rem; // Taille de police du titre
+      font-size: 1rem; // Taille de police du titre
       font-weight: bold;
   }
 

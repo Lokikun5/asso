@@ -230,7 +230,7 @@
 }
 
 .img-pages2 {
-  @include img-pages(50%,400px); 
+  @include img-pages(50%,300px); 
 }
 
 @media (max-width: 768px) {

@@ -61,7 +61,7 @@
             <!-- Entreprises -->
             <div class="col-md-4 d-flex">
                 <div class="p-4 border rounded shadow-sm flex-fill d-flex flex-column">
-                    <h3><i class="fas fa-building"></i>Entreprises du secteur privé</h3>
+                    <h3><i class="fas fa-building"></i> Entreprises du secteur privé</h3>
                     <p class="text-responsive">
                         Acteurs des domaines de l’ingénierie, de l’informatique, de la santé et des nouvelles technologies.
                        

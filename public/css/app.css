@@ -227,7 +227,7 @@ h1, .h1 {
 
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 h2, .h2 {
@@ -664,7 +664,7 @@ progress {
 
 @media (min-width: 1200px) {
   .display-6 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 .list-unstyled {
@@ -12529,7 +12529,7 @@ table {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 400px;
+  height: 300px;
   margin-bottom: 3rem;
 }
 
@@ -12587,15 +12587,15 @@ table {
 }
 
 .page-content h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .page-content h2 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .page-content h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .page-content p {
@@ -12610,7 +12610,7 @@ table {
 }
 
 .page-content ul li {
-  font-size: 1.2rem !important;
+  font-size: 1rem !important;
   color: #495057 !important;
   margin-bottom: 1rem !important;
   list-style-type: none !important;
@@ -12717,7 +12717,7 @@ span {
 
 .partner-card-image {
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -12790,7 +12790,7 @@ span {
 }
 
 .card .card-title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -13021,8 +13021,16 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+.display-5c {
+  font-size: 2rem;
+}
+
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 0.9rem;
 }
 
 .text-responsive {
@@ -13183,7 +13191,7 @@ i {
 }
 
 .hero .hero-content p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-top: 1rem;
   color: #F0FFF4;
 }
@@ -13194,14 +13202,14 @@ i {
 }
 
 .mission h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: #343a40;
+  color: #137c49;
   margin-bottom: 3rem;
 }
 
 .mission p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.9;
   margin-bottom: 3rem;
   color: #495057;
@@ -13235,7 +13243,7 @@ i {
 }
 
 .mission .programme p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #495057;
 }
 

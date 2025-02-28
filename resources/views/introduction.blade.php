@@ -35,7 +35,7 @@
                     <div class ="img-pages">
                         <img src="{{ asset('image/pages/programme-TGPD.webp') }}" alt="programme-TGPD">
                     </div>
-                    <div class="text-responsive">
+                    <div class="text-responsive flex-grow-1 min-h">
                         <p>
                             Ce programme s'adresse <span> aux jeunes élèves, étudiants et étudiantes africain(e)s,</span> 
                             avec pour ambition de les <span>accompagner dans leur orientation scolaire et professionnelle</span> 
@@ -50,7 +50,7 @@
                             En promouvant l'égalité des chances, ce programme offre à chacun des ressources et un réseau adapté pour construire un avenir prometteur.
                         </p>
                     </div>
-                    <a href="{{ route('programmes') }}" class="btn btn-base-color mt-4">En savoir plus</a>
+                    <a href="{{ route('programmes') }}" class="btn btn-base-color">En savoir plus</a>
                 </div>
             </div>
             <div class="col-md-6">
@@ -59,7 +59,7 @@
                     <div class ="img-pages">
                         <img src="{{ asset('image/pages/programme-FORV.webp') }}" alt="programme-FORV">
                     </div>
-                    <div class="text-responsive">
+                    <div class="text-responsive flex-grow-1 min-h">
                         <p>
                             Ce programme est né de l’idée de faire découvrir aux <span>jeunes filles des collèges, lycées et universités </span> l’éventail de
                             possibilités qui s’offrent à elles quant au choix de <span>leur carrière future.</span>

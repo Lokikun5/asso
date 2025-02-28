@@ -31,6 +31,12 @@
         <h1 class="display-5c fw-bold">{{ $partner->first_name }} {{ $partner->last_name }}</h1>
         <p class="text-muted">{{ $partner->description }}</p>
     </div>
+    <div class="text-center mb-3">
+        @foreach($partner->categories as $category)
+            <span class="badge badge-custom mb-5">{{ $category->name }}</span>
+        @endforeach
+    </div>
+
 
     <!-- Image du partenaire -->
     <div class="text-center mb-5">

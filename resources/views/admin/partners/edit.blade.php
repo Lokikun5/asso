@@ -60,6 +60,27 @@
                 @endif
             </div>
 
+            <div class="mb-3">
+                <label class="form-label">Catégories</label>
+                <div class="d-flex flex-wrap gap-2">
+                @foreach($categories as $category)
+                    <div class="form-check">
+                        <input 
+                            type="checkbox" 
+                            class="form-check-input" 
+                            id="category_{{ $category->id }}" 
+                            name="categories[]" 
+                            value="{{ $category->id }}"
+                            {{ $partner->categories->contains($category->id) ? 'checked' : '' }}>
+                        <label class="form-check-label" for="category_{{ $category->id }}">
+                            {{ $category->name }}
+                        </label>
+                    </div>
+                @endforeach
+                </div>
+            </div>
+
+
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">💾 Enregistrer les modifications</button>
             </div>

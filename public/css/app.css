@@ -13056,6 +13056,10 @@ html {
   scroll-padding-top: 300px;
 }
 
+.base-color {
+  color: #137c49;
+}
+
 .header-logo img {
   width: 6rem;
   border-radius: 50%;
@@ -13314,4 +13318,12 @@ i {
 }
 .linkedin-icon i {
   font-size: 2rem; /* Ajuste selon ton besoin */
+}
+
+.badge-custom {
+  background-color: #ff9800;
+  color: white;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  border-radius: 8px;
 }

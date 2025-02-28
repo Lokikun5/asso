@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
@@ -27,6 +28,12 @@ class Partner extends Model
     public function getProfilePictureAttribute($value)
     {
         return $value ? asset('storage/' . $value) : asset('storage/default-profile.webp');
+    }
+
+
+    public function categories(): BelongsToMany 
+    {
+        return $this->belongsToMany(Category::class, 'partner_category');
     }
 
 }

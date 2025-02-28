@@ -102,6 +102,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::patch('/admin/partenaires/{id}/toggle', [PartnerController::class, 'toggleActive'])->name('admin.partenaires.toggle');
     Route::delete('/partenaires/{id}', [PartnerController::class, 'destroy'])->name('admin.partenaires.destroy');
 
+    //Route::resource('partenaires', PartnerController::class);
+
     Route::get('/institution-partners', [InstitutionPartnerController::class, 'adminIndex'])->name('admin.institution-partners.index');
     Route::get('/institution-partners/create', [InstitutionPartnerController::class, 'create'])->name('admin.institution-partners.create');
     Route::post('/institution-partners', [InstitutionPartnerController::class, 'store'])->name('admin.institution-partners.store');

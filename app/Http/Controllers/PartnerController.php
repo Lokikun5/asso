@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Partner;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -83,7 +84,8 @@ class PartnerController extends Controller
     public function edit($id)
     {
         $partner = Partner::findOrFail($id);
-        return view('admin.partners.edit', compact('partner'));
+        $categories = Category::all(); 
+        return view('admin.partners.edit', compact('partner' ,'categories'));
     }
 
     /**
@@ -119,6 +121,7 @@ class PartnerController extends Controller
         }
 
         $partner->save();
+        $partner->categories()->sync($request->categories ?? []);
         return redirect()->route('admin.partenaires.index')->with('success', 'Partenaire mis à jour avec succès.');
     }
 

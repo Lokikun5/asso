@@ -46,7 +46,7 @@
                             Il vise également à leur permettre de mieux comprendre les opportunités et les défis des différents métiers, 
                             tout en facilitant leur accès à des réseaux professionnels et à des mentors.
                         </p>
-                        <p>
+                        <p class="m0">
                             En promouvant l'égalité des chances, ce programme offre à chacun des ressources et un réseau adapté pour construire un avenir prometteur.
                         </p>
                     </div>
@@ -69,7 +69,7 @@
                             <span>l’autonomisation des jeunes femmes africaines</span> et 
                             <span>à leur inclusion active dans des domaines essentiels</span> tels que l’ingénierie, l’informatique, la santé et les nouvelles technologies.
                         </p>
-                        <p>
+                        <p class="m0">
                         Nous croyons fermement que l'intégration et la réussite des
                         jeunes femmes dans ces secteurs stratégiques sont essentielles pour
                         une société plus équitable et innovante, et nous œuvrons à réduire cette disparité.

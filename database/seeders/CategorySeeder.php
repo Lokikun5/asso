@@ -18,7 +18,7 @@ class CategorySeeder extends Seeder
             ['name' => 'Formateur du Programme TGPD'],
             ['name' => 'Formatrice du Programme FORV'],
             ['name' => 'Mentor du Programme TGPD'],
-            ['name' => 'Mentore du Programme FOR'],
+            ['name' => 'Mentore du Programme FORV'],
         ];
 
         foreach ($categories as $category) {

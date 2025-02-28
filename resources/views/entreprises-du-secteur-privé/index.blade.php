@@ -43,22 +43,23 @@
             @if($companies->isEmpty())
                 <p>Recherche d’autres partenaires en cours</p>
             @else
-                <div class="row justify-content-center">
-                    @foreach($companies as $company)
+            <div class="row justify-content-center">
+                @foreach($companies as $company)
                     <div class="col-md-4 d-flex">
-                        <div class="p-4 mb-5 border rounded shadow-sm flex-fill d-flex flex-column">
-                            <h3><i class="fas fa-handshake"></i>{{ $company->name }}</h3>
-                            <p class="text-responsive">{{ $company->description }}</p>
+                        <div class="p-4 mb-5 border rounded shadow-sm d-flex flex-column h-100 flex-grow-1">
+                            <h3><i class="fas fa-handshake me-2"></i>{{ $company->name }}</h3>
+                            <p class="text-responsive line-height2 flex-grow-1">{{ $company->description }}</p>
                             @if($company->additional_info)
-                                <a href=" {{  $company->additional_info }}" class="btn btn-color2" target="_blank">
-                                    en savoir plus
+                                <a href="{{ $company->additional_info }}" class="btn btn-base-color mt-auto" target="_blank">
+                                    En savoir plus
                                 </a>
-                            @endif   
+                            @endif
                         </div>
                     </div>
-                    @endforeach
-                    <p class="fst-italic">Recherche d’autres partenaires en cours</p>
-                </div>
+                @endforeach
+                <p class="fst-italic text-center w-100">Recherche d’autres partenaires en cours</p>
+            </div>
+
             @endif
         </div>
     </section>

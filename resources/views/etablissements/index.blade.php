@@ -56,9 +56,9 @@
                     <div class="col-md-6 mt-4">
                         <div class="p-4 border rounded shadow-sm">
                             <h3><i class="fas fa-handshake"></i> {{ $partner->name }}</h3>
-                            <p class="text-responsive">{{ $partner->description }}</p>
+                            <p class="text-responsive line-height2">{{ $partner->description }}</p>
                             @if($partner->additional_info)
-                                <a href=" {{  $partner->additional_info }}" class="btn btn-color2" target="_blank">
+                                <a href=" {{  $partner->additional_info }}" class="btn  btn-base-color" target="_blank">
                                     en savoir plus
                                 </a>
                             @endif

@@ -30,7 +30,7 @@
             </div>
             <div class="mb-3">
                 <label for="additional_info" class="form-label">Lien</label>
-                <input type="text" name="additional_info" id="additional_info" class="form-control" value="{{ $institutionPartner->additional_info }}" required>
+                <input type="text" name="additional_info" id="additional_info" class="form-control" value="{{ $institutionPartner->additional_info }}">
             </div>
 
             <div class="mb-3">

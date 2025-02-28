@@ -12599,9 +12599,13 @@ table {
 }
 
 .page-content p {
-  font-size: 1rem !important;
-  line-height: 1.8 !important;
+  font-size: 0.9rem !important;
+  line-height: 2;
   margin-bottom: 1.5rem !important;
+}
+
+.page-content .line-height2 {
+  line-height: 2.5 !important;
 }
 
 .page-content ul {

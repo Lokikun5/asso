@@ -41,20 +41,21 @@
 
                             <!-- ✅ Nom du partenaire -->
                             <h3><i class="fas fa-chalkboard-teacher"></i> {{ $partner->first_name }} {{ $partner->last_name }}</h3>
+                            
+                            <!-- ✅ Description -->
+                            <p class="des-colors">{{ Str::limit($partner->description, 100) }}</p>
                             <!-- ✅ Catégories du partenaire -->
                             <div class="partner-categories mb-2 mt-2">
                                 @foreach($partner->categories as $category)
                                     <span class="badge">{{ $category->name }}</span>
                                 @endforeach
                             </div>
-                            <!-- ✅ Description -->
-                            <p class="des-colors">{{ Str::limit($partner->description, 100) }}</p>
 
                             <!-- ✅ Boutons -->
-                            <a href="{{ route('partenaire.show', $partner->slug) }}" class="btn btn-color btn-primary marginbot">
+                            <a href="{{ route('partenaire.show', $partner->slug) }}" class="btn btn-base-color marginbot">
                                 Découvrir le partenaire
                             </a>
-                            <a href="{{ $partner->partner_link }}" class="btn btn-color2" target="_blank">
+                            <a href="{{ $partner->partner_link }}" class="btn btn-base-color" target="_blank">
                                 Linkedin
                             </a>
                         </div> <!-- /partner-card-overlay -->

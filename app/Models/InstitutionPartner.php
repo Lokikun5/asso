@@ -9,7 +9,7 @@ class InstitutionPartner extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'category', 'active'];
+    protected $fillable = ['name', 'description', 'category', 'active', 'additional_info'];
 
     public function getIconAttribute($value)
     {

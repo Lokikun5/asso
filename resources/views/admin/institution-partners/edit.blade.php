@@ -28,6 +28,10 @@
                 <label for="description" class="form-label">Description</label>
                 <textarea name="description" id="description" class="form-control">{{ $institutionPartner->description }}</textarea>
             </div>
+            <div class="mb-3">
+                <label for="additional_info" class="form-label">Lien</label>
+                <input type="text" name="additional_info" id="additional_info" class="form-control" value="{{ $institutionPartner->additional_info }}" required>
+            </div>
 
             <div class="mb-3">
                 <label for="category" class="form-label">Catégorie</label>

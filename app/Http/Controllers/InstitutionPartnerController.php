@@ -41,6 +41,7 @@ class InstitutionPartnerController extends Controller
             'category' => 'required|string|max:255',
             'active' => 'required|boolean',
             'icon' => 'nullable|string',
+            'additional_info' => 'nullable|url',
         ]);
 
         InstitutionPartner::create($request->all());
@@ -61,6 +62,7 @@ class InstitutionPartnerController extends Controller
             'category' => 'required|string|max:255',
             'active' => 'required|boolean',
             'icon' => 'nullable|string',
+            'additional_info' => 'nullable|url',
         ]);
 
         $institutionPartner = InstitutionPartner::findOrFail($id);

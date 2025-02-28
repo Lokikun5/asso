@@ -48,7 +48,12 @@
                     <div class="col-md-4 d-flex">
                         <div class="p-4 mb-5 border rounded shadow-sm flex-fill d-flex flex-column">
                             <h3><i class="fas fa-handshake"></i>{{ $company->name }}</h3>
-                            <p class="text-responsive">{{ $company->description }}</p>     
+                            <p class="text-responsive">{{ $company->description }}</p>
+                            @if($company->additional_info)
+                                <a href=" {{  $company->additional_info }}" class="btn btn-color2" target="_blank">
+                                    en savoir plus
+                                </a>
+                            @endif   
                         </div>
                     </div>
                     @endforeach

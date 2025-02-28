@@ -58,11 +58,9 @@
                             <h3><i class="fas fa-handshake"></i> {{ $partner->name }}</h3>
                             <p class="text-responsive">{{ $partner->description }}</p>
                             @if($partner->additional_info)
-                                <ul>
-                                    @foreach($partner->additional_info as $info)
-                                        <li>{!! $info !!}</li>
-                                    @endforeach
-                                </ul>
+                                <a href=" {{  $partner->additional_info }}" class="btn btn-color2" target="_blank">
+                                    en savoir plus
+                                </a>
                             @endif
                         </div>
                     </div>

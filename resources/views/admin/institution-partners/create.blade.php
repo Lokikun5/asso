@@ -40,6 +40,10 @@
                 </select>
             </div>
             <div class="mb-3">
+                <label for="additional_info" class="form-label">Lien</label>
+                <input type="text" name="additional_info" id="additional_info" class="form-control" >
+            </div>
+            <div class="mb-3">
                 <label for="active" class="form-label">Actif</label>
                 <select name="active" id="active" class="form-control" required>
                     <option value="1">Oui</option>

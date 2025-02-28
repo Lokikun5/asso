@@ -37,7 +37,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="slug" class="form-label">Slug (URL validate)</label>
+                <label for="slug" class="form-label">Slug (URL)</label>
                 <input type="text" class="form-control" id="slug" name="slug" value="{{ $page->slug }}" required>
             </div>
 
@@ -52,15 +52,14 @@
         </form>
     </div>
 </div>
+
+{{-- ✅ Gestion automatique du slug --}}
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
     let slugInput = document.getElementById("slug");
 
     slugInput.addEventListener("input", function () {
         let slugValue = slugInput.value;
-
-        // Remplace les espaces et caractères spéciaux par des tirets
         slugValue = slugValue.toLowerCase()
             .replace(/[^a-z0-9-]+/g, "-")  // Remplace tout sauf a-z, 0-9 et "-"
             .replace(/^-+|-+$/g, "");  // Supprime les tirets au début et à la fin
@@ -68,16 +67,16 @@ document.addEventListener("DOMContentLoaded", function () {
         slugInput.value = slugValue;
     });
 
-    // Vérification finale avant soumission du formulaire
     document.querySelector("form").addEventListener("submit", function (e) {
         let slugValue = slugInput.value;
-
         if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slugValue)) {
-            e.preventDefault(); // Empêche la soumission du formulaire
+            e.preventDefault();
             alert("Le slug doit contenir uniquement des lettres minuscules, des chiffres et des tirets.");
         }
     });
 });
 </script>
 
+{{-- ✅ Chargement de TinyMCE --}}
+@include('layouts.tinymce')
 @endsection

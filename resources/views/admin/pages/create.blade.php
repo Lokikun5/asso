@@ -51,4 +51,7 @@
         </form>
     </div>
 </div>
+
+{{-- ✅ Chargement de TinyMCE --}}
+@include('layouts.tinymce')
 @endsection

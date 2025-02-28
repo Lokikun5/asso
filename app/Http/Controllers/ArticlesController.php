@@ -44,31 +44,42 @@ class ArticlesController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'text' => 'required',
-            'type' => 'required|string',
-            'img_banner' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required|string',
+        'text' => 'required',
+        'type' => 'required|string',
+        'img_banner' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
 
-        $article = new Article();
-        $article->title = $request->title;
-        $article->description = $request->description;
-        $article->text = $request->text;
-        $article->type = $request->type;
-        $article->slug = Str::slug($request->title);
-        $article->active = true;
+    $slug = Str::slug($request->title);
+    $originalSlug = $slug;
+    $counter = 1;
 
-        if ($request->hasFile('img_banner')) {
-            $imagePath = $request->file('img_banner')->store('articles', 'public');
-            $article->img_banner = $imagePath;
-        }
-
-        $article->save();
-
-        return redirect()->route('admin.dashboard', $article->id)->with('success', 'Article ajouté avec succès.');
+    // Vérifier si le slug existe déjà, si oui, ajouter un suffixe numérique
+    while (Article::where('slug', $slug)->exists()) {
+        $slug = $originalSlug . '-' . $counter;
+        $counter++;
     }
+
+    $article = new Article();
+    $article->title = $request->title;
+    $article->description = $request->description;
+    $article->text = $request->text;
+    $article->type = $request->type;
+    $article->slug = $slug; // ✅ Slug unique
+    $article->active = true;
+
+    if ($request->hasFile('img_banner')) {
+        $imagePath = $request->file('img_banner')->store('articles', 'public');
+        $article->img_banner = $imagePath;
+    }
+
+    $article->save();
+
+    return redirect()->route('admin.dashboard')->with('success', 'Article ajouté avec succès.');
+    }
+
 
     public function edit($id)
     {
@@ -91,9 +102,19 @@ class ArticlesController extends Controller
         $article->description = $request->description;
         $article->text = $request->text;
         $article->type = $request->type;
-        $article->slug = Str::slug($request->title);
 
-        // ✅ Gestion de l'image principale
+        $slug = Str::slug($request->title);
+        $originalSlug = $slug;
+        $counter = 1;
+
+        // Vérifier si le slug existe déjà pour un autre article
+        while (Article::where('slug', $slug)->where('id', '!=', $id)->exists()) {
+            $slug = $originalSlug . '-' . $counter;
+            $counter++;
+        }
+
+        $article->slug = $slug; // ✅ Slug unique
+
         if ($request->hasFile('img_banner')) {
             if ($article->img_banner) {
                 Storage::disk('public')->delete($article->img_banner);
@@ -104,31 +125,9 @@ class ArticlesController extends Controller
 
         $article->save();
 
-        // ✅ Gestion des nouvelles images de la galerie
-        if ($request->hasFile('gallery')) {
-            foreach ($request->file('gallery') as $file) {
-                $path = $file->store('articles/gallery', 'public');
-
-                Media::create([
-                    'file_name' => $path,
-                    'article_id' => $article->id,
-                ]);
-            }
-        }
-
-        // ✅ Suppression des images sélectionnées
-        if ($request->has('delete_images')) {
-            foreach ($request->delete_images as $imageId) {
-                $media = Media::find($imageId);
-                if ($media) {
-                    Storage::disk('public')->delete($media->file_name);
-                    $media->delete();
-                }
-            }
-        }
-
-        return redirect()->route('admin.dashboard', $article->id)->with('success', 'Article mis à jour avec succès.');
+        return redirect()->route('admin.dashboard')->with('success', 'Article mis à jour avec succès.');
     }
+
 
     public function toggle($id)
     {

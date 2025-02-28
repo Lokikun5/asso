@@ -15,7 +15,11 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        $partners = Partner::where('active', true)->orderBy('last_name')->get();
+        $partners = Partner::where('active', true)
+        ->orderByRaw("CASE WHEN last_name = 'GOZAN' AND first_name = 'Eva Harmony' THEN 0 ELSE 1 END")
+        ->orderBy('last_name')
+        ->get();
+
         return view('partenaires.index', compact('partners'));
     }
 

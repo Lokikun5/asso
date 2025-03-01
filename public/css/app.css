@@ -13341,7 +13341,7 @@ i {
 }
 
 .badge-custom {
-  background-color: #ff9800;
+  background-color: #137c49;
   color: white;
   font-size: 0.9rem;
   padding: 5px 10px;
@@ -13354,4 +13354,12 @@ i {
 
 .m0 {
   margin-bottom: 0 !important;
+}
+
+.partner-img {
+  width: 350px;
+  height: 350px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: #fff;
 }

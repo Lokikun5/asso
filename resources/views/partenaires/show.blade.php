@@ -43,8 +43,8 @@
         <img 
             src="{{ $partner->profile_picture }}" 
             alt="{{ $partner->first_name }}" 
-            class="img-fluid rounded-circle shadow-lg" 
-            style="width: 150px; height: 150px; object-fit: cover;">
+            class="img-fluid rounded-circle shadow-lg partner-img" 
+            >
     </div>
 
     <!-- Contenu détaillé -->

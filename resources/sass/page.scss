@@ -200,3 +200,20 @@ margin-bottom: 1.5rem !important; /* Espacement uniforme */
     }
   }
 }
+
+.partner-categories{
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  max-width: 100%; 
+  overflow: hidden; 
+}
+
+.badge {
+  white-space: normal;
+  text-align: center;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: white;
+  margin: 2px;
+}

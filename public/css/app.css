@@ -12761,6 +12761,23 @@ span {
     opacity: 1;
   }
 }
+.partner-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.badge {
+  white-space: normal;
+  text-align: center;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: white;
+  margin: 2px;
+}
+
 .card {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

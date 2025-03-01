@@ -41,7 +41,7 @@
             <!-- Jeunes élèves et étudiants -->
             <div class="col-md-4 d-flex">
                 <div class="p-4 border rounded shadow-sm flex-fill d-flex flex-column">
-                    <h3><i class="fas fa-graduation-cap"></i> Jeunes Élèves et Étudiantes</h3>
+                    <h3><i class="fas fa-graduation-cap"></i> Jeunes élèves et étudiant(e)s</h3>
                     <p class="text-responsive">
                         Collégien(e)s, lycéen(ne)s et universitaires en quête d’orientation et d’opportunités professionnelles.
                     </p>

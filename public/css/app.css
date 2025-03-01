@@ -12771,6 +12771,7 @@ span {
 
 .badge {
   white-space: normal;
+  line-height: 2;
   text-align: center;
   padding: 5px 10px;
   font-size: 12px;

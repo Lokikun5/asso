@@ -55,7 +55,7 @@
                             <a href="{{ route('partenaire.show', $partner->slug) }}" class="btn btn-base-color marginbot">
                                 Découvrir le partenaire
                             </a>
-                            <a href="{{ $partner->partner_link }}" class="btn btn-base-color" target="_blank">
+                            <a href="{{ $partner->partner_link }}" class="btn btn-color2" target="_blank">
                                 Linkedin
                             </a>
                         </div> <!-- /partner-card-overlay -->

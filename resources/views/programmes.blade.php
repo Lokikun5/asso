@@ -75,10 +75,10 @@
 
             <!-- Deuxième partie : Objectifs du programme féminin -->
             <h2 id="programme-feminin" class="text-center mt-5"><i class="fas fa-star"></i> 
-            Le Programme FORV
+            Le Programme FORG
             <span class="min-font-weigth">« Lycéennes, étudiantes, Osez et Rêvez Grand »</span></h2>
             <div class ="img-pages2 mt-5">
-                <img src="{{ asset('image/pages/programme-page-FORV.webp') }}" alt="programme FORV">
+                <img src="{{ asset('image/pages/programme-page-FORG.webp') }}" alt="programme FORG">
             </div>
             <div class="row mt-4">
                 <div class="col-md-6">

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9cead55aa5100a7897fca6e43c93b4e2",
+    "content-hash": "cd6b36bef87d486d6f5ea3442a597200",
     "packages": [
         {
             "name": "brick/math",
@@ -3430,16 +3430,16 @@
         },
         {
             "name": "spatie/laravel-sitemap",
-            "version": "7.3.3",
+            "version": "7.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sitemap.git",
-                "reference": "9423e3bb82d9e83fa8969a2a30dcea309d802e7e"
+                "reference": "5606b9e7b1cb2785218999a6f2ee11e0dbdcfb56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/9423e3bb82d9e83fa8969a2a30dcea309d802e7e",
-                "reference": "9423e3bb82d9e83fa8969a2a30dcea309d802e7e",
+                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/5606b9e7b1cb2785218999a6f2ee11e0dbdcfb56",
+                "reference": "5606b9e7b1cb2785218999a6f2ee11e0dbdcfb56",
                 "shasum": ""
             },
             "require": {
@@ -3491,7 +3491,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-sitemap/tree/7.3.3"
+                "source": "https://github.com/spatie/laravel-sitemap/tree/7.3.4"
             },
             "funding": [
                 {
@@ -3499,7 +3499,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-01-27T09:44:53+00:00"
+            "time": "2025-01-31T08:53:45+00:00"
         },
         {
             "name": "spatie/robots-txt",

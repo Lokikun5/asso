@@ -78,7 +78,7 @@
             Le Programme FORG
             <span class="min-font-weigth">« Lycéennes, étudiantes, Osez et Rêvez Grand »</span></h2>
             <div class ="img-pages2 mt-5">
-                <img src="{{ asset('image/pages/programme-page-FORG.webp') }}" alt="programme FORG">
+                <img src="{{ asset('image/pages/programme-page-FORV.webp') }}" alt="programme FORG">
             </div>
             <div class="row mt-4">
                 <div class="col-md-6">
